@@ -8,7 +8,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class AuthService {
-  private apiUrl = 'http://localhost:3000/auth'; // URL de tu backend de NestJS
+  // private apiUrl = 'http://localhost:3000/auth'; // URL de tu backend de NestJS
+  private apiUrl = 'https://back-5eiw.onrender.com'; // URL de tu backend de NestJS
 
   constructor(private http: HttpClient) {}
 
