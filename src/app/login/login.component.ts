@@ -24,7 +24,7 @@ export class LoginComponent {
         this.router.navigate(['/dashboard']); // Redirige a una página protegida después de iniciar sesión
       },
       (error) => {
-        console.error('Login error', error);
+        console.error('Login error');
       }
     );
   }

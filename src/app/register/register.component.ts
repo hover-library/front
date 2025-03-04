@@ -26,7 +26,7 @@ export class RegisterComponent {
         this.router.navigate(['/login']); // Redirige al login después de registrarse
       },
       (error) => {
-        console.error('Registration error', error);
+        console.error('Registration error');
       }
     );
   }

@@ -30,7 +30,7 @@ export class DashboardComponent implements OnInit {
           console.log('Dashboard data:', response);
         },
         (error) => {
-          console.error('Error fetching dashboard data:', error);
+          console.error('Error fetching dashboard data:');
         }
       );
     } else {
