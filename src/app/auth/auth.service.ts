@@ -1,4 +1,3 @@
-// src/app/auth.service.ts
 
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -9,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class AuthService {
   // private apiUrl = 'http://localhost:3000/auth'; // URL de tu backend de NestJS
-  private apiUrl = 'https://back-5eiw.onrender.com'; // URL de tu backend de NestJS
+  private apiUrl = 'https://back-sdm8.onrender.com'; // URL de tu backend de NestJS
 
   constructor(private http: HttpClient) {}
 
