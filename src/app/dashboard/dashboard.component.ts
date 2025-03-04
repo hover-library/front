@@ -1,5 +1,3 @@
-// dashboard.component.ts
-
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { AuthService } from '../auth/auth.service';
@@ -11,7 +9,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  private apiUrl = 'http://localhost:3000/dashboard'; // URL de tu backend para la ruta protegida
+  private apiUrl = 'https://back-sdm8.onrender.com/dashboard'; // URL de tu backend para la ruta protegida
+  dashboardData: any;
 
   constructor(
     private http: HttpClient,
@@ -21,26 +20,33 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     const token = this.authService.getToken();
-    if (token) {
-      const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
 
-      this.http.get(this.apiUrl, { headers }).subscribe(
-        (response) => {
-          console.log('Dashboard data:', response);
-        },
-        (error) => {
-          console.error('Error fetching dashboard data:', error);
-        }
-      );
-    } else {
+    if (!token) {
       console.log('No token found');
+      this.router.navigate(['/login']); // Redirige al login si no hay token
+      return;
     }
+
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+
+    this.http.get(this.apiUrl, { headers }).subscribe(
+      (response) => {
+        this.dashboardData = response;
+        console.log('Dashboard data:', response);
+      },
+      (error) => {
+        console.error('Error fetching dashboard data:', error);
+        if (error.status === 401) {
+          // Si el token no es válido o ha expirado, redirige al login
+          this.router.navigate(['/login']);
+        }
+      }
+    );
   }
 
   logout() {
     // Elimina el token del localStorage
     localStorage.removeItem('access_token');
-
     // Redirige al login
     this.router.navigate(['/login']);
   }
