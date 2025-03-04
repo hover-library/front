@@ -1,3 +1,5 @@
+// dashboard.component.ts
+
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { AuthService } from '../auth/auth.service';
@@ -20,33 +22,26 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     const token = this.authService.getToken();
+    if (token) {
+      const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
 
-    if (!token) {
-      console.log('No token found');
-      this.router.navigate(['/login']); // Redirige al login si no hay token
-      return;
-    }
-
-    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-
-    this.http.get(this.apiUrl, { headers }).subscribe(
-      (response) => {
-        this.dashboardData = response;
-        console.log('Dashboard data:', response);
-      },
-      (error) => {
-        console.error('Error fetching dashboard data:', error);
-        if (error.status === 401) {
-          // Si el token no es válido o ha expirado, redirige al login
-          this.router.navigate(['/login']);
+      this.http.get(this.apiUrl, { headers }).subscribe(
+        (response) => {
+          console.log('Dashboard data:', response);
+        },
+        (error) => {
+          console.error('Error fetching dashboard data:', error);
         }
-      }
-    );
+      );
+    } else {
+      console.log('No token found');
+    }
   }
 
   logout() {
     // Elimina el token del localStorage
     localStorage.removeItem('access_token');
+
     // Redirige al login
     this.router.navigate(['/login']);
   }

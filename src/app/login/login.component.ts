@@ -21,12 +21,10 @@ export class LoginComponent {
       (response) => {
         console.log('Login successful', response);
         this.authService.saveToken(response.access_token); // Guarda el token en el localStorage
-        this.router.navigate(['/dashboard']); // Redirige a la página protegida después de iniciar sesión
+        this.router.navigate(['/dashboard']); // Redirige a una página protegida después de iniciar sesión
       },
       (error) => {
         console.error('Login error', error);
-        // Mostrar un mensaje adecuado al usuario si el login falla
-        alert('Error de login. Por favor, verifique sus credenciales.');
       }
     );
   }
