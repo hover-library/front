@@ -14,12 +14,12 @@ export class AuthService {
 
   // Método para registrar un usuario
   register(user: any): Observable<any> {
-    return this.http.post(`${this.apiUrl}/register`, user);
+    return this.http.post(`${this.apiUrl}auth/register`, user);
   }
 
   // Método para hacer login de un usuario
   login(user: any): Observable<any> {
-    return this.http.post(`${this.apiUrl}/login`, user);
+    return this.http.post(`${this.apiUrl}auth/login`, user);
   }
 
   // Método para obtener el token JWT guardado en localStorage
