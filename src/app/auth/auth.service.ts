@@ -44,8 +44,9 @@ export class AuthService {
   }
 
   // Ejemplo de cómo hacer una solicitud protegida con el token
-  getProfile(): Observable<any> {
-    const headers = this.getAuthHeaders();
-    return this.http.get(`${this.apiUrl}/auth/profile`, { headers }); // Asegúrate de tener una ruta protegida
-  }
+  // getProfile(): Observable<any> {
+  //   const headers = this.getAuthHeaders();
+  //   return this.http.get(`${this.apiUrl}/auth/profile`, { headers });
+  //   // Asegúrate de tener una ruta protegida
+  // }
 }

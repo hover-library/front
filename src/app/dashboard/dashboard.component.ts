@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  private apiUrl = 'https://back-sdm8.onrender.com/dashboard'; // URL de tu backend para la ruta protegida
+  private apiUrl = 'https://back-sdm8.onrender.com/auth/dashboard'; // URL de tu backend para la ruta protegida
   dashboardData: any;
 
   constructor(
