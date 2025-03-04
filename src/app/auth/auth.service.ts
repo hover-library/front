@@ -21,11 +21,13 @@ export class AuthService {
     return this.http.post(`${this.apiUrl}/auth/login`, user).pipe(
       tap((response: any) => {
         if (response.access_token) {
-          this.saveToken(response.access_token); // Guarda el token JWT en localStorage
+          console.log('Access token received:', response.access_token);  // Verifica que el token esté llegando
+          this.saveToken(response.access_token);
         }
       })
     );
   }
+
 
   // Método para obtener el token JWT guardado en localStorage
   getToken(): string {
@@ -43,10 +45,13 @@ export class AuthService {
     return new HttpHeaders().set('Authorization', `Bearer ${token}`);
   }
 
-  // Ejemplo de cómo hacer una solicitud protegida con el token
-  getProfile(): Observable<any> {
-    const headers = this.getAuthHeaders();
-    return this.http.get(`${this.apiUrl}/auth/dashboard`, { headers });
-    // Asegúrate de tener una ruta protegida
+  getDashboard(): Observable<any> {
+    const headers = this.getAuthHeaders();  // Obtener los encabezados con el token
+    return this.http.get(`${this.apiUrl}/auth/dashboard`, { headers }).pipe(
+      tap(response => {
+        console.log('Dashboard data:', response);
+      })
+    );
   }
+
 }

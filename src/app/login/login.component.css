@@ -28,7 +28,16 @@ h2{
 }
 
 button{
-  width: 60%;
+  display: flex;
+  margin: 0 auto;
+  padding: 5px 25px;
+  width: fit-content;
+  text-align: center;
+}
+
+
+.register-link-cont{
+  display: flex;
 }
 
 
