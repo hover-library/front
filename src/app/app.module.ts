@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router'; // Asegúrate de importar esto
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -27,6 +28,7 @@ import { PepeTestLibraryModule } from 'pepe-test-library';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    RouterModule,
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
