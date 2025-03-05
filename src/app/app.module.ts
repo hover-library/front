@@ -32,7 +32,6 @@ import { AuthInterceptor } from './auth/auth.interceptor';
     FormsModule,
     HttpClientModule,
 
-
 ],
   providers: [
     // Aquí registramos el interceptor
