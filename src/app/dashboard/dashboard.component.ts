@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { AuthService } from '../auth/auth.service';
 import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-dashboard',
@@ -17,8 +18,16 @@ export class DashboardComponent implements OnInit {
   constructor(
     private http: HttpClient,
     private authService: AuthService,
-    private router: Router
-  ) {}
+    private router: Router,
+    //LIBRARY
+    private fb: FormBuilder
+  ) {
+    this.formulario = this.fb.group({
+      nombre: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+    });
+  }
 
   ngOnInit(): void {
     const token = this.authService.getToken();
@@ -44,5 +53,49 @@ export class DashboardComponent implements OnInit {
 
     // Redirige al login
     this.router.navigate(['/login']);
+  }
+
+
+
+  // LIBRARY
+  // Inputs
+  isDisabled: boolean = false;
+  isInputInvalid: boolean = false;
+
+  toggleDisabled() {
+    this.isDisabled = !this.isDisabled;
+  }
+
+  toggleInvalid() {
+    this.isInputInvalid = !this.isInputInvalid;
+  }
+
+  // Formularios Reactivos
+  formulario: FormGroup;
+
+
+  onSubmit() {
+    if (this.formulario.valid) {
+      console.log('Formulario enviado:', this.formulario.value);
+    } else {
+      console.log('Formulario inválido');
+    }
+  }
+
+  // Función para verificar si un campo es inválido
+  isInvalid(controlName: string): boolean {
+    const control = this.formulario.get(controlName);
+    return control ? control.invalid && control.touched : false;
+  }
+
+  //Modal
+  // Método que se ejecuta cuando el modal se cierra
+  onModalClosed() {
+    console.log('Modal cerrado');
+  }
+
+  // Método que se ejecuta cuando se confirma el modal
+  onModalConfirmed() {
+    console.log('Modal confirmado');
   }
 }

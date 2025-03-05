@@ -31,6 +31,10 @@ import { PepeTestLibraryModule } from 'pepe-test-library';
     FormsModule,
     HttpClientModule,
     PepeTestLibraryModule
+
+],
+exports: [
+  PepeTestLibraryModule
 ],
   providers: [
     // Aquí registramos el interceptor

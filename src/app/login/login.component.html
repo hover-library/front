@@ -6,17 +6,13 @@
 
   <div class="cont-input">
     <label for="email">Email:</label>
-    <input type="email" id="email" [(ngModel)]="user.email" name="email" required>
+    <input type="email" id="email" [(ngModel)]="user.email" name="email" required autocomplete="off">
   </div>
 
   <div class="cont-input">
     <label for="password">Password:</label>
     <input type="password" id="password" [(ngModel)]="user.password" name="password" required>
   </div>
-
-  <!-- <div class="cont-btn">
-    <button type="submit">Login</button>
-  </div> -->
 
   <div class="cont-btn">
     <ui-boton type="submit">Login</ui-boton>
@@ -26,11 +22,7 @@
 <div class="register-link-cont">
   <p>Don't have an account?</p>
 
-<a
-routerLink="/register" >
-  Register
-</a>
-</div>
+<a routerLink="/register">Register</a>
 
-
+  </div>
 </div>

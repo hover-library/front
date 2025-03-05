@@ -1,20 +1,36 @@
+<div class="reg-container">
+  <h2>Register</h2>
 
-<h2>Register</h2>
+  <form (ngSubmit)="onRegister()">
+    <div class="cont-input">
+      <label for="name">Name:</label>
+      <input type="text" id="name" [(ngModel)]="user.name" name="name" required autocomplete="off"/>
+    </div>
 
-<form (ngSubmit)="onRegister()">
-  <label for="name">Name:</label>
-  <input type="text" id="name" [(ngModel)]="user.name" name="name" required>
+    <div class="cont-input">
+      <label for="email">Email:</label>
+      <input type="email" id="email" [(ngModel)]="user.email" name="email" required autocomplete="off"/>
+    </div>
 
-  <label for="email">Email:</label>
-  <input type="email" id="email" [(ngModel)]="user.email" name="email" required>
+    <div class="cont-input">
+      <label for="password">Password:</label>
+      <input
+        type="password"
+        id="password"
+        [(ngModel)]="user.password"
+        name="password"
+        required
+      />
+    </div>
 
-  <label for="password">Password:</label>
-  <input type="password" id="password" [(ngModel)]="user.password" name="password" required>
+    <div class="cont-btn">
+      <ui-boton type="submit">Register</ui-boton>
+    </div>
+  </form>
 
-  <button type="submit">Register</button>
-</form>
+  <div class="login-link-cont">
+    <p>Have an account?</p>
 
-<button
-routerLink="/login" >
-  Login
-</button>
+    <a routerLink="/login">Login</a>
+  </div>
+</div>
