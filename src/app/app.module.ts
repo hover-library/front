@@ -15,6 +15,7 @@ import { DashboardComponent } from './dashboard/dashboard.component'; // Tambié
 
 // Importa el interceptor
 import { AuthInterceptor } from './auth/auth.interceptor';
+import { PepeTestLibraryModule } from 'pepe-test-library';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { AuthInterceptor } from './auth/auth.interceptor';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
+    PepeTestLibraryModule
 
 ],
   providers: [

@@ -15,6 +15,9 @@ export class DashboardComponent implements OnInit {
   private apiUrl = 'https://back-sdm8.onrender.com/auth/dashboard'; // URL de tu backend para la ruta protegida
   dashboardData: any;
 
+    // Formularios Reactivos
+    formulario: FormGroup;
+
   constructor(
     private http: HttpClient,
     private authService: AuthService,
@@ -58,6 +61,7 @@ export class DashboardComponent implements OnInit {
 
 
   // LIBRARY
+
   // Inputs
   isDisabled: boolean = false;
   isInputInvalid: boolean = false;
@@ -70,8 +74,6 @@ export class DashboardComponent implements OnInit {
     this.isInputInvalid = !this.isInputInvalid;
   }
 
-  // Formularios Reactivos
-  formulario: FormGroup;
 
 
   onSubmit() {
@@ -98,4 +100,5 @@ export class DashboardComponent implements OnInit {
   onModalConfirmed() {
     console.log('Modal confirmado');
   }
+
 }
