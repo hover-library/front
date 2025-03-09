@@ -1,6 +1,6 @@
 // dashboard.component.ts
 
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { AuthService } from '../auth/auth.service';
 import { Router } from '@angular/router';
@@ -23,7 +23,8 @@ export class DashboardComponent implements OnInit {
     private authService: AuthService,
     private router: Router,
     //LIBRARY
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private renderer: Renderer2, private el: ElementRef
   ) {
     this.formulario = this.fb.group({
       nombre: ['', Validators.required],
@@ -99,6 +100,32 @@ export class DashboardComponent implements OnInit {
   // Método que se ejecuta cuando se confirma el modal
   onModalConfirmed() {
     console.log('Modal confirmado');
+  }
+
+  /////// MENU ////////
+  menuItems: string[] = ['Home', 'Project', 'Services', 'Contact'];
+  selectedIndex: number = -1; // Inicializamos en -1 para que ningún elemento esté seleccionado al inicio
+  highlightStyle: any = {};
+
+
+  selectItem(index: number): void {
+    this.selectedIndex = index;
+    this.updateHighlight();
+  }
+
+  updateHighlight(): void {
+    const menuItems = this.el.nativeElement.querySelectorAll('li');
+    if (menuItems[this.selectedIndex]) {
+      const selectedItem = menuItems[this.selectedIndex];
+      const rect = selectedItem.getBoundingClientRect();
+      const parentRect = this.el.nativeElement.querySelector('ul').getBoundingClientRect();
+
+      this.highlightStyle = {
+        width: `${rect.width}px`,
+        height: `${rect.height}px`,
+        transform: `translateX(${rect.left - parentRect.left}px)`,
+      };
+    }
   }
 
 }
