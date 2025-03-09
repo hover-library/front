@@ -1,4 +1,26 @@
 
+
+
+
+
+.menu{
+  /* width: 90vw; */
+  width: fit-content;
+  margin: 0 auto;
+  padding: 5px 10px;
+  border: 1px solid rgba(255, 255, 255, .2);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 14px;
+  /* background-color: #181818;
+  color: white; */
+}
+
+
+
 .container{
   background-color: white;
   width: fit-content;
@@ -10,6 +32,12 @@
   flex-direction: column;
   gap: 1.8rem;
   box-shadow: 1px 1px 10px rgba(0, 0, 0, .3);
+}
+
+.close-session{
+  width: fit-content;
+  margin: 0 auto;
+  cursor: pointer;
 }
 
 h1, h2 {
