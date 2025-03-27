@@ -1,0 +1,116 @@
+aside {
+  color: #181818;
+  background-color: #FDFDFD;
+}
+
+h3{
+  font-size: 14px;
+  text-align: center;
+}
+
+h2 {
+  width: 80%;
+  text-align: left;
+  margin: 0 0 1.5rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #d30b0b;
+  position: relative;
+  padding-left: 1rem;
+  letter-spacing: -0.25px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, #d30b0b, #d32626);
+    border-radius: 3px;
+  }
+
+  &::after {
+    content: "COMPONENT";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.65rem;
+    font-weight: 600;
+    color: #757575;
+    letter-spacing: 0.5px;
+    background: #f5f5f5;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+  }
+}
+
+.section-list {
+  width: 80%;
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 3px;
+    top: 20px;
+    height: calc(100% - 40px);
+    width: 1px;
+    background-color: #dbdbdb;
+    z-index: 0;
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
+    transition: all 0.3s ease;
+    position: relative;
+
+    .circle {
+      width: 6px;
+      height: 6px;
+      border: 1px solid #dbdbdb;
+      border-radius: 50%;
+      background-color: white;
+      margin-right: 10px;
+      transition: all 0.3s ease;
+      z-index: 1;
+    }
+
+    a {
+      text-decoration: none;
+      cursor: pointer;
+      color: inherit;
+      font-size: 15px;
+      color: #4b4949;
+
+      &:hover{
+        color: #d30b0b;
+      }
+
+    }
+
+    &:hover {
+      color: #b62c2c;
+    }
+
+    &.active {
+      color: #d30b0b;
+
+      .circle {
+        background-color: #d30b0b;
+        border-color: #d30b0b;
+      }
+
+      a {
+        color: inherit;
+        font-weight: bold;
+      }
+    }
+  }
+}

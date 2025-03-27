@@ -1,0 +1,37 @@
+.menu{
+  /* width: 90vw; */
+  width: fit-content;
+  margin: 0 auto;
+  margin-top: 40px;
+  margin-bottom: 50px;
+  padding: 5px 10px;
+  border: 1px solid rgba(255, 255, 255, .2);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 14px;
+  /* background-color: #181818;
+  color: white; */
+}
+
+ul{
+  display: flex;
+  list-style: none;
+  gap: 3rem;
+}
+
+li a{
+  color: #fff;
+  text-decoration: none;
+}
+
+
+p{
+  font-size: 106px;
+  color: #fff;
+  width: fit-content;
+  margin: 0 auto;
+  margin-top: 150px;
+}

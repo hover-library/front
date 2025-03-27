@@ -1,0 +1,17 @@
+<div class="menu">
+  <ul>
+    <li
+      *ngFor="let item of menuRoutes; let i = index"
+      (click)="selectItem(i)"
+      [class.selected]="selectedIndex === i"
+    >
+      <a [routerLink]="item.route">
+        {{ item.label }}
+      </a>
+    </li>
+    <div class="highlight" [ngStyle]="highlightStyle"></div>
+  </ul>
+</div>
+
+
+<p>home works!</p>

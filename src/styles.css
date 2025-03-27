@@ -5,10 +5,15 @@ body{
   font-family: "Roboto", serif, Roboto;
   font-optical-sizing: auto;
 
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+
   /* background: linear-gradient(to bottom, #E3F2FD, #FFFFFF);
   background-repeat: no-repeat; */
 
-  background-color: #000;
+  background-color: #FDFDFD;
+  background-color: #000000;
 }
 
 

@@ -1,0 +1,14 @@
+<div id="container">
+  <h2>Introduction</h2>
+  <div class="menu">
+    <ul>
+      <li *ngFor="let item of menuRoutes">
+        <a [routerLink]="item.route"
+        routerLinkActive="active"
+        >
+          {{ item.label }}
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

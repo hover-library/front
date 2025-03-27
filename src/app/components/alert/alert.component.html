@@ -1,0 +1,50 @@
+<div class="container">
+    <!-- ALERTAS -->
+    <h2>Demostración de Alertas</h2>
+
+    <!-- Alerta sin barra de progreso -->
+    <ui-alert
+      type="info"
+      message="Esta es una alerta de información."
+      [closable]="true"
+    ></ui-alert>
+
+    <!-- Alerta de error sin barra de progreso -->
+    <ui-alert
+      type="error"
+      message="Esta es una alerta de error."
+      [closable]="true"
+    ></ui-alert>
+    <!-- Alerta con barra de progreso y duración automática -->
+    <ui-alert
+      #autoAlert
+      type="success"
+      message="Esta es una alerta temporal de 5 segundos."
+      [closable]="true"
+      [showProgressBar]="true"
+      [duration]="5000"
+    ></ui-alert>
+
+    <!-- Alerta con barra de progreso y duración manual -->
+    <ui-alert
+      #manualAlert
+      type="warning"
+      message="Esta es una alerta temporal de 3 segundos."
+      [closable]="true"
+      [showProgressBar]="true"
+      [duration]="3000"
+    ></ui-alert>
+
+    <div class="button-group">
+      <ui-boton (click)="autoAlert.startTimer()"
+        >Iniciar temporizador (Alerta verde)</ui-boton
+      >
+      <ui-boton (click)="manualAlert.startTimer()"
+        >Iniciar temporizador (Alerta amarilla)</ui-boton
+      >
+    </div>
+    <!-- FIN ALERTAS -->
+
+    <hr class="hr" />
+
+</div>

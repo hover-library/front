@@ -16,6 +16,10 @@ import { DashboardComponent } from './dashboard/dashboard.component'; // Tambié
 // Importa el interceptor
 import { AuthInterceptor } from './auth/auth.interceptor';
 import { PepeTestLibraryModule } from 'pepe-test-library';
+import { HomeComponent } from './home/home.component';
+import { MenuAsideComponent } from './layout/menu-aside/menu-aside.component';
+import { ListAsideComponent } from './layout/list-aside/list-aside.component';
+import { DashboardModule } from './dashboard/dashboard.module';
 
 @NgModule({
   declarations: [
@@ -23,6 +27,10 @@ import { PepeTestLibraryModule } from 'pepe-test-library';
     LoginComponent,
     RegisterComponent,
     DashboardComponent,
+    HomeComponent,
+    MenuAsideComponent,
+    ListAsideComponent,
+
 
   ],
   imports: [
@@ -32,8 +40,11 @@ import { PepeTestLibraryModule } from 'pepe-test-library';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    PepeTestLibraryModule
-
+    PepeTestLibraryModule,
+    DashboardModule
+],
+exports: [
+  PepeTestLibraryModule
 ],
   providers: [
     // Aquí registramos el interceptor
