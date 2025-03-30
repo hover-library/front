@@ -1,17 +1,107 @@
 <div class="menu">
-  <ul>
-    <li
-      *ngFor="let item of menuRoutes; let i = index"
-      (click)="selectItem(i)"
-      [class.selected]="selectedIndex === i"
-    >
-      <a [routerLink]="item.route">
-        {{ item.label }}
-      </a>
-    </li>
-    <div class="highlight" [ngStyle]="highlightStyle"></div>
-  </ul>
+  <ui-menu />
 </div>
 
+<main class="hero">
+  <img src="../../assets/pantera.png" alt="Panther Logo" class="hero-image">
 
-<p>home works!</p>
+  <!-- <div class="hero-gradient"></div> -->
+  <!-- <div class="hero-image-container">
+    <img src="../../assets/pantera.png" alt="Panther Logo" class="hero-image">
+  </div> -->
+
+  <div class="hero-content">
+    <div class="badge">ANGULAR COMPONENTS</div>
+
+    <h1 class="hero-title">
+      <span>Build Faster.</span>
+      <span>Build Smarter.</span>
+    </h1>
+
+    <p class="hero-description">
+      The most comprehensive Angular component library for professional projects.
+      Designed for demanding developers.
+    </p>
+
+    <div class="cta-buttons">
+      <a [routerLink]="['/dashboard']" class="cta-button">
+        <span>Get Started</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <a href="/github" class="cta-button secondary">
+        <span>GitHub</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 0C5.374 0 0 5.373 0 12C0 17.302 3.438 21.8 8.207 23.387C8.806 23.498 9 23.126 9 22.81V20.576C5.662 21.302 4.967 19.16 4.967 19.16C4.421 17.773 3.634 17.404 3.634 17.404C2.545 16.659 3.717 16.675 3.717 16.675C4.922 16.759 5.556 17.912 5.556 17.912C6.626 19.746 8.363 19.216 9.048 18.909C9.155 18.134 9.466 17.604 9.81 17.305C7.145 17.001 4.343 15.971 4.343 11.374C4.343 10.063 4.812 8.993 5.579 8.153C5.455 7.85 5.044 6.629 5.696 4.977C5.696 4.977 6.704 4.655 8.997 6.207C9.954 5.941 10.98 5.808 12 5.803C13.02 5.808 14.047 5.941 15.006 6.207C17.297 4.655 18.303 4.977 18.303 4.977C18.956 6.629 18.545 7.85 18.421 8.153C19.191 8.993 19.656 10.063 19.656 11.374C19.656 15.983 16.849 16.998 14.177 17.295C14.607 17.667 15 18.397 15 19.517V22.81C15 23.129 15.192 23.504 15.801 23.386C20.566 21.797 24 17.3 24 12C24 5.373 18.627 0 12 0Z" fill="currentColor"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</main>
+
+<section class="features-section">
+  <h2>Features</h2>
+  <div class="container">
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🚀</div>
+        <h3>Performance First</h3>
+        <p>Optimized components with strategic Change Detection</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🧩</div>
+        <h3>Modular Architecture</h3>
+        <p>Import only what you need, no bloat</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🔌</div>
+        <h3>Seamless Integration</h3>
+        <p>Works perfectly with Angular ecosystem</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="performance-section">
+  <div class="container">
+    <!-- <h2>Enterprise Grade Performance</h2> -->
+    <h2>Github Stats</h2>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-value">>99%</div>
+        <div class="stat-label">Less bundle size</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">100%</div>
+        <div class="stat-label">Strictly Typed</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">0ms</div>
+        <div class="stat-label">CLS</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="companies-section">
+  <div class="container">
+    <!-- <h3>Trusted by teams at</h3>
+    <div class="logos-grid">
+      <div class="logo-item">Company 1</div>
+      <div class="logo-item">Company 2</div>
+      <div class="logo-item">Company 3</div>
+      <div class="logo-item">Company 4</div>
+    </div> -->
+
+     <h3>Footer Menu</h3>
+    <div class="logos-grid">
+      <div class="logo-item">Home</div>
+      <div class="logo-item">Project</div>
+      <div class="logo-item">Services</div>
+      <div class="logo-item">Contact</div>
+    </div>
+  </div>
+</section>
