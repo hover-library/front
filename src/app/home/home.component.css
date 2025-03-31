@@ -1,34 +1,20 @@
-/* Variables de color actualizadas */
-:root {
-  --black: #0e0e0e;
-  --dark: #1a1a1a;
-  --gray: #2d2d2d;
-  --light: #f5f5f5;
-  --primary: #dd0031; /* Rojo NestJS */
-  --primary-light: #ff3366;
-  --text-primary: #ffffff;
-  --text-secondary: rgba(255, 255, 255, 0.7);
-}
 
-/* Reset y estilos base */
-body {
-  margin: 0;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  background-color: var(--black);
-  color: var(--text-primary);
-  line-height: 1.6;
-  overflow-x: hidden;
-}
 
 /* Menú (se mantiene igual) */
 .menu {
+  position: absolute;
+  z-index: 999;
+  left: calc( 50% - 200px );
+  top: 60px;
   width: fit-content;
-  margin: 2rem auto;
+  /* margin: 2rem auto; */
+  margin: 0 auto;
   padding: 0.5rem 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  /* border: 1px solid rgba(255, 255, 255, 0.1); */
   border-radius: 8px;
   backdrop-filter: blur(10px);
-  background-color: rgba(10, 10, 10, 0.8);
+  /* background-color: rgba(10, 10, 10, 0.8); */
+  /* background: linear-gradient(to bottom, black, trasparent); */
 }
 
 .menu ul {
@@ -59,6 +45,8 @@ body {
   align-items: center;
   overflow: hidden;
   padding: 0 2rem;
+
+  /* border: 1px solid red; */
 }
 
 .hero-gradient {
@@ -101,7 +89,7 @@ body {
   z-index: 2;
   max-width: 600px;
   width: 100%;
-  margin: 0 auto 200px 20%;
+  margin: 100px auto 200px 20%;
   padding: 4rem 0;
 
   /* border: 1px solid red; */
