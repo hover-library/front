@@ -1,22 +1,48 @@
 <div class="menu">
-  <ui-menu />
+  <div class="logo">
+    <a routerLink="/">JMV</a>
+  </div>
+  <div class="menu-list">
+    <ul>
+      <li>
+        <a routerLink="/">
+          docs
+        </a>
+      </li>
+      <li>
+        <a [routerLink]="['/dashboard']">
+          components
+        </a>
+      </li>
+      <li>
+        <a routerLink="/">
+          contact
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="login">
+    <a routerLink="/">
+      iniciar sesión
+    </a>
+  </div>
 </div>
 
 <main class="hero">
-  <img src="../../assets/pantera.png" alt="Panther Logo" class="hero-image">
-
   <div class="hero-content">
     <div class="badge">ANGULAR COMPONENTS</div>
 
     <h1 class="hero-title">
-      <span>Build Faster.</span>
-      <span>Build Smarter.</span>
+      <span>Build <div class="red">Faster.</div></span>
+      <span>Build <div class="red">Smarter.</div></span>
+      <span>Build with <div class="red">Confidence.</div></span>
     </h1>
 
     <p class="hero-description">
-      The most comprehensive Angular component library for professional projects.
-      Designed for demanding developers.
+      The ultimate Angular component library built for performance, scalability, and seamless integration.
+      Empower your development workflow with robust, customizable, and enterprise-ready UI components.
     </p>
+
 
     <div class="cta-buttons">
       <a [routerLink]="['/dashboard']" class="cta-button">

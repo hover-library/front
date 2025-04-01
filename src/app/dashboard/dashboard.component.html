@@ -1,24 +1,31 @@
-
-<!-- <div class="menu">
-  <ui-menu [menuItems]="menuRoutes" />
-</div> -->
-
 <div class="menu">
   <div class="logo">
-    <a routerLink="/home">
-      JMV
+    <a routerLink="/">JMV</a>
+  </div>
+  <div class="menu-list">
+    <ul>
+      <li>
+        <a routerLink="/">
+          docs
+        </a>
+      </li>
+      <li>
+        <a [routerLink]="['/dashboard']">
+          components
+        </a>
+      </li>
+      <li>
+        <a routerLink="/">
+          contact
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="login">
+    <a routerLink="/">
+      iniciar sesión
     </a>
   </div>
-  <ul>
-    <li
-      *ngFor="let item of menuRoutes; let i = index"
-    >
-      <a [routerLink]="item.route">
-        {{ item.label }}
-      </a>
-    </li>
-    <!-- <div class="highlight" [ngStyle]="highlightStyle"></div> -->
-  </ul>
 </div>
 
 <!-- <hr class="hr"> -->

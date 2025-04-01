@@ -1,20 +1,21 @@
 
 
-/* Menú (se mantiene igual) */
+/* Menú */
 .menu {
-  position: absolute;
+  position: sticky;
+  top: 0;
+  left: 0;
   z-index: 999;
-  left: calc( 50% - 200px );
-  top: 60px;
-  width: fit-content;
-  /* margin: 2rem auto; */
-  margin: 0 auto;
-  padding: 0.5rem 1rem;
-  /* border: 1px solid rgba(255, 255, 255, 0.1); */
-  border-radius: 8px;
-  backdrop-filter: blur(10px);
-  /* background-color: rgba(10, 10, 10, 0.8); */
-  /* background: linear-gradient(to bottom, black, trasparent); */
+  width: calc(100% -  400px);
+  height: 9vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 200px;
+  /* background-color: #5f0010; */
+  background-color: #91051c;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .menu ul {
@@ -28,69 +29,73 @@
 .menu li a {
   color: rgba(255, 255, 255, 0.9);
   text-decoration: none;
-  font-size: 0.9rem;
-  font-weight: 500;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 600;
   transition: color 0.2s;
+  text-shadow: 0 0 4px black;
 }
 
 .menu li a:hover {
-  color: var(--primary-light);
+  color: #c9c9c9;
+}
+
+.logo a{
+  width: fit-content;
+  height: 100%;
+  font-size: 40px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  color: white;
+  text-shadow: 0 0 10px black;
+  text-decoration: none;
+}
+
+.login a{
+  color: white;
+  text-decoration: none;
+  text-shadow: 0 0 4px black;
 }
 
 /* Hero Section - Rediseñada al estilo NestJS */
 .hero {
   position: relative;
-  min-height: 100vh;
+  height: 90vh;
   display: flex;
   align-items: center;
   overflow: hidden;
   padding: 0 2rem;
+  /* background: linear-gradient(to bottom, #5f0010, #97021b, transparent); */
+  background: linear-gradient(to bottom,  #4d000d98, 30%, transparent);
 
-  /* border: 1px solid red; */
+
 }
 
-.hero-gradient {
+.hero::after{
+  content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+  inset: 0;
+  z-index: -10;
   height: 100%;
-  background: linear-gradient(to left, 80%,  black, transparent);
-  /* background: radial-gradient(circle at 75% 50%, rgba(221, 0, 49, 0.15) 0%, rgba(10, 10, 10, 0) 50%); */
-  z-index: 1;
-}
-
-.hero-image-container {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 50%;
-  max-width: 800px;
-  z-index: 0;
-}
-
-.hero-image {
   width: 100%;
-  height: auto;
-  position: absolute;
-  opacity: 0.9;
-  /* filter: drop-shadow(0 0 30px rgba(221, 0, 49, 0.3)); */
-
-  -webkit-mask-image: linear-gradient(to left, 70%,  black, transparent);
-  mask-image: linear-gradient(to left, black, 70%, transparent);
-
-  z-index: 0;
-
+  background-image: radial-gradient(rgba(255,255,255, .4) 1px, transparent 1px);
+  background-size: 32px 32px;
 }
 
 .hero-content {
   position: relative;
   z-index: 2;
-  max-width: 600px;
+  /* max-width: 600px; */
   width: 100%;
-  margin: 100px auto 200px 20%;
+  margin: 80px 20% 200px 20%;
   padding: 4rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  /* border: 1px solid rgb(0, 0, 0); */
 
   /* border: 1px solid red; */
 }
@@ -113,7 +118,7 @@
 .hero-title {
   font-size: 3.5rem;
   font-weight: 800;
-  line-height: 1.1;
+  line-height: 1.3;
   margin: 0 0 1.5rem 0;
   background: linear-gradient(90deg, #ffffff, #e0e0e0);
   -webkit-background-clip: text;
@@ -125,9 +130,16 @@
   display: block;
 }
 
+.red{
+  display: inline;
+  color: #c00726;
+  text-shadow: 1px 1px 5px black;
+}
+
 .hero-description {
+  text-wrap: balance;
   font-size: 1.25rem;
-  max-width: 500px;
+  max-width: 900px;
   color: white;
   margin-bottom: 3rem;
   line-height: 1.6;

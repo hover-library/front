@@ -1,8 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
+/*Plus Jakarta Sans -->   font-family: "Plus Jakarta Sans", serif;*/
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+/* Geist+Mono -->  font-family: "Geist Mono", serif; */
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap');
+
 
 body{
+  font-family: "Geist Mono", serif;
   font-family: "Roboto", serif, Roboto;
+  font-family: "Plus Jakarta Sans", serif;
   font-optical-sizing: auto;
 
   box-sizing: border-box;
