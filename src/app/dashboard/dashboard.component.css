@@ -1,19 +1,26 @@
-/* Menú (se mantiene igual) */
+/* Menú */
 .menu {
   position: fixed;
   top: 0;
   left: 0;
   z-index: 999;
-  width: calc(100% -  400px);
-  height: 9vh;
+  /* width: calc(100% - 400px); */
+  width: calc(100% - 110px);
+  height: 7vh;
   display: flex;
   align-items: center;
+  /* justify-content: space-between; */
   justify-content: space-between;
-  padding: 0 200px;
-  /* background-color: #5f0010; */
-  background-color: #91051c;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+  /* padding: 0 200px; */
+  padding: 0 55px;
+
+  background-color: #080808;
+}
+
+.menu-left{
+  display: flex;
+  align-items: center;
+  gap: 3rem;
 }
 
 .menu ul {
@@ -41,13 +48,54 @@
 .logo a{
   width: fit-content;
   height: 100%;
-  font-size: 40px;
+  font-size: 22px;
   font-weight: bold;
   display: flex;
   align-items: center;
   color: white;
   text-shadow: 0 0 10px black;
   text-decoration: none;
+}
+
+.img-logo{
+  width: 30px;
+  margin-right: 10px;
+}
+
+.search-bar{
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 5px;
+
+
+  input{
+    height: 30px;
+    width: 200px;
+    padding-left: 10px;
+    border: 0;
+    outline: 0;
+    appearance: none;
+    border-radius: 5px;
+  }
+
+  input:focus{
+    /* border: 5px solid #97021b !important; */
+    outline: 4px solid #97021b !important;
+  }
+
+
+}
+
+.search-icon{
+  width: 25px;
+  height: 25px;
+  margin: 0 5px;
+  background: url(../../assets/search.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
 }
 
 .login a{
@@ -59,7 +107,7 @@
 #menu-aside{
   position: fixed;
   left: 0;
-  top: 8vh;
+  top: 7vh;
   width: 300px;
   /* min-height: 100vh; */
   height: 100%;
@@ -69,7 +117,7 @@
 
 #router{
   position: absolute;
-  top: 8vh;
+  top: 7vh;
   left: 300px;
   width: calc( 100% - 500px );
   height: 100%;
@@ -77,14 +125,14 @@
   justify-content: center;
   z-index: -1;
   /* overflow-y: auto; */
-  background-color: #FDFDFD;
   background-color: #1C1E21;
+  background-color: #FDFDFD;
 }
 
 #list-aside{
   position: fixed;
   right: 0;
-  top: 8vh;
+  top: 7vh;
   width: 200px;
   /* min-height: 100vh; */
   height: 100%;

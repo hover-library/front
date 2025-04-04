@@ -7,7 +7,7 @@
 }
 
 h2 {
-  font-size: 1.05rem;
+  font-size: 20px;
   color: #0a0a0a;
   margin-bottom: 0px;
   font-weight: 600;
@@ -15,6 +15,14 @@ h2 {
   letter-spacing: 0.03em;
   padding-bottom: 10px;
   border-bottom: 1px solid #f0f0f0;
+}
+
+.h2-link{
+  text-decoration: none;
+}
+
+h3{
+  color: #4b4c4d;
 }
 
 .menu {
@@ -25,9 +33,10 @@ h2 {
 
 ul{
   padding: 0;
+  list-style: none;
 }
 
-a {
+a:not(.h2-link) {
   display: flex;
   align-items: center;
   padding: 0.85rem 1.25rem;

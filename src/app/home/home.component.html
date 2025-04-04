@@ -1,6 +1,9 @@
 <div class="menu">
   <div class="logo">
-    <a routerLink="/">JMV</a>
+    <a routerLink="/">
+      <img class="img-logo" src="../../assets/logo2.png" alt="logo">
+      Rubik
+    </a>
   </div>
   <div class="menu-list">
     <ul>
@@ -22,7 +25,7 @@
     </ul>
   </div>
   <div class="login">
-    <a routerLink="/">
+    <a [routerLink]="['/login']">
       iniciar sesión
     </a>
   </div>
@@ -60,69 +63,3 @@
     </div>
   </div>
 </main>
-
-<section class="features-section">
-  <h2>Features</h2>
-  <div class="container">
-    <div class="features-grid">
-      <div class="feature-card">
-        <div class="feature-icon">🚀</div>
-        <h3>Performance First</h3>
-        <p>Optimized components with strategic Change Detection</p>
-      </div>
-
-      <div class="feature-card">
-        <div class="feature-icon">🧩</div>
-        <h3>Modular Architecture</h3>
-        <p>Import only what you need, no bloat</p>
-      </div>
-
-      <div class="feature-card">
-        <div class="feature-icon">🔌</div>
-        <h3>Seamless Integration</h3>
-        <p>Works perfectly with Angular ecosystem</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="performance-section">
-  <div class="container">
-    <!-- <h2>Enterprise Grade Performance</h2> -->
-    <h2>Github Stats</h2>
-    <div class="stats">
-      <div class="stat">
-        <div class="stat-value">>99%</div>
-        <div class="stat-label">Less bundle size</div>
-      </div>
-      <div class="stat">
-        <div class="stat-value">100%</div>
-        <div class="stat-label">Strictly Typed</div>
-      </div>
-      <div class="stat">
-        <div class="stat-value">0ms</div>
-        <div class="stat-label">CLS</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="companies-section">
-  <div class="container">
-    <!-- <h3>Trusted by teams at</h3>
-    <div class="logos-grid">
-      <div class="logo-item">Company 1</div>
-      <div class="logo-item">Company 2</div>
-      <div class="logo-item">Company 3</div>
-      <div class="logo-item">Company 4</div>
-    </div> -->
-
-     <h3>Footer Menu</h3>
-    <div class="logos-grid">
-      <div class="logo-item">Home</div>
-      <div class="logo-item">Project</div>
-      <div class="logo-item">Services</div>
-      <div class="logo-item">Contact</div>
-    </div>
-  </div>
-</section>
