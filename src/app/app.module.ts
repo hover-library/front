@@ -1,4 +1,3 @@
-import { HoverLibraryModule } from './../../node_modules/hover-ui/src/lib/hover-library.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router'; // Asegúrate de importar esto
@@ -20,6 +19,7 @@ import { HomeComponent } from './home/home.component';
 import { MenuAsideComponent } from './layout/menu-aside/menu-aside.component';
 import { ListAsideComponent } from './layout/list-aside/list-aside.component';
 import { DashboardModule } from './dashboard/dashboard.module';
+import { HoverLibraryModule } from 'hover-ui/src/lib/hover-library.module';
 
 @NgModule({
   declarations: [
