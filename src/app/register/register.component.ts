@@ -1,5 +1,5 @@
 // src/app/register/register.component.ts
-
+import { FormsModule } from '@angular/forms';
 import { Component } from '@angular/core';
 import { AuthService } from '../auth/auth.service';
 import { Router } from '@angular/router';

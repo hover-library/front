@@ -3,41 +3,41 @@
     <h2>Inputs</h2>
 
     <!-- Input de texto con etiqueta -->
-    <ui-input
+    <!-- <ui-input
       type="text"
       label="Usuario"
       placeholder="Ingresa el usuario"
-    ></ui-input>
+    ></ui-input> -->
 
     <!-- Input de contraseña deshabilitado -->
-    <ui-input
+    <!-- <ui-input
       type="password"
       label="Contraseña (disabled)"
       placeholder="Ingresa tu contraseña"
       [disabled]="true"
-    ></ui-input>
+    ></ui-input> -->
 
     <!-- Input inválido con mensaje de error -->
-    <ui-input
+    <!-- <ui-input
       type="text"
       label="Código (invalid)"
       placeholder="Ingresa el código"
       [invalid]="true"
       errorMessage="El código es inválido"
-    ></ui-input>
+    ></ui-input> -->
     <!-- FIN INPUTS -->
 
     <hr class="hr" />
 
     <h2>Demostración Dinámica</h2>
-    <ui-input
+    <!-- <ui-input
       type="text"
       label="Nombre"
       placeholder="Ingresa tu nombre"
       [disabled]="isDisabled"
       [invalid]="isInputInvalid"
       errorMessage="Este campo es obligatorio"
-    ></ui-input>
+    ></ui-input> -->
 
     <!-- <ui-boton color="primario" (click)="toggleDisabled()">
       {{ isDisabled ? "Habilitar Input" : "Deshabilitar Input" }}
@@ -54,34 +54,34 @@
 
     <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
       <!-- Campo de nombre -->
-      <ui-input
+      <!-- <ui-input
         type="text"
         label="Nombre"
         placeholder="Ingresa tu nombre"
         formControlName="nombre"
         [invalid]="isInvalid('nombre')"
         errorMessage="El nombre es obligatorio"
-      ></ui-input>
+      ></ui-input> -->
 
       <!-- Campo de correo -->
-      <ui-input
+      <!-- <ui-input
         type="email"
         label="Correo electrónico"
         placeholder="Ingresa tu correo"
         formControlName="email"
         [invalid]="isInvalid('email')"
         errorMessage="Ingresa un correo válido"
-      ></ui-input>
+      ></ui-input> -->
 
       <!-- Campo de contraseña -->
-      <ui-input
+      <!-- <ui-input
         type="password"
         label="Contraseña"
         placeholder="Ingresa tu contraseña"
         formControlName="password"
         [invalid]="isInvalid('password')"
         errorMessage="La contraseña debe tener al menos 6 caracteres"
-      ></ui-input>
+      ></ui-input> -->
 
       <!-- Botón de enviar -->
       <!-- <ui-boton type="submit" color="primario" [disabled]="formulario.invalid">
