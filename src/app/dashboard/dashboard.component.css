@@ -45,21 +45,18 @@
   color: #c9c9c9;
 }
 
+
 .logo a{
   width: fit-content;
   height: 100%;
+  font-family: "Montserrat", sans-serif;
   font-size: 22px;
-  font-weight: bold;
+  font-weight: 500;
   display: flex;
   align-items: center;
   color: white;
   text-shadow: 0 0 10px black;
   text-decoration: none;
-}
-
-.img-logo{
-  width: 30px;
-  margin-right: 10px;
 }
 
 .search-bar{
@@ -98,10 +95,17 @@
   cursor: pointer;
 }
 
+.login{
+  display: flex;
+  width: fit-content;
+  border: 1px solid red;
+}
+
 .login a{
   color: white;
   text-decoration: none;
   text-shadow: 0 0 4px black;
+  width: fit-content;
 }
 
 #menu-aside{

@@ -1,3 +1,4 @@
+import { HoverLibraryModule } from './../../node_modules/hover-ui/src/lib/hover-library.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router'; // Asegúrate de importar esto
@@ -15,7 +16,6 @@ import { DashboardComponent } from './dashboard/dashboard.component'; // Tambié
 
 // Importa el interceptor
 import { AuthInterceptor } from './auth/auth.interceptor';
-import { PepeTestLibraryModule } from 'pepe-test-library';
 import { HomeComponent } from './home/home.component';
 import { MenuAsideComponent } from './layout/menu-aside/menu-aside.component';
 import { ListAsideComponent } from './layout/list-aside/list-aside.component';
@@ -31,7 +31,6 @@ import { DashboardModule } from './dashboard/dashboard.module';
     MenuAsideComponent,
     ListAsideComponent,
 
-
   ],
   imports: [
     BrowserModule,
@@ -40,11 +39,11 @@ import { DashboardModule } from './dashboard/dashboard.module';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    PepeTestLibraryModule,
-    DashboardModule
+    DashboardModule,
+    HoverLibraryModule
 ],
 exports: [
-  PepeTestLibraryModule
+  HoverLibraryModule
 ],
   providers: [
     // Aquí registramos el interceptor

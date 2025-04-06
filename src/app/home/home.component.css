@@ -44,8 +44,9 @@
 .logo a{
   width: fit-content;
   height: 100%;
+  font-family: "Montserrat", sans-serif;
   font-size: 30px;
-  font-weight: bold;
+  font-weight: 500;
   display: flex;
   align-items: center;
   color: white;
@@ -53,34 +54,27 @@
   text-decoration: none;
 }
 
-.img-logo{
-  width: 40px;
-  margin-right: 10px;
-}
-
 .login a{
-  color: white;
-  text-decoration: none;
-  text-shadow: 0 0 4px black;
+  padding: 0.6rem 1.8rem;
 }
 
-/* Hero Section - Rediseñada al estilo NestJS */
+/* Hero Section */
 .hero {
   position: relative;
   height: calc(100vh - 100px);
   display: flex;
   align-items: center;
   overflow: hidden;
-  /* padding: 100px 2rem 0 2rem; */
   padding-top: 100px;
-  /* background: linear-gradient(to bottom, #5f0010, #97021b, transparent); */
-  background: linear-gradient(to bottom,  #4d000d98, 30%, transparent);
+}
 
-  background: url('../../assets/bg.gif');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-
+.hero video{
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100vh;
+  z-index: -1;
 }
 
 .hero::after{
@@ -92,31 +86,32 @@
   width: 100%;
   /* background-image: radial-gradient(rgba(255,255,255, .4) 1px, transparent 1px);
   background-size: 32px 32px; */
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .hero-content {
   position: relative;
   z-index: 2;
   /* max-width: 600px; */
-  width: 100%;
-  margin: 80px 20% 200px 20%;
-  padding: 4rem 0;
+  width: fit-content;
+  margin: 80px auto 200px auto;
+  /* padding: 4rem 0; */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: left;
-  /* border: 1px solid rgb(0, 0, 0); */
+  /* align-items: start;
+  justify-content: start;
+  text-align: left; */
+
+  border: 0px solid rgb(230, 10, 10);
 
   /* border: 1px solid red; */
 }
 
 .badge {
   display: inline-block;
-  /* background: rgba(221, 0, 49, 0.15); */
   background: #97021b;
-  /* color: var(--primary-light); */
   color: white;
   padding: 0.5rem 1rem;
   border-radius: 50px;
@@ -152,7 +147,7 @@
   text-wrap: balance;
   text-align: center;
   font-size: 1.25rem;
-  max-width: 900px;
+  max-width: 700px;
   color: white;
   margin-bottom: 3rem;
   line-height: 1.6;
@@ -169,6 +164,9 @@ h2{
 /* CTA Buttons */
 .cta-buttons {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
   gap: 1rem;
   margin-top: 2rem;
 }
@@ -178,7 +176,6 @@ h2{
   align-items: center;
   gap: 0.5rem;
   padding: 1rem 2rem;
-  background: var(--primary);
   color: white;
   border-radius: 8px;
   text-decoration: none;
@@ -212,3 +209,13 @@ h2{
 }
 
 
+
+@media (max-width: 768px) {
+  .hero video {
+    display: none;
+  }
+  .hero {
+    background: url('../../assets/bg-spline2.png') no-repeat center center fixed;
+    background-size: cover;
+  }
+}

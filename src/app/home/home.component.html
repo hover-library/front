@@ -1,8 +1,7 @@
 <div class="menu">
   <div class="logo">
     <a routerLink="/">
-      <img class="img-logo" src="../../assets/logo2.png" alt="logo">
-      Rubik
+      hover .
     </a>
   </div>
   <div class="menu-list">
@@ -25,13 +24,20 @@
     </ul>
   </div>
   <div class="login">
-    <a [routerLink]="['/login']">
-      iniciar sesión
+    <a [routerLink]="['/login']" class="cta-button secondary">
+      log in
     </a>
   </div>
 </div>
 
 <main class="hero">
+
+  <video autoplay muted >
+    <source src="../../assets/line-v-2.webm" type="video/webm">
+    <!-- Fallback para navegadores que no soportan video -->
+    <!-- <img src="../../assets/bg-spline2.png" alt="Background fallback"> -->
+  </video>
+
   <div class="hero-content">
     <div class="badge">ANGULAR COMPONENTS</div>
 

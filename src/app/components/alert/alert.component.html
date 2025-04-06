@@ -9,42 +9,44 @@
       [closable]="true"
     ></ui-alert>
 
-    <!-- Alerta de error sin barra de progreso -->
-    <ui-alert
-      type="error"
-      message="Esta es una alerta de error."
-      [closable]="true"
-    ></ui-alert>
-    <!-- Alerta con barra de progreso y duración automática -->
-    <ui-alert
-      #autoAlert
-      type="success"
-      message="Esta es una alerta temporal de 5 segundos."
-      [closable]="true"
-      [showProgressBar]="true"
-      [duration]="5000"
-    ></ui-alert>
+    <!-- ALERTAS -->
+    <h2>Demostración de Alertas</h2>
+    <div class="alert-container">
+      <!-- Alerta de éxito -->
+      <ui-alert
+        type="success"
+        title="Operación exitosa"
+        message="Los datos se guardaron correctamente"
+        [closable]="true">
+      </ui-alert>
 
-    <!-- Alerta con barra de progreso y duración manual -->
-    <ui-alert
-      #manualAlert
-      type="warning"
-      message="Esta es una alerta temporal de 3 segundos."
-      [closable]="true"
-      [showProgressBar]="true"
-      [duration]="3000"
-    ></ui-alert>
+      <!-- Alerta de error -->
+      <ui-alert
+        type="error"
+        title="Error"
+        message="No se pudo completar la operación"
+        [showProgressBar]="true"
+        [autoClose]="true"
+        [duration]="5000">
+      </ui-alert>
 
-    <div class="button-group">
-      <ui-boton (click)="autoAlert.startTimer()"
-        >Iniciar temporizador (Alerta verde)</ui-boton
-      >
-      <ui-boton (click)="manualAlert.startTimer()"
-        >Iniciar temporizador (Alerta amarilla)</ui-boton
-      >
+      <!-- Alerta de advertencia -->
+      <ui-alert
+        type="warning"
+        title="Advertencia"
+        message="Verifique los datos ingresados"
+        [closable]="false">
+      </ui-alert>
+
+      <!-- Alerta informativa -->
+      <ui-alert
+        type="info"
+        message="Nueva actualización disponible"
+        [autoClose]="true"
+        [duration]="3000">
+      </ui-alert>
     </div>
-    <!-- FIN ALERTAS -->
 
-    <hr class="hr" />
+    <!-- FIN ALERTAS -->
 
 </div>

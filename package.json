@@ -18,7 +18,8 @@
     "@angular/platform-browser": "^17.3.0",
     "@angular/platform-browser-dynamic": "^17.3.0",
     "@angular/router": "^17.3.0",
-    "pepe-test-library": "^0.0.8",
+    "hover-ui": "^0.0.3",
+    "pepe-test-library": "^0.0.9",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"

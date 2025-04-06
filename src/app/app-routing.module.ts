@@ -16,7 +16,7 @@ const routes: Routes = [
   // { path: 'dashboard', component: DashboardComponent },
   // { path: 'dashboard', loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule), canActivate: [authGuard] },
   { path: 'dashboard', loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule) },
-  { path: 'home', component: HomeComponent },
+  { path: '', component: HomeComponent },
   // { path: 'dashboard', component: DashboardComponent },
   // { path: '', redirectTo: '/login', pathMatch: 'full' }, // Redirige al login si no hay ruta especificada
   { path: '', redirectTo: '/home', pathMatch: 'full' }, // Redirige al login si no hay ruta especificada
