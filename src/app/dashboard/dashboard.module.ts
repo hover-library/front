@@ -8,6 +8,7 @@ import { BadgeComponent } from '../components/badge/badge.component';
 import { AlertComponent } from '../components/alert/alert.component';
 import { SpinnerComponent } from '../components/spinner/spinner.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HoverLibraryModule } from 'hover-angular-library';
 
 
 
@@ -24,6 +25,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     DashboardRoutingModule,
     ReactiveFormsModule,
+    HoverLibraryModule
 ]
 })
 export class DashboardModule { }

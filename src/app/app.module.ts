@@ -19,6 +19,7 @@ import { HomeComponent } from './home/home.component';
 import { MenuAsideComponent } from './layout/menu-aside/menu-aside.component';
 import { ListAsideComponent } from './layout/list-aside/list-aside.component';
 import { DashboardModule } from './dashboard/dashboard.module';
+import { HoverLibraryModule } from 'hover-angular-library';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,6 @@ import { DashboardModule } from './dashboard/dashboard.module';
     HomeComponent,
     MenuAsideComponent,
     ListAsideComponent,
-
   ],
   imports: [
     BrowserModule,
@@ -39,8 +39,10 @@ import { DashboardModule } from './dashboard/dashboard.module';
     FormsModule,
     HttpClientModule,
     DashboardModule,
+    HoverLibraryModule
 ],
 exports: [
+  HoverLibraryModule
 ],
   providers: [
     // Aquí registramos el interceptor
