@@ -1,33 +1,113 @@
-<div class="container">
-    <!-- BADGE -->
-    <h2>Demostración de Badges</h2>
+<div class="demo-container">
+  <div class="demo-bg-effect"></div>
 
-    <div class="grid">
+  <h2 class="demo-title">Demostración de Badges</h2>
 
-<!-- Básico -->
-<ui-badge text="Default"></ui-badge>
+  <div class="demo-grid">
+    <!-- Sección Básico -->
+    <section class="demo-section">
+      <h3 class="demo-section-title">Badge Básico</h3>
+      <div class="demo-component-preview">
+        <ui-badge text="Default"></ui-badge>
+      </div>
+      <pre class="demo-code-container"><code class="demo-code-block">
+&lt;ui-badge text="Default"&gt;&lt;/ui-badge&gt;
+      </code></pre>
+      <button class="demo-copy-button" (click)="copyToClipboard('<ui-badge text=&quot;Default&quot;></ui-badge>')">
+        <span class="demo-icon">content_copy</span> Copiar código
+      </button>
+    </section>
 
-<!-- Tipos -->
-<ui-badge text="Primary" type="primary"></ui-badge>
-<ui-badge text="Accent" type="accent"></ui-badge>
-<ui-badge text="Warning" type="warn"></ui-badge>
-<ui-badge text="Success" type="success"></ui-badge>
-<ui-badge text="Neutral" type="neutral"></ui-badge>
+    <!-- Sección Tipos -->
+    <section class="demo-section">
+      <h3 class="demo-section-title">Tipos de Badges</h3>
+      <div class="demo-component-preview demo-badge-group">
+        <ui-badge text="Primary" type="primary"></ui-badge>
+        <ui-badge text="Accent" type="accent"></ui-badge>
+        <ui-badge text="Warning" type="warn"></ui-badge>
+        <ui-badge text="Success" type="success"></ui-badge>
+        <ui-badge text="Neutral" type="neutral"></ui-badge>
+      </div>
+      <pre class="demo-code-container"><code class="demo-code-block">
+&lt;ui-badge text="Primary" type="primary"&gt;&lt;/ui-badge&gt;
+&lt;ui-badge text="Accent" type="accent"&gt;&lt;/ui-badge&gt;
+&lt;ui-badge text="Warning" type="warn"&gt;&lt;/ui-badge&gt;
+&lt;ui-badge text="Success" type="success"&gt;&lt;/ui-badge&gt;
+&lt;ui-badge text="Neutral" type="neutral"&gt;&lt;/ui-badge&gt;
+      </code></pre>
+      <button class="demo-copy-button" (click)="copyToClipboard('<ui-badge text=&quot;Primary&quot; type=&quot;primary&quot;></ui-badge>\n<ui-badge text=&quot;Accent&quot; type=&quot;accent&quot;></ui-badge>\n<ui-badge text=&quot;Warning&quot; type=&quot;warn&quot;></ui-badge>\n<ui-badge text=&quot;Success&quot; type=&quot;success&quot;></ui-badge>\n<ui-badge text=&quot;Neutral&quot; type=&quot;neutral&quot;></ui-badge>')">
+        <span class="demo-icon">content_copy</span> Copiar código
+      </button>
+    </section>
 
-<!-- Tamaños -->
-<ui-badge text="Small" size="small"></ui-badge>
-<ui-badge text="Medium" size="medium"></ui-badge>
-<ui-badge text="Large" size="large"></ui-badge>
+    <!-- Sección Tamaños -->
+    <section class="demo-section">
+      <h3 class="demo-section-title">Tamaños</h3>
+      <div class="demo-component-preview demo-badge-group">
+        <ui-badge text="Small" size="small"></ui-badge>
+        <ui-badge text="Medium" size="medium"></ui-badge>
+        <ui-badge text="Large" size="large"></ui-badge>
+      </div>
+      <pre class="demo-code-container"><code class="demo-code-block">
+&lt;ui-badge text="Small" size="small"&gt;&lt;/ui-badge&gt;
+&lt;ui-badge text="Medium" size="medium"&gt;&lt;/ui-badge&gt;
+&lt;ui-badge text="Large" size="large"&gt;&lt;/ui-badge&gt;
+      </code></pre>
+      <button class="demo-copy-button" (click)="copyToClipboard('<ui-badge text=&quot;Small&quot; size=&quot;small&quot;></ui-badge>\n<ui-badge text=&quot;Medium&quot; size=&quot;medium&quot;></ui-badge>\n<ui-badge text=&quot;Large&quot; size=&quot;large&quot;></ui-badge>')">
+        <span class="demo-icon">content_copy</span> Copiar código
+      </button>
+    </section>
 
-<!-- Formas -->
-<ui-badge text="Pill" shape="pill"></ui-badge>
-<ui-badge text="Outline" shape="outline" type="primary"></ui-badge>
+    <!-- Sección Formas -->
+    <section class="demo-section">
+      <h3 class="demo-section-title">Formas</h3>
+      <div class="demo-component-preview demo-badge-group">
+        <ui-badge text="Pill" shape="pill"></ui-badge>
+        <ui-badge text="Outline" shape="outline" type="primary"></ui-badge>
+      </div>
+      <pre class="demo-code-container"><code class="demo-code-block">
+&lt;ui-badge text="Pill" shape="pill"&gt;&lt;/ui-badge&gt;
+&lt;ui-badge text="Outline" shape="outline" type="primary"&gt;&lt;/ui-badge&gt;
+      </code></pre>
+      <button class="demo-copy-button" (click)="copyToClipboard('<ui-badge text=&quot;Pill&quot; shape=&quot;pill&quot;></ui-badge>\n<ui-badge text=&quot;Outline&quot; shape=&quot;outline&quot; type=&quot;primary&quot;></ui-badge>')">
+        <span class="demo-icon">content_copy</span> Copiar código
+      </button>
+    </section>
 
-<!-- Con icono -->
-<ui-badge text="With icon" icon="★"></ui-badge>
-<ui-badge text="Success" type="success" icon="✓"></ui-badge>
+    <!-- Sección Con icono -->
+    <section class="demo-section">
+      <h3 class="demo-section-title">Con iconos</h3>
+      <div class="demo-component-preview demo-badge-group">
+        <ui-badge text="With icon" icon="★"></ui-badge>
+        <ui-badge text="Success" type="success" icon="✓"></ui-badge>
+      </div>
+      <pre class="demo-code-container"><code class="demo-code-block">
+&lt;ui-badge text="With icon" icon="★"&gt;&lt;/ui-badge&gt;
+&lt;ui-badge text="Success" type="success" icon="✓"&gt;&lt;/ui-badge&gt;
+      </code></pre>
+      <button class="demo-copy-button" (click)="copyToClipboard('<ui-badge text=&quot;With icon&quot; icon=&quot;★&quot;></ui-badge>\n<ui-badge text=&quot;Success&quot; type=&quot;success&quot; icon=&quot;✓&quot;></ui-badge>')">
+        <span class="demo-icon">content_copy</span> Copiar código
+      </button>
+    </section>
 
-<!-- Combinaciones -->
-
-<ui-badge text="Premium" type="accent" size="large" shape="pill" icon="✨"></ui-badge>
+    <!-- Sección Combinaciones -->
+    <section class="demo-section">
+      <h3 class="demo-section-title">Combinaciones</h3>
+      <div class="demo-component-preview">
+        <ui-badge text="Premium" type="accent" size="large" shape="pill" icon="✨"></ui-badge>
+      </div>
+      <pre class="demo-code-container"><code class="demo-code-block">
+&lt;ui-badge
+  text="Premium"
+  type="accent"
+  size="large"
+  shape="pill"
+  icon="✨"&gt;
+&lt;/ui-badge&gt;
+      </code></pre>
+      <button class="demo-copy-button" (click)="copyToClipboard('<ui-badge text=&quot;Premium&quot; type=&quot;accent&quot; size=&quot;large&quot; shape=&quot;pill&quot; icon=&quot;✨&quot;></ui-badge>')">
+        <span class="demo-icon">content_copy</span> Copiar código
+      </button>
+    </section>
+  </div>
 </div>

@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrl: './spinner.component.css'
 })
 export class SpinnerComponent {
-
+  copyToClipboard(code: string) {
+    navigator.clipboard.writeText(code);
+  }
 }

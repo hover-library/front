@@ -30,24 +30,15 @@
     <div class="search-icon"></div>
   </div>
   <div class="login">
-    <a routerLink="/">
+    <a routerLink="/login">
       log in
     </a>
-    <hr class="hr">
+    <!-- <hr class="hr">
     <a routerLink="/">
       sign-up
-    </a>
+    </a> -->
   </div>
 </div>
-
-<!-- <hr class="hr"> -->
-
-<!-- <h2>Dashboard - Página Protegida</h2> -->
-<!-- <p>Bienvenido, esta es una página protegida solo para usuarios autenticados.</p> -->
-
-<!-- <div class="close-session">
-  <button (click)="logout()">Cerrar sesión</button>
-</div> -->
 
 <hr class="hr">
 
@@ -63,29 +54,4 @@
   <app-list-aside [currentComponent]="currentComponent"></app-list-aside>
 </div>
 
-<div class="container" style="display: none;">
-
-  <!-- MODAL -->
-  <h2>Demostración de Modal</h2>
-
-  <!-- Botón para abrir el modal -->
-  <!-- <ui-boton class="modal" (click)="modal.open()">Abrir Modal</ui-boton> -->
-
-  <!-- Modal -->
-  <!-- <ui-modal
-    #modal
-    title="Título del Modal"
-    [showCloseButton]="true"
-    [showFooter]="true"
-    [closeOnClickOutside]="true"
-    (closed)="onModalClosed()"
-    (confirmed)="onModalConfirmed()"
-  >
-    <p>Este es el contenido personalizable del modal.</p>
-  </ui-modal> -->
-  <!-- FIN MODAL -->
-
-  <hr class="hr" />
-
-</div>
 

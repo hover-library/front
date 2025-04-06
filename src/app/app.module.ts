@@ -20,6 +20,7 @@ import { MenuAsideComponent } from './layout/menu-aside/menu-aside.component';
 import { ListAsideComponent } from './layout/list-aside/list-aside.component';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { HoverLibraryModule } from 'hover-angular-library';
+import { IntroductionComponent } from './components/introduction/introduction.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { HoverLibraryModule } from 'hover-angular-library';
     HomeComponent,
     MenuAsideComponent,
     ListAsideComponent,
+    IntroductionComponent,
   ],
   imports: [
     BrowserModule,

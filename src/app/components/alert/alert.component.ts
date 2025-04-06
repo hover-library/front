@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AlertComponent {
 
+  copyToClipboard(code: string) {
+    navigator.clipboard.writeText(code);
+  }
+
+
 }

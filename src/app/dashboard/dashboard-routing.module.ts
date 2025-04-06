@@ -6,11 +6,14 @@ import { AlertComponent } from '../components/alert/alert.component';
 import { InputComponent } from '../components/input/input.component';
 import { BadgeComponent } from '../components/badge/badge.component';
 import { SpinnerComponent } from '../components/spinner/spinner.component';
+import { IntroductionComponent } from '../components/introduction/introduction.component';
 
 
 const routes: Routes = [
   {path: '', component: DashboardComponent,
     children: [
+      {path: '', component : AlertComponent},
+      {path: 'introduction', component : IntroductionComponent},
       {path: 'alert', component : AlertComponent},
       {path: 'badge', component : BadgeComponent},
       {path: 'button', component : ButtonComponent},

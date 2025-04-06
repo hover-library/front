@@ -1,55 +1,124 @@
-<div class="container">
-    <!-- ALERTAS -->
-    <h2>Demostración de Alertas</h2>
+<div class="demo-container">
+  <div class="demo-bg-effect"></div>
 
-    <!-- Alerta sin barra de progreso -->
+  <h2 class="demo-title">Demostración de Alertas</h2>
+
+  <!-- ALERTA - Informativa básica -->
+  <section class="demo-section">
+    <h3 class="demo-section-title">Alerta informativa (básica)</h3>
     <ui-alert
       type="info"
       message="Esta es una alerta de información."
-      [closable]="true"
-    ></ui-alert>
+      [closable]="true">
+    </ui-alert>
 
-    <!-- ALERTAS -->
-    <h2>Demostración de Alertas</h2>
+    <pre class="demo-code-container"><code class="demo-code-block">
+&lt;ui-alert
+  type="info"
+  message="Esta es una alerta de información."
+  [closable]="true"&gt;
+&lt;/ui-alert&gt;
+    </code></pre>
+    <button class="demo-copy-button" (click)="copyToClipboard('<ui-alert type=\'info\' message=\'Esta es una alerta de información.\' [closable]=\'true\'></ui-alert>')">
+      <i class="demo-icon">content_copy</i> Copiar código
+    </button>
+  </section>
 
+  <!-- ALERTA - Éxito -->
+  <section class="demo-section">
+    <h3 class="demo-section-title">Alerta de éxito</h3>
+    <ui-alert
+      type="success"
+      title="Operación exitosa"
+      message="Los datos se guardaron correctamente"
+      [closable]="true">
+    </ui-alert>
 
+    <pre class="demo-code-container"><code class="demo-code-block">
+&lt;ui-alert
+  type="success"
+  title="Operación exitosa"
+  message="Los datos se guardaron correctamente"
+  [closable]="true"&gt;
+&lt;/ui-alert&gt;
+    </code></pre>
+    <button class="demo-copy-button" (click)="copyToClipboard('<ui-alert type=\'success\' title=\'Operación exitosa\' message=\'Los datos se guardaron correctamente\' [closable]=\'true\'></ui-alert>')">
+      <i class="demo-icon">content_copy</i> Copiar código
+    </button>
+  </section>
 
-    <div class="alert-container">
-      <!-- Alerta de éxito -->
-      <ui-alert
-        type="success"
-        title="Operación exitosa"
-        message="Los datos se guardaron correctamente"
-        [closable]="true">
-      </ui-alert>
+  <!-- ALERTA - Error -->
+  <section class="demo-section">
+    <h3 class="demo-section-title">Alerta de error con barra de progreso y autocierre</h3>
+    <ui-alert
+      type="error"
+      title="Error"
+      message="No se pudo completar la operación"
+      [showProgressBar]="true"
+      [autoClose]="true"
+      >
+      <!-- [duration]="5000" -->
+    </ui-alert>
 
-      <!-- Alerta de error -->
-      <ui-alert
-        type="error"
-        title="Error"
-        message="No se pudo completar la operación"
-        [showProgressBar]="true"
-        [autoClose]="true"
-        [duration]="5000">
-      </ui-alert>
+    <pre class="demo-code-container"><code class="demo-code-block">
+&lt;ui-alert
+  type="error"
+  title="Error"
+  message="No se pudo completar la operación"
+  [showProgressBar]="true"
+  [autoClose]="true"
+  [duration]="5000"&gt;
+&lt;/ui-alert&gt;
+    </code></pre>
+    <button class="demo-copy-button" (click)="copyToClipboard('<ui-alert type=\'error\' title=\'Error\' message=\'No se pudo completar la operación\' [showProgressBar]=\'true\' [autoClose]=\'true\' [duration]=\'5000\'></ui-alert>')">
+      <i class="demo-icon">content_copy</i> Copiar código
+    </button>
+  </section>
 
-      <!-- Alerta de advertencia -->
-      <ui-alert
-        type="warning"
-        title="Advertencia"
-        message="Verifique los datos ingresados"
-        [closable]="false">
-      </ui-alert>
+  <!-- ALERTA - Advertencia sin cierre -->
+  <section class="demo-section">
+    <h3 class="demo-section-title">Alerta de advertencia sin botón de cierre</h3>
+    <ui-alert
+      type="warning"
+      title="Advertencia"
+      message="Verifique los datos ingresados"
+      [closable]="false">
+    </ui-alert>
 
-      <!-- Alerta informativa -->
-      <ui-alert
-        type="info"
-        message="Nueva actualización disponible"
-        [autoClose]="true"
-        [duration]="3000">
-      </ui-alert>
-    </div>
+    <pre class="demo-code-container"><code class="demo-code-block">
+&lt;ui-alert
+  type="warning"
+  title="Advertencia"
+  message="Verifique los datos ingresados"
+  [closable]="false"&gt;
+&lt;/ui-alert&gt;
+    </code></pre>
+    <button class="demo-copy-button" (click)="copyToClipboard('<ui-alert type=\'warning\' title=\'Advertencia\' message=\'Verifique los datos ingresados\' [closable]=\'false\'></ui-alert>')">
+      <i class="demo-icon">content_copy</i> Copiar código
+    </button>
+  </section>
 
-    <!-- FIN ALERTAS -->
+  <!-- ALERTA - Info con autocierre -->
+  <section class="demo-section">
+    <h3 class="demo-section-title">Alerta informativa con autocierre</h3>
+    <ui-alert
+      type="info"
+      message="Nueva actualización disponible"
+      [autoClose]="true"
+      >
+      <!-- [duration]="3000" -->
+    </ui-alert>
 
+    <pre class="demo-code-container"><code class="demo-code-block">
+&lt;ui-alert
+  type="info"
+  message="Nueva actualización disponible"
+  [autoClose]="true"
+  [duration]="3000"&gt;
+&lt;/ui-alert&gt;
+    </code></pre>
+    <button class="demo-copy-button" (click)="copyToClipboard('<ui-alert type=\'info\' message=\'Nueva actualización disponible\' [autoClose]=\'true\' [duration]=\'3000\'></ui-alert>')">
+      <i class="demo-icon">content_copy</i> Copiar código
+    </button>
+  </section>
 </div>

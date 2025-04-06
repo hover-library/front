@@ -18,7 +18,8 @@ export class LoginComponent {
   onLogin() {
     this.authService.login(this.user).subscribe(
       (response) => {
-        console.log('Login successful', response);
+        // console.log('Login successful', response);
+        console.log('Login successful');
         this.authService.saveToken(response.access_token); // Guarda el token en el localStorage
         this.router.navigate(['/dashboard']); // Redirige a una página protegida después de iniciar sesión
       },

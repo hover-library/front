@@ -11,6 +11,10 @@
 /* Montserrat -->  font-family: "Montserrat", serif; */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+/* Fira Code -->  font-family: "Fira Code", serif; */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap');
+
+
 body{
   font-family: "Geist Mono", serif;
   font-family: "Roboto", serif, Roboto;
@@ -26,6 +30,7 @@ body{
 
   background-color: #000000;
   background-color: #FDFDFD;
+  background-color: #0F172A;
 }
 
 
