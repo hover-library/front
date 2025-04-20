@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../auth/auth.service';
 import { Router } from '@angular/router';
 
@@ -7,24 +8,39 @@ import { Router } from '@angular/router';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
 
-  user = {
-    email: '',
-    password: ''
-  };
+  loginForm!: FormGroup;
+  isNotLogged: boolean = false;
 
-  constructor(private authService: AuthService, private router: Router) { }
-  onLogin() {
-    this.authService.login(this.user).subscribe(
+  constructor(
+    private fb: FormBuilder,
+    private authService: AuthService,
+    private router: Router
+  ) {
+    this.loginForm = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', Validators.required, Validators.minLength(6)]
+    });
+  }
+
+  ngOnInit(): void {
+
+  }
+
+  onLogin(): void {
+    if (this.loginForm.invalid){
+      this.isNotLogged = true;
+      return;
+    }
+
+    const user = this.loginForm.value;
+
+    this.authService.login(user).subscribe(
       (response) => {
-        // console.log('Login successful', response);
         console.log('Login successful');
-        this.authService.saveToken(response.access_token); // Guarda el token en el localStorage
-        this.router.navigate(['/dashboard']); // Redirige a una página protegida después de iniciar sesión
-      },
-      (error) => {
-        console.error('Login error');
+        this.authService.saveToken(response.access_token);
+        this.router.navigate(['/dashboard']);
       }
     );
   }

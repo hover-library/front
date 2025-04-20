@@ -1,73 +1,109 @@
-<div class="demo-buttons-container">
-  <div class="demo-buttons-bg-effect"></div>
+<div id="container">
+  <h1>Buttons</h1>
+  <p>
+    The <strong translate="no">hover-button</strong> component provides customizable buttons with ripple effects, icons, size options, and color variants. These are ideal for actions in your UI.
+  </p>
 
-  <h2 class="demo-buttons-title">Demostración de Botones</h2>
+  <!-- Available Inputs -->
+  <h3>Available Inputs</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Attribute</th>
+        <th>Description</th>
+        <th>Possible Values</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>color</code></td>
+        <td>Button color style</td>
+        <td>primary, secondary, complete</td>
+      </tr>
+      <tr>
+        <td><code>size</code></td>
+        <td>Defines button size</td>
+        <td>sm, md, lg</td>
+      </tr>
+      <tr>
+        <td><code>disabled</code></td>
+        <td>Disables the button when set to 'disabled'</td>
+        <td>disabled | ''</td>
+      </tr>
+      <tr>
+        <td><code>icon</code></td>
+        <td>Optional icon displayed before content</td>
+        <td>Material icon name</td>
+      </tr>
+    </tbody>
+  </table>
 
-  <div class="demo-buttons-grid">
-    <!-- Sección Tamaño Pequeño -->
-    <div class="demo-buttons-section">
-      <h3 class="demo-buttons-section-title">Botones Pequeños (sm)</h3>
-      <div class="demo-buttons-preview demo-buttons-group">
-        <ui-boton color="primary" size="sm">Primary</ui-boton>
-        <ui-boton color="secondary" size="sm">Secondary</ui-boton>
-        <ui-boton color="danger" size="sm">Danger</ui-boton>
-        <ui-boton color="success" size="sm">Success</ui-boton>
-      </div>
-      <div class="demo-buttons-code-container">
-        <pre><code class="demo-buttons-code">
-&lt;ui-boton color="primary" size="sm"&gt;Primary&lt;/ui-boton&gt;
-&lt;ui-boton color="secondary" size="sm"&gt;Secondary&lt;/ui-boton&gt;
-&lt;ui-boton color="danger" size="sm"&gt;Danger&lt;/ui-boton&gt;
-&lt;ui-boton color="success" size="sm"&gt;Success&lt;/ui-boton&gt;
-        </code></pre>
-        <button class="demo-buttons-copy-btn" (click)="copyToClipboard('<ui-boton color=&quot;primary&quot; size=&quot;sm&quot;>Primary</ui-boton>\n<ui-boton color=&quot;secondary&quot; size=&quot;sm&quot;>Secondary</ui-boton>\n<ui-boton color=&quot;danger&quot; size=&quot;sm&quot;>Danger</ui-boton>\n<ui-boton color=&quot;success&quot; size=&quot;sm&quot;>Success</ui-boton>')">
-          <span class="demo-buttons-icon">content_copy</span> Copiar código
-        </button>
-      </div>
-    </div>
-
-    <!-- Sección Tamaño Medio -->
-    <div class="demo-buttons-section">
-      <h3 class="demo-buttons-section-title">Botones Medianos (default)</h3>
-      <div class="demo-buttons-preview demo-buttons-group">
-        <ui-boton color="primary">Primary</ui-boton>
-        <ui-boton color="secondary">Secondary</ui-boton>
-        <ui-boton color="danger">Danger</ui-boton>
-        <ui-boton color="success" disabled>Success (disabled)</ui-boton>
-      </div>
-      <div class="demo-buttons-code-container">
-        <pre><code class="demo-buttons-code">
-&lt;ui-boton color="primary"&gt;Primary&lt;/ui-boton&gt;
-&lt;ui-boton color="secondary"&gt;Secondary&lt;/ui-boton&gt;
-&lt;ui-boton color="danger"&gt;Danger&lt;/ui-boton&gt;
-&lt;ui-boton color="success" disabled&gt;Success&lt;/ui-boton&gt;
-        </code></pre>
-        <button class="demo-buttons-copy-btn" (click)="copyToClipboard('<ui-boton color=&quot;primary&quot;>Primary</ui-boton>\n<ui-boton color=&quot;secondary&quot;>Secondary</ui-boton>\n<ui-boton color=&quot;danger&quot;>Danger</ui-boton>\n<ui-boton color=&quot;success&quot; disabled>Success</ui-boton>')">
-          <span class="demo-buttons-icon">content_copy</span> Copiar código
-        </button>
-      </div>
-    </div>
-
-    <!-- Sección Tamaño Grande -->
-    <div class="demo-buttons-section">
-      <h3 class="demo-buttons-section-title">Botones Grandes (lg)</h3>
-      <div class="demo-buttons-preview demo-buttons-group">
-        <ui-boton color="primary" size="lg">Primary</ui-boton>
-        <ui-boton color="secondary" size="lg">Secondary</ui-boton>
-        <ui-boton color="danger" size="lg">Danger</ui-boton>
-        <ui-boton color="success" size="lg">Success</ui-boton>
-      </div>
-      <div class="demo-buttons-code-container">
-        <pre><code class="demo-buttons-code">
-&lt;ui-boton color="primary" size="lg"&gt;Primary&lt;/ui-boton&gt;
-&lt;ui-boton color="secondary" size="lg"&gt;Secondary&lt;/ui-boton&gt;
-&lt;ui-boton color="danger" size="lg"&gt;Danger&lt;/ui-boton&gt;
-&lt;ui-boton color="success" size="lg"&gt;Success&lt;/ui-boton&gt;
-        </code></pre>
-        <button class="demo-buttons-copy-btn" (click)="copyToClipboard('<ui-boton color=&quot;primary&quot; size=&quot;lg&quot;>Primary</ui-boton>\n<ui-boton color=&quot;secondary&quot; size=&quot;lg&quot;>Secondary</ui-boton>\n<ui-boton color=&quot;danger&quot; size=&quot;lg&quot;>Danger</ui-boton>\n<ui-boton color=&quot;success&quot; size=&quot;lg&quot;>Success</ui-boton>')">
-          <span class="demo-buttons-icon">content_copy</span> Copiar código
-        </button>
-      </div>
-    </div>
+  <!-- Color Variants -->
+  <h2>Button Color Variants</h2>
+  <p>These buttons showcase the available <span class="tag">color</span> variants (primary, secondary, and complete), which help visually distinguish different actions or importance levels.</p>
+  <div class="component-row">
+    <hover-button color="primary">Primary</hover-button>
+    <hover-button color="secondary">Secondary</hover-button>
+    <hover-button color="complete">Complete</hover-button>
   </div>
+  <div class="code">
+    <span class="copy" (click)="copyCode(buttonsVariants)">copy</span>
+  <pre><code class="text-code">
+    &lt;<span class="tag-code">hover-button</span> <span class="attr">color</span>=<span class="value">'primary'</span>&gt;Primary&lt;/<span class="tag-code">hover-button</span>&gt;
+    &lt;<span class="tag-code">hover-button</span> <span class="attr">color</span>=<span class="value">'secondary'</span>&gt;Secondary&lt;/<span class="tag-code">hover-button</span>&gt;
+    &lt;<span class="tag-code">hover-button</span> <span class="attr">color</span>=<span class="value">'complete'</span>&gt;Complete&lt;/<span class="tag-code">hover-button</span>&gt;
+  </code></pre>
+  </div>
+
+  <!-- Button Sizes -->
+  <h2>Button Sizes</h2>
+  <p>The <span class="tag">size</span> input allows you to choose between small (sm), medium (md), and large (lg) button styles to fit different contexts in your layout.</p>
+  <div class="component-row">
+    <hover-button color="primary" size="sm">Small</hover-button>
+    <hover-button color="primary" size="md">Medium</hover-button>
+    <hover-button color="primary" size="lg">Large</hover-button>
+  </div>
+  <div class="code">
+    <span class="copy" (click)="copyCode(buttonsSizes)">copy</span>
+    <pre><code class="text-code">
+      &lt;<span class="tag-code">hover-button</span> <span class="attr">color</span>=<span class="value">'primary'</span> <span class="attr">size</span>=<span class="value">'sm'</span>&gt;Small&lt;/<span class="tag-code">hover-button</span>&gt;
+      &lt;<span class="tag-code">hover-button</span> <span class="attr">color</span>=<span class="value">'secondary'</span> <span class="attr">size</span>=<span class="value">'md'</span>&gt;Medium&lt;/<span class="tag-code">hover-button</span>&gt;
+      &lt;<span class="tag-code">hover-button</span> <span class="attr">color</span>=<span class="value">'complete'</span> <span class="attr">size</span>=<span class="value">'lg'</span>&gt;Large&lt;/<span class="tag-code">hover-button</span>&gt;
+    </code></pre>
+  </div>
+
+  <!-- Disabled Buttons -->
+  <h2>Disabled Buttons</h2>
+  <p>Set <code>disabled="<span class="tag">disabled</span>"</code> to visually and functionally disable the button. Useful for inactive states or waiting actions.</p>
+  <div class="component-row">
+    <hover-button color="primary" disabled="disabled">Primary</hover-button>
+    <hover-button color="secondary" disabled="disabled">Secondary</hover-button>
+    <hover-button color="complete" disabled="disabled">Complete</hover-button>
+  </div>
+  <div class="code">
+    <span class="copy" (click)="copyCode(buttonsDisabled)">copy</span>
+  <pre><code class="text-code">
+    &lt;<span class="tag-code">hover-button</span> <span class="attr">color</span>=<span class="value">'primary'</span> <span class="attr">disabled</span>=<span class="value">'disabled'</span>&gt;Primary&lt;/<span class="tag-code">hover-button</span>&gt;
+    &lt;<span class="tag-code">hover-button</span> <span class="attr">color</span>=<span class="value">'secondary'</span> <span class="attr">disabled</span>=<span class="value">'disabled'</span>&gt;Secondary&lt;/<span class="tag-code">hover-button</span>&gt;
+    &lt;<span class="tag-code">hover-button</span> <span class="attr">color</span>=<span class="value">'complete'</span> <span class="attr">disabled</span>=<span class="value">'disabled'</span>&gt;Complete&lt;/<span class="tag-code">hover-button</span>&gt;
+  </code></pre>
+  </div>
+
+  <!-- Icon Buttons -->
+  <h2>Buttons with Icons</h2>
+  <p>You can add icons to the button using the <span class="tag">icon</span> input. Icons are placed before the text and use the <strong><a class="material-link" href="https://fonts.google.com/icons" target="_blank" rel="noopener noreferrer">Angular Material Icons</a></strong> set.</p>
+  <div class="component-row">
+    <hover-button color="primary" icon="save" size="sm">Save</hover-button>
+    <hover-button color="secondary" icon="home" size="md">Home</hover-button>
+    <hover-button color="complete" icon="lock" size="lg">Lock</hover-button>
+  </div>
+  <div class="code">
+    <span class="copy" (click)="copyCode(buttonsIcons)">copy</span>
+    <pre><code class="text-code">
+      &lt;<span class="tag-code">hover-button</span> <span class="attr">color</span>=<span class="value">'primary'</span> <span class="attr">icon</span>=<span class="value">'save'</span> <span class="attr">size</span>=<span class="value">'sm'</span>&gt;Save&lt;/<span class="tag-code">hover-button</span>&gt;
+      &lt;<span class="tag-code">hover-button</span> <span class="attr">color</span>=<span class="value">'secondary'</span> <span class="attr">icon</span>=<span class="value">'home'</span> <span class="attr">size</span>=<span class="value">'md'</span>&gt;Home&lt;/<span class="tag-code">hover-button</span>&gt;
+      &lt;<span class="tag-code">hover-button</span> <span class="attr">color</span>=<span class="value">'complete'</span> <span class="attr">icon</span>=<span class="value">'lock'</span> <span class="attr">size</span>=<span class="value">'lg'</span>&gt;Lock&lt;/<span class="tag-code">hover-button</span>&gt;
+    </code></pre>
+  </div>
+
 </div>

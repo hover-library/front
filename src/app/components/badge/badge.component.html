@@ -1,113 +1,141 @@
-<div class="demo-container">
-  <div class="demo-bg-effect"></div>
+<div id="container">
+  <h1>Badges</h1>
+  <p>
+    The <strong translate="no">hover-badge</strong> component allows you to display small status indicators with customizable text, colors, sizes, shapes, and optional icons. These badges are perfect for labeling statuses, categories, or key highlights in your UI.
+  </p>
 
-  <h2 class="demo-title">Demostración de Badges</h2>
+  <!-- Inputs Table -->
+  <h3>Available Inputs</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Attribute</th>
+        <th>Description</th>
+        <th>Possible Values</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>text</code></td>
+        <td>The text shown inside the badge</td>
+        <td>Any string</td>
+      </tr>
+      <tr>
+        <td><code>type</code></td>
+        <td>Defines the badge color based on context</td>
+        <td>primary, accent, warn, success, neutral</td>
+      </tr>
+      <tr>
+        <td><code>size</code></td>
+        <td>Sets the badge's size</td>
+        <td>sm, md (default), lg</td>
+      </tr>
+      <tr>
+        <td><code>shape</code></td>
+        <td>Controls the badge shape</td>
+        <td>default, pill</td>
+      </tr>
+      <tr>
+        <td><code>icon</code></td>
+        <td>Optional icon (uses <code>material-icons</code> or emoji)</td>
+        <td>Any valid icon name or emoji</td>
+      </tr>
+    </tbody>
+  </table>
 
-  <div class="demo-grid">
-    <!-- Sección Básico -->
-    <section class="demo-section">
-      <h3 class="demo-section-title">Badge Básico</h3>
-      <div class="demo-component-preview">
-        <ui-badge text="Default"></ui-badge>
-      </div>
-      <pre class="demo-code-container"><code class="demo-code-block">
-&lt;ui-badge text="Default"&gt;&lt;/ui-badge&gt;
-      </code></pre>
-      <button class="demo-copy-button" (click)="copyToClipboard('<ui-badge text=&quot;Default&quot;></ui-badge>')">
-        <span class="demo-icon">content_copy</span> Copiar código
-      </button>
-    </section>
+  <!-- Badge Sizes -->
+  <h2>Badge Sizes</h2>
+  <p>
+    You can change the size of the badge using the <span class="tag">size</span> input. Available sizes are <code>sm</code>, <code>md</code> (default), and <code>lg</code>.
+  </p>
+  <div class="example-row">
+    <hover-badge text="Small" size="sm"></hover-badge>
+    <hover-badge text="Medium"></hover-badge>
+    <hover-badge text="Large" size="lg"></hover-badge>
+  </div>
+  <div class="code">
+    <span class="copy" (click)="copyCode(badgesSizes)">copy</span>
+    <pre>
+      <code class="text-code">
+        &lt;<span class="tag-code">hover-badge</span> <span class="attr">text</span>=<span class="value">'Small'</span> <span class="attr">size</span>=<span class="value">'sm'</span>&gt;&lt;/<span class="tag-code">hover-badge</span>&gt;
+        &lt;<span class="tag-code">hover-badge</span> <span class="attr">text</span>=<span class="value">'Medium'</span>&gt;&lt;/<span class="tag-code">hover-badge</span>&gt;
+        &lt;<span class="tag-code">hover-badge</span> <span class="attr">text</span>=<span class="value">'Large'</span> <span class="attr">size</span>=<span class="value">'lg'</span>&gt;&lt;/<span class="tag-code">hover-badge</span>&gt;
+      </code>
+    </pre>
 
-    <!-- Sección Tipos -->
-    <section class="demo-section">
-      <h3 class="demo-section-title">Tipos de Badges</h3>
-      <div class="demo-component-preview demo-badge-group">
-        <ui-badge text="Primary" type="primary"></ui-badge>
-        <ui-badge text="Accent" type="accent"></ui-badge>
-        <ui-badge text="Warning" type="warn"></ui-badge>
-        <ui-badge text="Success" type="success"></ui-badge>
-        <ui-badge text="Neutral" type="neutral"></ui-badge>
-      </div>
-      <pre class="demo-code-container"><code class="demo-code-block">
-&lt;ui-badge text="Primary" type="primary"&gt;&lt;/ui-badge&gt;
-&lt;ui-badge text="Accent" type="accent"&gt;&lt;/ui-badge&gt;
-&lt;ui-badge text="Warning" type="warn"&gt;&lt;/ui-badge&gt;
-&lt;ui-badge text="Success" type="success"&gt;&lt;/ui-badge&gt;
-&lt;ui-badge text="Neutral" type="neutral"&gt;&lt;/ui-badge&gt;
-      </code></pre>
-      <button class="demo-copy-button" (click)="copyToClipboard('<ui-badge text=&quot;Primary&quot; type=&quot;primary&quot;></ui-badge>\n<ui-badge text=&quot;Accent&quot; type=&quot;accent&quot;></ui-badge>\n<ui-badge text=&quot;Warning&quot; type=&quot;warn&quot;></ui-badge>\n<ui-badge text=&quot;Success&quot; type=&quot;success&quot;></ui-badge>\n<ui-badge text=&quot;Neutral&quot; type=&quot;neutral&quot;></ui-badge>')">
-        <span class="demo-icon">content_copy</span> Copiar código
-      </button>
-    </section>
+  </div>
 
-    <!-- Sección Tamaños -->
-    <section class="demo-section">
-      <h3 class="demo-section-title">Tamaños</h3>
-      <div class="demo-component-preview demo-badge-group">
-        <ui-badge text="Small" size="small"></ui-badge>
-        <ui-badge text="Medium" size="medium"></ui-badge>
-        <ui-badge text="Large" size="large"></ui-badge>
-      </div>
-      <pre class="demo-code-container"><code class="demo-code-block">
-&lt;ui-badge text="Small" size="small"&gt;&lt;/ui-badge&gt;
-&lt;ui-badge text="Medium" size="medium"&gt;&lt;/ui-badge&gt;
-&lt;ui-badge text="Large" size="large"&gt;&lt;/ui-badge&gt;
-      </code></pre>
-      <button class="demo-copy-button" (click)="copyToClipboard('<ui-badge text=&quot;Small&quot; size=&quot;small&quot;></ui-badge>\n<ui-badge text=&quot;Medium&quot; size=&quot;medium&quot;></ui-badge>\n<ui-badge text=&quot;Large&quot; size=&quot;large&quot;></ui-badge>')">
-        <span class="demo-icon">content_copy</span> Copiar código
-      </button>
-    </section>
+  <!-- Badge Types -->
+  <h2>Badge Types</h2>
+  <p>
+    Use the <span class="tag">type</span> input to assign a color that represents context: <code>primary</code>, <code>accent</code>, <code>warn</code>, <code>success</code>, and <code>neutral</code>.
+  </p>
+  <div class="example-row">
+    <hover-badge text="Primary" type="primary"></hover-badge>
+    <hover-badge text="Accent" type="accent"></hover-badge>
+    <hover-badge text="Warning" type="warn"></hover-badge>
+    <hover-badge text="Success" type="success"></hover-badge>
+    <hover-badge text="Neutral" type="neutral"></hover-badge>
+  </div>
+  <div class="code">
+    <span class="copy" (click)="copyCode(badgesTypes)">copy</span>
+    <pre>
+      <code class="text-code">
+        &lt;<span class="tag-code">hover-badge</span> <span class="attr">text</span>=<span class="value">'Primary'</span> <span class="attr">type</span>=<span class="value">'primary'</span>&gt;&lt;/<span class="tag-code">hover-badge</span>&gt;
+        &lt;<span class="tag-code">hover-badge</span> <span class="attr">text</span>=<span class="value">'Accent'</span> <span class="attr">type</span>=<span class="value">'accent'</span>&gt;&lt;/<span class="tag-code">hover-badge</span>&gt;
+        &lt;<span class="tag-code">hover-badge</span> <span class="attr">text</span>=<span class="value">'Warning'</span> <span class="attr">type</span>=<span class="value">'warn'</span>&gt;&lt;/<span class="tag-code">hover-badge</span>&gt;
+        &lt;<span class="tag-code">hover-badge</span> <span class="attr">text</span>=<span class="value">'Success'</span> <span class="attr">type</span>=<span class="value">'success'</span>&gt;&lt;/<span class="tag-code">hover-badge</span>&gt;
+        &lt;<span class="tag-code">hover-badge</span> <span class="attr">text</span>=<span class="value">'Neutral'</span> <span class="attr">type</span>=<span class="value">'neutral'</span>&gt;&lt;/<span class="tag-code">hover-badge</span>&gt;
+      </code>
+    </pre>
 
-    <!-- Sección Formas -->
-    <section class="demo-section">
-      <h3 class="demo-section-title">Formas</h3>
-      <div class="demo-component-preview demo-badge-group">
-        <ui-badge text="Pill" shape="pill"></ui-badge>
-        <ui-badge text="Outline" shape="outline" type="primary"></ui-badge>
-      </div>
-      <pre class="demo-code-container"><code class="demo-code-block">
-&lt;ui-badge text="Pill" shape="pill"&gt;&lt;/ui-badge&gt;
-&lt;ui-badge text="Outline" shape="outline" type="primary"&gt;&lt;/ui-badge&gt;
-      </code></pre>
-      <button class="demo-copy-button" (click)="copyToClipboard('<ui-badge text=&quot;Pill&quot; shape=&quot;pill&quot;></ui-badge>\n<ui-badge text=&quot;Outline&quot; shape=&quot;outline&quot; type=&quot;primary&quot;></ui-badge>')">
-        <span class="demo-icon">content_copy</span> Copiar código
-      </button>
-    </section>
+  </div>
 
-    <!-- Sección Con icono -->
-    <section class="demo-section">
-      <h3 class="demo-section-title">Con iconos</h3>
-      <div class="demo-component-preview demo-badge-group">
-        <ui-badge text="With icon" icon="★"></ui-badge>
-        <ui-badge text="Success" type="success" icon="✓"></ui-badge>
-      </div>
-      <pre class="demo-code-container"><code class="demo-code-block">
-&lt;ui-badge text="With icon" icon="★"&gt;&lt;/ui-badge&gt;
-&lt;ui-badge text="Success" type="success" icon="✓"&gt;&lt;/ui-badge&gt;
-      </code></pre>
-      <button class="demo-copy-button" (click)="copyToClipboard('<ui-badge text=&quot;With icon&quot; icon=&quot;★&quot;></ui-badge>\n<ui-badge text=&quot;Success&quot; type=&quot;success&quot; icon=&quot;✓&quot;></ui-badge>')">
-        <span class="demo-icon">content_copy</span> Copiar código
-      </button>
-    </section>
+  <!-- Badge with Icons -->
+  <h2>Badges with Icons</h2>
+  <p>
+    You can add an <span class="tag">icon</span> inside the badge by providing the name of a <code>material-icon</code> or an emoji. The icon appears to the left of the text.
+  </p>
+  <div class="example-row">
+    <hover-badge text="Info" icon="info"></hover-badge>
+    <hover-badge text="Favorite" icon="favorite" type="accent"></hover-badge>
+    <hover-badge text="Warning" icon="warning" type="warn"></hover-badge>
+    <hover-badge text="Success" icon="thumb_up" type="success"></hover-badge>
+    <hover-badge text="Notifications" icon="notifications" type="neutral"></hover-badge>
+    <hover-badge text="Premium" icon="✨" type="accent"></hover-badge>
+  </div>
+  <div class="code">
+    <span class="copy" (click)="copyCode(badgesIcons)">copy</span>
+    <pre>
+      <code class="text-code">
+        &lt;<span class="tag-code">hover-badge</span> <span class="attr">text</span>=<span class="value">'Info'</span> <span class="attr">icon</span>=<span class="value">'info'</span>&gt;&lt;/<span class="tag-code">hover-badge</span>&gt;
+        &lt;<span class="tag-code">hover-badge</span> <span class="attr">text</span>=<span class="value">'Favorite'</span> <span class="attr">icon</span>=<span class="value">'favorite'</span> <span class="attr">type</span>=<span class="value">'accent'</span>&gt;&lt;/<span class="tag-code">hover-badge</span>&gt;
+        &lt;<span class="tag-code">hover-badge</span> <span class="attr">text</span>=<span class="value">'Warning'</span> <span class="attr">icon</span>=<span class="value">'warning'</span> <span class="attr">type</span>=<span class="value">'warn'</span>&gt;&lt;/<span class="tag-code">hover-badge</span>&gt;
+        &lt;<span class="tag-code">hover-badge</span> <span class="attr">text</span>=<span class="value">'Success'</span> <span class="attr">icon</span>=<span class="value">'thumb_up'</span> <span class="attr">type</span>=<span class="value">'success'</span>&gt;&lt;/<span class="tag-code">hover-badge</span>&gt;
+        &lt;<span class="tag-code">hover-badge</span> <span class="attr">text</span>=<span class="value">'Notifications'</span> <span class="attr">icon</span>=<span class="value">'notifications'</span> <span class="attr">type</span>=<span class="value">'neutral'</span>&gt;&lt;/<span class="tag-code">hover-badge</span>&gt;
+        &lt;<span class="tag-code">hover-badge</span> <span class="attr">text</span>=<span class="value">'Premium'</span> <span class="attr">icon</span>=<span class="value">'✨'</span> <span class="attr">type</span>=<span class="value">'accent'</span>&gt;&lt;/<span class="tag-code">hover-badge</span>&gt;
+      </code>
+    </pre>
 
-    <!-- Sección Combinaciones -->
-    <section class="demo-section">
-      <h3 class="demo-section-title">Combinaciones</h3>
-      <div class="demo-component-preview">
-        <ui-badge text="Premium" type="accent" size="large" shape="pill" icon="✨"></ui-badge>
-      </div>
-      <pre class="demo-code-container"><code class="demo-code-block">
-&lt;ui-badge
-  text="Premium"
-  type="accent"
-  size="large"
-  shape="pill"
-  icon="✨"&gt;
-&lt;/ui-badge&gt;
-      </code></pre>
-      <button class="demo-copy-button" (click)="copyToClipboard('<ui-badge text=&quot;Premium&quot; type=&quot;accent&quot; size=&quot;large&quot; shape=&quot;pill&quot; icon=&quot;✨&quot;></ui-badge>')">
-        <span class="demo-icon">content_copy</span> Copiar código
-      </button>
-    </section>
+  </div>
+
+  <!-- Badge Variants -->
+  <h2>Badge Shapes</h2>
+  <p>
+    You can switch between the default rectangular shape and a more rounded style using the <span class="tag">shape</span> input. The option <code>pill</code> creates a fully rounded badge.
+  </p>
+  <div class="example-row">
+    <hover-badge text="Default"></hover-badge>
+    <hover-badge text="Pill" shape="pill"></hover-badge>
+  </div>
+  <div class="code">
+    <span class="copy" (click)="copyCode(badgesShapes)">copy</span>
+    <pre>
+      <code class="text-code">
+        &lt;<span class="tag-code">hover-badge</span> <span class="attr">text</span>=<span class="value">'Default'</span>&gt;&lt;/<span class="tag-code">hover-badge</span>&gt;
+        &lt;<span class="tag-code">hover-badge</span> <span class="attr">text</span>=<span class="value">'Pill'</span> <span class="attr">shape</span>=<span class="value">'pill'</span>&gt;&lt;/<span class="tag-code">hover-badge</span>&gt;
+      </code>
+    </pre>
+
   </div>
 </div>

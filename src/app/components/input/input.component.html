@@ -1,95 +1,156 @@
-<div class="container">
-    <!-- INPUTS -->
-    <h2>Inputs</h2>
+<div id="container">
+  <h1>Inputs</h1>
+  <p>
+    The <strong translate="no">hover-input</strong> component provides customizable input fields with support for icons, validation, and error messages. It is ideal for creating interactive forms with a clear interface.
+  </p>
 
-    <!-- Input de texto con etiqueta -->
-    <!-- <ui-input
-      type="text"
-      label="Usuario"
-      placeholder="Ingresa el usuario"
-    ></ui-input> -->
+  <!-- Basic Inputs -->
+  <h2>Basic Inputs</h2>
+  <div class="component-row">
+    <hover-input label="Full Name" icon="person"></hover-input>
+    <hover-input label="Password" type="password" icon="lock"></hover-input>
+  </div>
+  <p>
+    In this example, it shows how to use the <code>hover-input</code> component to create basic fields like "Full Name" and "Password" with icons. These inputs are ideal for simple forms where text or password entries are required.
+  </p>
+  <div class="code">
+    <span class="copy" (click)="copyCode(inputsBasic)">copy</span>
+    <pre><code class="text-code">
+      &lt;<span class="tag-code">hover-input</span> <span class="attr">label</span>=<span class="value">'Full Name'</span> <span class="attr">icon</span>=<span class="value">'person'</span>&gt;&lt;/<span class="tag-code">hover-input</span>&gt;
+      &lt;<span class="tag-code">hover-input</span> <span class="attr">label</span>=<span class="value">'Password'</span> <span class="attr">type</span>=<span class="value">'password'</span> <span class="attr">icon</span>=<span class="value">'lock'</span>&gt;&lt;/<span class="tag-code">hover-input</span>&gt;
+    </code></pre>
+  </div>
 
-    <!-- Input de contraseña deshabilitado -->
-    <!-- <ui-input
-      type="password"
-      label="Contraseña (disabled)"
-      placeholder="Ingresa tu contraseña"
-      [disabled]="true"
-    ></ui-input> -->
+  <!-- Inputs with States -->
+  <h2>Inputs with States</h2>
+  <div class="component-row">
+    <hover-input label="Email" type="email" icon="mail"></hover-input>
+    <hover-input label="Phone" type="tel" icon="phone"></hover-input>
+    <hover-input label="Password" type="password" icon="lock"></hover-input>
+    <hover-input label="Disabled" [disabled]="true" icon="block" value="Example"></hover-input>
+  </div>
+  <p>
+    Here we show inputs that include different field types: email, phone, and password. You will also see a disabled input, which is achieved by using the <code>[disabled]="true"</code> property.
+  </p>
+  <div class="code">
+    <span class="copy" (click)="copyCode(inputStates)">copy</span>
+    <pre><code class="text-code">
+      &lt;<span class="tag-code">hover-input</span> <span class="attr">label</span>=<span class="value">'Email'</span> <span class="attr">type</span>=<span class="value">'email'</span> <span class="attr">icon</span>=<span class="value">'mail'</span>&gt;&lt;/<span class="tag-code">hover-input</span>&gt;
+      &lt;<span class="tag-code">hover-input</span> <span class="attr">label</span>=<span class="value">'Phone'</span> <span class="attr">type</span>=<span class="value">'tel'</span> <span class="attr">icon</span>=<span class="value">'phone'</span>&gt;&lt;/<span class="tag-code">hover-input</span>&gt;
+      &lt;<span class="tag-code">hover-input</span> <span class="attr">label</span>=<span class="value">'Disabled'</span> <span class="attr">disabled</span>=<span class="value">'true'</span> <span class="attr">icon</span>=<span class="value">'block'</span>&gt;&lt;/<span class="tag-code">hover-input</span>&gt;
+    </code></pre>
+  </div>
 
-    <!-- Input inválido con mensaje de error -->
-    <!-- <ui-input
-      type="text"
-      label="Código (invalid)"
-      placeholder="Ingresa el código"
-      [invalid]="true"
-      errorMessage="El código es inválido"
-    ></ui-input> -->
-    <!-- FIN INPUTS -->
-
-    <hr class="hr" />
-
-    <h2>Demostración Dinámica</h2>
-    <!-- <ui-input
-      type="text"
-      label="Nombre"
-      placeholder="Ingresa tu nombre"
-      [disabled]="isDisabled"
-      [invalid]="isInputInvalid"
-      errorMessage="Este campo es obligatorio"
-    ></ui-input> -->
-
-    <!-- <ui-boton color="primario" (click)="toggleDisabled()">
-      {{ isDisabled ? "Habilitar Input" : "Deshabilitar Input" }}
-    </ui-boton>
-
-    <ui-boton color="advertencia" (click)="toggleInvalid()">
-      {{ isInputInvalid ? "Marcar como válido" : "Marcar como inválido" }}
-    </ui-boton> -->
-
-    <hr class="hr" />
-
-    <!-- Formularios Reactivos -->
-    <h2>Formulario Reactivo</h2>
-
-    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
-      <!-- Campo de nombre -->
-      <!-- <ui-input
-        type="text"
-        label="Nombre"
-        placeholder="Ingresa tu nombre"
-        formControlName="nombre"
-        [invalid]="isInvalid('nombre')"
-        errorMessage="El nombre es obligatorio"
-      ></ui-input> -->
-
-      <!-- Campo de correo -->
-      <!-- <ui-input
+  <!-- Inputs with Reactive Validation -->
+  <h2>Inputs with Reactive Validation</h2>
+  <p>
+    These inputs are connected to a reactive form with validation. We use controls such as email, password, and age, each with custom validation rules. It demonstrates how to handle errors and custom messages using the component.
+  </p>
+  <div class="component-row">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form-reactive">
+      <hover-input
+        label="Corporate Email"
         type="email"
-        label="Correo electrónico"
-        placeholder="Ingresa tu correo"
         formControlName="email"
-        [invalid]="isInvalid('email')"
-        errorMessage="Ingresa un correo válido"
-      ></ui-input> -->
+        [control]="form.get('email')"
+        icon="alternate_email"
+        [customMessages]="emailMessages"
+      ></hover-input>
 
-      <!-- Campo de contraseña -->
-      <!-- <ui-input
+      <hover-input
+        label="Password"
         type="password"
-        label="Contraseña"
-        placeholder="Ingresa tu contraseña"
         formControlName="password"
-        [invalid]="isInvalid('password')"
-        errorMessage="La contraseña debe tener al menos 6 caracteres"
-      ></ui-input> -->
+        [control]="form.get('password')"
+        icon="lock"
+        [customMessages]="passwordMessages"
+      ></hover-input>
 
-      <!-- Botón de enviar -->
-      <!-- <ui-boton type="submit" color="primario" [disabled]="formulario.invalid">
-        Enviar
-      </ui-boton> -->
+      <hover-input
+        label="Age (optional)"
+        type="text"
+        formControlName="age"
+        [control]="form.get('age')"
+        helperText="Between 18 and 99"
+        icon="elderly"
+      ></hover-input>
+
+      <div class="actions">
+        <hover-button
+          color="primary"
+          type="submit"
+          [disabled]="form.invalid ? 'disabled' : ''"
+        >
+          Submit Form
+        </hover-button>
+
+        <hover-button
+          color="secondary"
+          type="button"
+          (click)="reset()"
+          icon="delete"
+        >
+          Clear
+        </hover-button>
+      </div>
     </form>
-    <!-- Fin Formularios Reactivos -->
+  </div>
+  <p>
+    The reactive form allows for advanced validation, such as ensuring that the email field is correctly formatted and that the password has at least 8 characters. If the form contains errors, the "Submit Form" button is disabled.
+  </p>
+  <div class="code">
+    <span class="copy" (click)="copyCode(reactiveForm)">copy</span>
+    <pre><code class="text-code">
+      &lt;<span class="tag-code">form</span> <span class="attr">[formGroup]</span>=<span class="value">"form"</span> <span class="attr">(ngSubmit)</span>=<span class="value">"onSubmit()"</span> <span class="attr">class</span>=<span class="value">"form-reactive"</span>&gt;
+        &lt;<span class="tag-code">hover-input</span>
+          <span class="attr">label</span>=<span class="value">"Corporate Email"</span>
+          <span class="attr">type</span>=<span class="value">"email"</span>
+          <span class="attr">formControlName</span>=<span class="value">"email"</span>
+          <span class="attr">[control]</span>=<span class="value">"form.get('email')"</span>
+          <span class="attr">icon</span>=<span class="value">"alternate_email"</span>
+          <span class="attr">[customMessages]</span>=<span class="value">{{ "'{" }} required: 'This field is required', default: 'Enter a valid email address' {{ "}'" }}</span>
+        &gt;&lt;/<span class="tag-code">hover-input</span>&gt;
 
-    <hr class="hr" />
+        &lt;<span class="tag-code">hover-input</span>
+          <span class="attr">label</span>=<span class="value">"Password"</span>
+          <span class="attr">type</span>=<span class="value">"password"</span>
+          <span class="attr">formControlName</span>=<span class="value">"password"</span>
+          <span class="attr">[control]</span>=<span class="value">"form.get('password')"</span>
+          <span class="attr">icon</span>=<span class="value">"lock"</span>
+          <span class="attr">[customMessages]</span>=<span class="value">{{ "'{" }} required: 'This field is required', minlength: 'Minimum 8 characters' {{ "}'" }}</span>
+        &gt;&lt;/<span class="tag-code">hover-input</span>&gt;
+
+        &lt;<span class="tag-code">hover-input</span>
+          <span class="attr">label</span>=<span class="value">"Age (optional)"</span>
+          <span class="attr">type</span>=<span class="value">"text"</span>
+          <span class="attr">formControlName</span>=<span class="value">"age"</span>
+          <span class="attr">[control]</span>=<span class="value">"form.get('age')"</span>
+          <span class="attr">helperText</span>=<span class="value">"Between 18 and 99"</span>
+          <span class="attr">icon</span>=<span class="value">"elderly"</span>
+        &gt;&lt;/<span class="tag-code">hover-input</span>&gt;
+
+        &lt;<span class="tag-code">div</span> <span class="attr">class</span>=<span class="value">"actions"</span>&gt;
+          &lt;<span class="tag-code">hover-button</span>
+            <span class="attr">color</span>=<span class="value">"primary"</span>
+            <span class="attr">type</span>=<span class="value">"submit"</span>
+            <span class="attr">[disabled]</span>=<span class="value">"form.invalid ? 'disabled' : ''"</span>
+          &gt;
+            Submit Form
+          &lt;/<span class="tag-code">hover-button</span>&gt;
+
+          &lt;<span class="tag-code">hover-button</span>
+            <span class="attr">color</span>=<span class="value">"secondary"</span>
+            <span class="attr">type</span>=<span class="value">"button"</span>
+            <span class="attr">(click)</span>=<span class="value">"reset()"</span>
+            <span class="attr">icon</span>=<span class="value">"delete"</span>
+          &gt;
+            Clear
+          &lt;/<span class="tag-code">hover-button</span>&gt;
+        &lt;/<span class="tag-code">div</span>&gt;
+      &lt;/<span class="tag-code">form</span>&gt;
+    </code></pre>
+  </div>
+
+
 
 </div>

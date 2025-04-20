@@ -1,220 +1,67 @@
-<div class="demo-container">
-  <div class="demo-bg-effect"></div>
+<div id="container">
+  <h1>Hover Spinner</h1>
+  <p>
+    The <strong translate="no">hover-spinner</strong> component provides animated loading indicators to improve user experience while data is loading or a process is running. It supports multiple styles, sizes, and color themes to fit various design needs.
+  </p>
+  <p>
+    Spinners are ideal for asynchronous operations, form submissions, or content placeholders. They are lightweight, customizable, and easy to use.
+  </p>
 
-  <h2 class="demo-title">Demostración de Spinners</h2>
-  <p class="demo-subtitle">Componentes de carga futuristas y elegantes</p>
+  <h2>Types</h2>
+  <p>
+    The <span class="tag">type</span> input lets you choose from four unique spinner styles: <strong>pulse</strong>, <strong>wave</strong>, <strong>cube</strong>, and <strong>neo</strong>. Each style is animated with its own pattern and feel.
+  </p>
+  <div class="component-row">
+    <hover-spinner type="pulse" color="primary"></hover-spinner>
+    <hover-spinner type="wave" color="tech"></hover-spinner>
+    <hover-spinner type="cube" color="accent"></hover-spinner>
+    <hover-spinner type="neo" color="neon"></hover-spinner>
+  </div>
+  <div class="code">
+    <span class="copy" (click)="copyCode(spinnersTypes)">copy</span>
+    <pre><code class="text-code">
+&lt;<span class="tag-code">hover-spinner</span> <span class="attr">type</span>=<span class="value">'pulse'</span> <span class="attr">color</span>=<span class="value">'primary'</span>&gt;&lt;/<span class="tag-code">hover-spinner</span>&gt;
+&lt;<span class="tag-code">hover-spinner</span> <span class="attr">type</span>=<span class="value">'wave'</span> <span class="attr">color</span>=<span class="value">'tech'</span>&gt;&lt;/<span class="tag-code">hover-spinner</span>&gt;
+&lt;<span class="tag-code">hover-spinner</span> <span class="attr">type</span>=<span class="value">'cube'</span> <span class="attr">color</span>=<span class="value">'accent'</span>&gt;&lt;/<span class="tag-code">hover-spinner</span>&gt;
+&lt;<span class="tag-code">hover-spinner</span> <span class="attr">type</span>=<span class="value">'neo'</span> <span class="attr">color</span>=<span class="value">'neon'</span>&gt;&lt;/<span class="tag-code">hover-spinner</span>&gt;
+    </code></pre>
+  </div>
 
-  <div class="demo-content">
-    <!-- Sección Pulse Spinner -->
-    <section class="demo-section">
-      <h3 class="demo-section-title">1. Pulse Spinner</h3>
-      <p class="demo-section-desc">Anillos concéntricos con efecto de pulsación</p>
+  <h2>Sizes</h2>
+  <p>
+    You can define the spinner's size using the <span class="tag">size</span> input. Available options are <strong>sm</strong>, <strong>md</strong> (default), and <strong>lg</strong>. Use different sizes to fit spinners into buttons, cards, or full-page loaders.
+  </p>
+  <div class="component-row">
+    <hover-spinner type="pulse" color="primary" size="sm"></hover-spinner>
+    <hover-spinner type="pulse" color="primary" size="md"></hover-spinner>
+    <hover-spinner type="pulse" color="primary" size="lg"></hover-spinner>
+  </div>
+  <div class="code">
+    <span class="copy" (click)="copyCode(spinnersSizes)">copy</span>
+    <pre><code class="text-code">
+&lt;<span class="tag-code">hover-spinner</span> <span class="attr">size</span>=<span class="value">'sm'</span>&gt;&lt;/<span class="tag-code">hover-spinner</span>&gt;
+&lt;<span class="tag-code">hover-spinner</span> <span class="attr">size</span>=<span class="value">'md'</span>&gt;&lt;/<span class="tag-code">hover-spinner</span>&gt;
+&lt;<span class="tag-code">hover-spinner</span> <span class="attr">size</span>=<span class="value">'lg'</span>&gt;&lt;/<span class="tag-code">hover-spinner</span>&gt;
+    </code></pre>
+  </div>
 
-      <div class="demo-grid">
-        <div class="demo-card">
-          <div class="demo-preview">
-            <ui-spinner type="pulse" color="primary"></ui-spinner>
-          </div>
-          <div class="demo-code-container">
-            <pre><code class="demo-code-block">&lt;ui-spinner type="pulse" color="primary"&gt;&lt;/ui-spinner&gt;</code></pre>
-            <button class="demo-copy-button" (click)="copyToClipboard('<ui-spinner type=&quot;pulse&quot; color=&quot;primary&quot;></ui-spinner>')">
-              <span class="demo-icon">content_copy</span> Copiar código
-            </button>
-          </div>
-        </div>
-
-        <div class="demo-card">
-          <div class="demo-preview">
-            <ui-spinner type="pulse" color="accent" size="medium"></ui-spinner>
-          </div>
-          <div class="demo-code-container">
-            <pre><code class="demo-code-block">&lt;ui-spinner type="pulse" color="accent" size="medium"&gt;&lt;/ui-spinner&gt;</code></pre>
-            <button class="demo-copy-button" (click)="copyToClipboard('<ui-spinner type=&quot;pulse&quot; color=&quot;accent&quot; size=&quot;medium&quot;></ui-spinner>')">
-              <span class="demo-icon">content_copy</span> Copiar código
-            </button>
-          </div>
-        </div>
-
-        <div class="demo-card">
-          <div class="demo-preview">
-            <ui-spinner type="pulse" color="tech" size="large"></ui-spinner>
-          </div>
-          <div class="demo-code-container">
-            <pre><code class="demo-code-block">&lt;ui-spinner type="pulse" color="tech" size="large"&gt;&lt;/ui-spinner&gt;</code></pre>
-            <button class="demo-copy-button" (click)="copyToClipboard('<ui-spinner type=&quot;pulse&quot; color=&quot;tech&quot; size=&quot;large&quot;></ui-spinner>')">
-              <span class="demo-icon">content_copy</span> Copiar código
-            </button>
-          </div>
-        </div>
-
-        <div class="demo-card">
-          <div class="demo-preview">
-            <ui-spinner type="pulse" color="neon" size="small"></ui-spinner>
-          </div>
-          <div class="demo-code-container">
-            <pre><code class="demo-code-block">&lt;ui-spinner type="pulse" color="neon" size="small"&gt;&lt;/ui-spinner&gt;</code></pre>
-            <button class="demo-copy-button" (click)="copyToClipboard('<ui-spinner type=&quot;pulse&quot; color=&quot;neon&quot; size=&quot;small&quot;></ui-spinner>')">
-              <span class="demo-icon">content_copy</span> Copiar código
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Sección Quantum Spinner -->
-    <section class="demo-section">
-      <h3 class="demo-section-title">2. Quantum Spinner</h3>
-      <p class="demo-section-desc">Puntos en órbita con movimiento sincronizado</p>
-
-      <div class="demo-grid">
-        <div class="demo-card">
-          <div class="demo-preview">
-            <ui-spinner type="quantum" color="primary"></ui-spinner>
-          </div>
-          <div class="demo-code-container">
-            <pre><code class="demo-code-block">&lt;ui-spinner type="quantum" color="primary"&gt;&lt;/ui-spinner&gt;</code></pre>
-            <button class="demo-copy-button" (click)="copyToClipboard('<ui-spinner type=&quot;quantum&quot; color=&quot;primary&quot;></ui-spinner>')">
-              <span class="demo-icon">content_copy</span> Copiar código
-            </button>
-          </div>
-        </div>
-
-        <div class="demo-card">
-          <div class="demo-preview">
-            <ui-spinner type="quantum" color="accent" size="medium"></ui-spinner>
-          </div>
-          <div class="demo-code-container">
-            <pre><code class="demo-code-block">&lt;ui-spinner type="quantum" color="accent" size="medium"&gt;&lt;/ui-spinner&gt;</code></pre>
-            <button class="demo-copy-button" (click)="copyToClipboard('<ui-spinner type=&quot;quantum&quot; color=&quot;accent&quot; size=&quot;medium&quot;></ui-spinner>')">
-              <span class="demo-icon">content_copy</span> Copiar código
-            </button>
-          </div>
-        </div>
-
-        <div class="demo-card">
-          <div class="demo-preview">
-            <ui-spinner type="quantum" color="tech" size="large"></ui-spinner>
-          </div>
-          <div class="demo-code-container">
-            <pre><code class="demo-code-block">&lt;ui-spinner type="quantum" color="tech" size="large"&gt;&lt;/ui-spinner&gt;</code></pre>
-            <button class="demo-copy-button" (click)="copyToClipboard('<ui-spinner type=&quot;quantum&quot; color=&quot;tech&quot; size=&quot;large&quot;></ui-spinner>')">
-              <span class="demo-icon">content_copy</span> Copiar código
-            </button>
-          </div>
-        </div>
-
-        <div class="demo-card">
-          <div class="demo-preview">
-            <ui-spinner type="quantum" color="neon" size="small"></ui-spinner>
-          </div>
-          <div class="demo-code-container">
-            <pre><code class="demo-code-block">&lt;ui-spinner type="quantum" color="neon" size="small"&gt;&lt;/ui-spinner&gt;</code></pre>
-            <button class="demo-copy-button" (click)="copyToClipboard('<ui-spinner type=&quot;quantum&quot; color=&quot;neon&quot; size=&quot;small&quot;></ui-spinner>')">
-              <span class="demo-icon">content_copy</span> Copiar código
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Sección Hologram Spinner -->
-    <section class="demo-section">
-      <h3 class="demo-section-title">3. Hologram Spinner</h3>
-      <p class="demo-section-desc">Esfera 3D con efecto holográfico</p>
-
-      <div class="demo-grid">
-        <div class="demo-card">
-          <div class="demo-preview">
-            <ui-spinner type="hologram" color="primary"></ui-spinner>
-          </div>
-          <div class="demo-code-container">
-            <pre><code class="demo-code-block">&lt;ui-spinner type="hologram" color="primary"&gt;&lt;/ui-spinner&gt;</code></pre>
-            <button class="demo-copy-button" (click)="copyToClipboard('<ui-spinner type=&quot;hologram&quot; color=&quot;primary&quot;></ui-spinner>')">
-              <span class="demo-icon">content_copy</span> Copiar código
-            </button>
-          </div>
-        </div>
-
-        <div class="demo-card">
-          <div class="demo-preview">
-            <ui-spinner type="hologram" color="accent" size="medium"></ui-spinner>
-          </div>
-          <div class="demo-code-container">
-            <pre><code class="demo-code-block">&lt;ui-spinner type="hologram" color="accent" size="medium"&gt;&lt;/ui-spinner&gt;</code></pre>
-            <button class="demo-copy-button" (click)="copyToClipboard('<ui-spinner type=&quot;hologram&quot; color=&quot;accent&quot; size=&quot;medium&quot;></ui-spinner>')">
-              <span class="demo-icon">content_copy</span> Copiar código
-            </button>
-          </div>
-        </div>
-
-        <div class="demo-card">
-          <div class="demo-preview">
-            <ui-spinner type="hologram" color="tech" size="large"></ui-spinner>
-          </div>
-          <div class="demo-code-container">
-            <pre><code class="demo-code-block">&lt;ui-spinner type="hologram" color="tech" size="large"&gt;&lt;/ui-spinner&gt;</code></pre>
-            <button class="demo-copy-button" (click)="copyToClipboard('<ui-spinner type=&quot;hologram&quot; color=&quot;tech&quot; size=&quot;large&quot;></ui-spinner>')">
-              <span class="demo-icon">content_copy</span> Copiar código
-            </button>
-          </div>
-        </div>
-
-        <div class="demo-card">
-          <div class="demo-preview">
-            <ui-spinner type="hologram" color="neon" size="small"></ui-spinner>
-          </div>
-          <div class="demo-code-container">
-            <pre><code class="demo-code-block">&lt;ui-spinner type="hologram" color="neon" size="small"&gt;&lt;/ui-spinner&gt;</code></pre>
-            <button class="demo-copy-button" (click)="copyToClipboard('<ui-spinner type=&quot;hologram&quot; color=&quot;neon&quot; size=&quot;small&quot;></ui-spinner>')">
-              <span class="demo-icon">content_copy</span> Copiar código
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Sección de tamaños -->
-    <section class="demo-section">
-      <h3 class="demo-section-title">Variaciones de tamaño</h3>
-      <p class="demo-section-desc">Escalado perfecto para cualquier interfaz</p>
-
-      <div class="demo-grid">
-        <div class="demo-card">
-          <div class="demo-preview">
-            <ui-spinner type="quantum" size="small"></ui-spinner>
-          </div>
-          <div class="demo-code-container">
-            <pre><code class="demo-code-block">&lt;ui-spinner type="quantum" size="small"&gt;&lt;/ui-spinner&gt;</code></pre>
-            <button class="demo-copy-button" (click)="copyToClipboard('<ui-spinner type=&quot;quantum&quot; size=&quot;small&quot;></ui-spinner>')">
-              <span class="demo-icon">content_copy</span> Copiar código
-            </button>
-          </div>
-        </div>
-
-        <div class="demo-card">
-          <div class="demo-preview">
-            <ui-spinner type="quantum" size="medium"></ui-spinner>
-          </div>
-          <div class="demo-code-container">
-            <pre><code class="demo-code-block">&lt;ui-spinner type="quantum" size="medium"&gt;&lt;/ui-spinner&gt;</code></pre>
-            <button class="demo-copy-button" (click)="copyToClipboard('<ui-spinner type=&quot;quantum&quot; size=&quot;medium&quot;></ui-spinner>')">
-              <span class="demo-icon">content_copy</span> Copiar código
-            </button>
-          </div>
-        </div>
-
-        <div class="demo-card">
-          <div class="demo-preview">
-            <ui-spinner type="quantum" size="large"></ui-spinner>
-          </div>
-          <div class="demo-code-container">
-            <pre><code class="demo-code-block">&lt;ui-spinner type="quantum" size="large"&gt;&lt;/ui-spinner&gt;</code></pre>
-            <button class="demo-copy-button" (click)="copyToClipboard('<ui-spinner type=&quot;quantum&quot; size=&quot;large&quot;></ui-spinner>')">
-              <span class="demo-icon">content_copy</span> Copiar código
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
+  <h2>Colors</h2>
+  <p>
+    Spinners can be styled with theme colors using the <span class="tag">color</span> input. The available values are <strong>primary</strong>, <strong>tech</strong>, <strong>accent</strong>, and <strong>neon</strong>. These follow the design system of your application.
+  </p>
+  <div class="component-row">
+    <hover-spinner type="pulse" color="primary"></hover-spinner>
+    <hover-spinner type="pulse" color="tech"></hover-spinner>
+    <hover-spinner type="pulse" color="accent"></hover-spinner>
+    <hover-spinner type="pulse" color="neon"></hover-spinner>
+  </div>
+  <div class="code">
+    <span class="copy" (click)="copyCode(spinnersColors)">copy</span>
+    <pre><code class="text-code">
+&lt;<span class="tag-code">hover-spinner</span> <span class="attr">color</span>=<span class="value">'primary'</span>&gt;&lt;/<span class="tag-code">hover-spinner</span>&gt;
+&lt;<span class="tag-code">hover-spinner</span> <span class="attr">color</span>=<span class="value">'tech'</span>&gt;&lt;/<span class="tag-code">hover-spinner</span>&gt;
+&lt;<span class="tag-code">hover-spinner</span> <span class="attr">color</span>=<span class="value">'accent'</span>&gt;&lt;/<span class="tag-code">hover-spinner</span>&gt;
+&lt;<span class="tag-code">hover-spinner</span> <span class="attr">color</span>=<span class="value">'neon'</span>&gt;&lt;/<span class="tag-code">hover-spinner</span>&gt;
+    </code></pre>
   </div>
 </div>

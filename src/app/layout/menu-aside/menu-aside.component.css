@@ -1,28 +1,70 @@
 #container {
+  /* margin-top: 30px; */
   height: 100%;
-  background: #ffffff;
-  border-right: 1px solid rgb(243, 243, 243);
-  padding: 2.5rem 1.25rem;
-  box-shadow: 1px 0 15px rgba(0, 0, 0, 0.015);
+  padding: 15px 22px;
+  /* border-radius: 8px; */
+  user-select: none;
+  color: #DCDCD4;
+  color: #3C3C43;
+
+  background-color: #F6F6F7;
+
+
+  /* box-shadow: rgba(196, 208, 217, 0.4) 0px 0px 0px 1px inset, rgba(255, 255, 255, 0.1) 0px -1px inset, rgba(132, 185, 246, 0.1) 0px 1px inset;
+  background-image: radial-gradient(145% 110% at 46% 20%, rgba(250, 253, 255, 0.5) 50%, rgba(228, 238, 246, 0.6) 85%, rgb(154, 191, 225) 100%);
+  backdrop-filter: blur(6px); */
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+
+  /* justify-content: center; */
+}
+
+.logo a {
+  font-family: "Special Gothic Expanded One", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none;
+  color: #181818;
+  transition: color 0.3s ease;
+  margin: 0;
+
+  &:hover{
+    color: #5401ac;
+    font-weight: 500 !important;
+  }
+}
+
+
+.menu-list{
+  margin-top: 60px;
+}
+
+a{
+  color: #3C3C43;
 }
 
 h2 {
-  font-size: 20px;
-  color: #0a0a0a;
+  font-size: 14px;
   margin-bottom: 0px;
-  font-weight: 600;
-  font-family: 'Inter', sans-serif;
+  font-weight: 700;
   letter-spacing: 0.03em;
   padding-bottom: 10px;
-  border-bottom: 1px solid #f0f0f0;
 }
 
 .h2-link{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   text-decoration: none;
-}
+  border-bottom: 1px solid #e7e7e7;
 
-h3{
-  color: #4b4c4d;
+  svg{
+    border: 0px solid red;
+  }
 }
 
 .menu {
@@ -33,40 +75,31 @@ h3{
 
 ul{
   padding: 0;
+  gap: 1rem;
   list-style: none;
 }
 
 a:not(.h2-link) {
   display: flex;
   align-items: center;
-  padding: 0.85rem 1.25rem;
-  color: #2d3748;
-  font-size: 0.9rem;
+  padding: 8px 0;
+  padding-left: 10px;
+  margin-bottom: 5px;
   text-decoration: none;
-  transition: all 0.25s ease;
-  font-family: 'Inter', sans-serif;
+  font-size: 13px;
   font-weight: 500;
-  border-radius: 0; /* Estilo cuadrado */
+  border-radius: 8px;
   position: relative;
 
   &:hover {
-    background: #f9f9f9;
-    color: #c00;
-    &:after {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0;
-      height: 100%;
-      width: 2px;
-      background: #d30b0b;
-    }
+    color: #0f0f0f;
+    font-weight: 600;
   }
 
   &.active {
-    background: linear-gradient(90deg, rgba(211,11,11,0.05) 0%, rgba(211,11,11,0.01) 100%);
-    color: #d30b0b;
+    background-color: #fff;
+    color: #000;
     font-weight: 600;
-    border-left: 2px solid #d30b0b;
+    outline: 1px solid rgba(0, 0, 0, 0.11);
   }
 }

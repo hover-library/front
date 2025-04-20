@@ -1,46 +1,75 @@
 <div class="menu">
- <div class="menu-left">
-  <div class="logo">
-    <a routerLink="/">
-      hover .
-    </a>
-  </div>
-  <div class="menu-list">
-    <ul>
-      <li>
-        <a routerLink="/">
-          docs
-        </a>
-      </li>
-      <li>
-        <a [routerLink]="['/dashboard']">
-          components
-        </a>
-      </li>
-      <li>
-        <a routerLink="/">
-          contact
-        </a>
-      </li>
-    </ul>
-  </div>
- </div>
-  <div class="search-bar">
-    <input type="text" name="search" id="search" placeholder="Search" autocomplete="off">
-    <div class="search-icon"></div>
-  </div>
-  <div class="login">
-    <a routerLink="/login">
-      log in
-    </a>
-    <!-- <hr class="hr">
-    <a routerLink="/">
-      sign-up
-    </a> -->
-  </div>
+
+<div class="logo">
+  <svg width="35" height="35" viewBox="0 0 32 33" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <!-- Gradiente para el fondo del escudo -->
+      <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#6e00ff" />
+        <stop offset="100%" stop-color="#3a0077" />
+      </linearGradient>
+
+      <!-- Sombra para la H -->
+      <filter id="textShadow" x="-50%" y="-50%" width="200%" height="200%">
+        <feDropShadow dx="0" dy="1" stdDeviation="1" flood-color="black" flood-opacity="0.5" />
+      </filter>
+    </defs>
+
+    <path d="M15.1934 0L0.0391235 5.38288L2.35052 25.3417L15.1934 32.427L28.0364 25.3417L30.3478 5.38288L15.1934 0Z" fill="url(#logoGradient)" />
+
+    <text x="48%" y="53%" text-anchor="middle" dominant-baseline="middle"
+      fill="white"
+      font-size="14"
+      font-family="'Plus Jakarta Sans', sans-serif"
+      font-weight="600"
+      filter="url(#textShadow)">
+      H
+    </text>
+  </svg>
+
+  <a routerLink="/" translate="no">
+    Hover UI
+  </a>
 </div>
 
-<hr class="hr">
+
+    <div class="menu-list">
+      <ul>
+        <li>
+          <a [routerLink]="['/dashboard/introduction']">
+            introduction
+          </a>
+        </li>
+        <li>
+          <a [routerLink]="['/dashboard']">
+            examples
+          </a>
+        </li>
+        <li>
+          <a routerLink="/">
+            contact
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="login">
+      <a [routerLink]="['/login']" class="login-link">
+        Log In
+      </a>
+      <a [routerLink]="['/register']" class="register-link">
+        Sign Up
+      </a>
+    </div>
+    <div class="menu-mobile">
+      <label class="hamburger">
+        <input type="checkbox">
+        <svg viewBox="0 0 32 32">
+          <path class="line line-top-bottom" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
+          <path class="line" d="M7 16 27 16"></path>
+        </svg>
+      </label>
+    </div>
+</div>
 
 <div id="menu-aside">
   <app-menu-aside></app-menu-aside>

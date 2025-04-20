@@ -13,11 +13,11 @@ export class MenuAsideComponent {
 
 
   menuRoutes = [
-    { label: 'alert', route: '/dashboard/alert' },
-    { label: 'badge', route: '/dashboard/badge' },
-    { label: 'button', route: '/dashboard/button' },
-    // { label: 'input', route: '/dashboard/input' },
-    { label: 'spinner', route: '/dashboard/spinner' },
+    { label: 'Alert', route: '/dashboard/alert' },
+    { label: 'Badge', route: '/dashboard/badge' },
+    { label: 'Button', route: '/dashboard/button' },
+    { label: 'Input', route: '/dashboard/input' },
+    { label: 'Spinner', route: '/dashboard/spinner' },
 
   ];
 

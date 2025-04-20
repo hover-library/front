@@ -143,6 +143,11 @@ h2 {
   text-decoration: underline;
 }
 
+.error{
+  font-size: 14px;
+  color: red;
+}
+
 
 @media (max-width: 1600px){
   #cont{

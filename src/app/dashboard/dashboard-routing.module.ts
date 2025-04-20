@@ -12,7 +12,7 @@ import { IntroductionComponent } from '../components/introduction/introduction.c
 const routes: Routes = [
   {path: '', component: DashboardComponent,
     children: [
-      {path: '', component : AlertComponent},
+      {path: '', component : IntroductionComponent},
       {path: 'introduction', component : IntroductionComponent},
       {path: 'alert', component : AlertComponent},
       {path: 'badge', component : BadgeComponent},

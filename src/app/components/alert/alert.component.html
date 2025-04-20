@@ -1,124 +1,169 @@
-<div class="demo-container">
-  <div class="demo-bg-effect"></div>
+<div id="container">
+  <h1>Alerts</h1>
+  <p>
+    The <strong translate="no">hover-alert</strong> component allows you to display various types of alerts to users, such as <span class="tag">information</span>, <span class="tag">success</span>, <span class="tag">error</span>, and <span class="tag">warning</span>. These alerts come with customizable features like manual close, automatic close, progress bars, optional titles, and more. Below are examples of each type of alert with descriptions of their available attributes.
+  </p>
 
-  <h2 class="demo-title">Demostración de Alertas</h2>
+  <!-- Table of Inputs -->
+  <h3>Available Inputs</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Attribute</th>
+        <th>Description</th>
+        <th>Possible Values</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>type</code></td>
+        <td>Defines the type of the alert</td>
+        <td>info, success, error, warning</td>
+      </tr>
+      <tr>
+        <td><code>message</code></td>
+        <td>The message text to display in the alert</td>
+        <td>Any string</td>
+      </tr>
+      <tr>
+        <td><code>title</code></td>
+        <td>Optional title for the alert (not used for all types)</td>
+        <td>Any string</td>
+      </tr>
+      <tr>
+        <td><code>closable</code></td>
+        <td>Indicates whether the alert can be manually closed by the user</td>
+        <td>true, false</td>
+      </tr>
+      <tr>
+        <td><code>autoClose</code></td>
+        <td>Automatically closes the alert after a specified duration</td>
+        <td>true, false</td>
+      </tr>
+      <tr>
+        <td><code>duration</code></td>
+        <td>The time (in milliseconds) before the alert auto closes</td>
+        <td>Any positive integer (e.g., 5000 for 5 seconds)</td>
+      </tr>
+      <tr>
+        <td><code>showProgressBar</code></td>
+        <td>Displays a progress bar while the alert is visible</td>
+        <td>true, false</td>
+      </tr>
+    </tbody>
+  </table>
 
-  <!-- ALERTA - Informativa básica -->
-  <section class="demo-section">
-    <h3 class="demo-section-title">Alerta informativa (básica)</h3>
-    <ui-alert
+  <!-- Alert Info -->
+  <h2>Info</h2>
+  <p>
+    This alert is typically used to display informational messages. It has the option of being closed manually by the user. It can be customized with a <span class="tag">message</span> and can be made closable using the <span class="tag">closable</span> attribute.
+  </p>
+  <div class="example">
+    <hover-alert
       type="info"
-      message="Esta es una alerta de información."
+      message="This is an info alert."
       [closable]="true">
-    </ui-alert>
+    </hover-alert>
+  </div>
 
-    <pre class="demo-code-container"><code class="demo-code-block">
-&lt;ui-alert
-  type="info"
-  message="Esta es una alerta de información."
-  [closable]="true"&gt;
-&lt;/ui-alert&gt;
-    </code></pre>
-    <button class="demo-copy-button" (click)="copyToClipboard('<ui-alert type=\'info\' message=\'Esta es una alerta de información.\' [closable]=\'true\'></ui-alert>')">
-      <i class="demo-icon">content_copy</i> Copiar código
-    </button>
-  </section>
+  <div class="code">
+    <span class="copy" (click)="copyCode(alertInfo)">copy</span>
+    <pre>
+      <code class="text-code">
+        &lt;<span class="tag-code">hover-alert</span>
+        <span class="attr">type</span>=<span class="value">'info'</span>
+        <span class="attr">message</span>=<span class="value">'This is an info alert.'</span>
+        <span class="bracket">[</span><span class="attr">closable</span><span class="bracket">]</span>=<span class="value">'true'</span>
+        &gt;&lt;/<span class="tag-code">hover-alert</span>&gt;
+      </code>
+    </pre>
+  </div>
 
-  <!-- ALERTA - Éxito -->
-  <section class="demo-section">
-    <h3 class="demo-section-title">Alerta de éxito</h3>
-    <ui-alert
+  <!-- Alert Success -->
+  <h2>Success</h2>
+  <p>
+    Success alerts are useful for displaying positive feedback or confirmation. They usually include a <span class="tag">title</span>, like "Success", and a <span class="tag">message</span> with additional information. The <span class="tag">closable</span> option allows the user to close the alert manually.
+  </p>
+  <div class="example">
+    <hover-alert
       type="success"
-      title="Operación exitosa"
-      message="Los datos se guardaron correctamente"
+      title="Success"
+      message="The data was saved successfully."
       [closable]="true">
-    </ui-alert>
+    </hover-alert>
+  </div>
 
-    <pre class="demo-code-container"><code class="demo-code-block">
-&lt;ui-alert
-  type="success"
-  title="Operación exitosa"
-  message="Los datos se guardaron correctamente"
-  [closable]="true"&gt;
-&lt;/ui-alert&gt;
-    </code></pre>
-    <button class="demo-copy-button" (click)="copyToClipboard('<ui-alert type=\'success\' title=\'Operación exitosa\' message=\'Los datos se guardaron correctamente\' [closable]=\'true\'></ui-alert>')">
-      <i class="demo-icon">content_copy</i> Copiar código
-    </button>
-  </section>
+  <div class="code">
+    <span class="copy" (click)="copyCode(alertSuccess)">copy</span>
+    <pre>
+      <code class="text-code">
+        &lt;<span class="tag-code">hover-alert</span>
+        <span class="attr">type</span>=<span class="value">'success'</span>
+        <span class="attr">title</span>=<span class="value">'Success'</span>
+        <span class="attr">message</span>=<span class="value">'The data was saved successfully.'</span>
+        <span class="bracket">[</span><span class="attr">closable</span><span class="bracket">]</span>=<span class="value">'true'</span>
+        &gt;&lt;/<span class="tag-code">hover-alert</span>&gt;
+      </code>
+    </pre>
+  </div>
 
-  <!-- ALERTA - Error -->
-  <section class="demo-section">
-    <h3 class="demo-section-title">Alerta de error con barra de progreso y autocierre</h3>
-    <ui-alert
+  <!-- Alert Error -->
+  <h2>Error</h2>
+  <p>
+    Error alerts are used to notify users of problems or issues that require attention. You can customize this alert with a <span class="tag">title</span>, <span class="tag">message</span>, and set properties like <span class="tag">showProgressBar</span> and <span class="tag">autoClose</span>. Additionally, you can control how long the alert is visible using the <span class="tag">duration</span> attribute.
+  </p>
+  <div class="example">
+    <hover-alert
       type="error"
       title="Error"
-      message="No se pudo completar la operación"
+      message="The operation could not be completed."
       [showProgressBar]="true"
-      [autoClose]="true"
-      >
-      <!-- [duration]="5000" -->
-    </ui-alert>
+      [autoClose]="true">
+    </hover-alert>
+  </div>
 
-    <pre class="demo-code-container"><code class="demo-code-block">
-&lt;ui-alert
-  type="error"
-  title="Error"
-  message="No se pudo completar la operación"
-  [showProgressBar]="true"
-  [autoClose]="true"
-  [duration]="5000"&gt;
-&lt;/ui-alert&gt;
-    </code></pre>
-    <button class="demo-copy-button" (click)="copyToClipboard('<ui-alert type=\'error\' title=\'Error\' message=\'No se pudo completar la operación\' [showProgressBar]=\'true\' [autoClose]=\'true\' [duration]=\'5000\'></ui-alert>')">
-      <i class="demo-icon">content_copy</i> Copiar código
-    </button>
-  </section>
+  <div class="code">
+    <span class="copy" (click)="copyCode(alertError)">copy</span>
+    <pre>
+      <code class="text-code">
+        &lt;<span class="tag-code">hover-alert</span>
+        <span class="attr">type</span>=<span class="value">'error'</span>
+        <span class="attr">title</span>=<span class="value">'Error'</span>
+        <span class="attr">message</span>=<span class="value">'The operation could not be completed.'</span>
+        <span class="bracket">[</span><span class="attr">showProgressBar</span><span class="bracket">]</span>=<span class="value">'true'</span>
+        <span class="bracket">[</span><span class="attr">autoClose</span><span class="bracket">]</span>=<span class="value">'true'</span>
+        <span class="attr">[duration]</span>=<span class="value">'5000'</span>
+        &gt;&lt;/<span class="tag-code">hover-alert</span>&gt;
+      </code>
+    </pre>
+  </div>
 
-  <!-- ALERTA - Advertencia sin cierre -->
-  <section class="demo-section">
-    <h3 class="demo-section-title">Alerta de advertencia sin botón de cierre</h3>
-    <ui-alert
+  <!-- Alert Warning -->
+  <h2>Warning</h2>
+  <p>
+    Warning alerts are used to highlight potential issues that require attention but are not critical. You can set a <span class="tag">title</span>, provide a <span class="tag">message</span>, and control whether the alert is closable using the <span class="tag">closable</span> attribute.
+  </p>
+  <div class="example">
+    <hover-alert
       type="warning"
-      title="Advertencia"
-      message="Verifique los datos ingresados"
+      title="Warning"
+      message="Please check the input data."
       [closable]="false">
-    </ui-alert>
+    </hover-alert>
+  </div>
 
-    <pre class="demo-code-container"><code class="demo-code-block">
-&lt;ui-alert
-  type="warning"
-  title="Advertencia"
-  message="Verifique los datos ingresados"
-  [closable]="false"&gt;
-&lt;/ui-alert&gt;
-    </code></pre>
-    <button class="demo-copy-button" (click)="copyToClipboard('<ui-alert type=\'warning\' title=\'Advertencia\' message=\'Verifique los datos ingresados\' [closable]=\'false\'></ui-alert>')">
-      <i class="demo-icon">content_copy</i> Copiar código
-    </button>
-  </section>
+  <div class="code">
+    <span class="copy" (click)="copyCode(alertWarning)">copy</span>
+    <pre>
+      <code class="text-code">
+        &lt;<span class="tag-code">hover-alert</span>
+        <span class="attr">type</span>=<span class="value">'warning'</span>
+        <span class="attr">title</span>=<span class="value">'Warning'</span>
+        <span class="attr">message</span>=<span class="value">'Please check the input data.'</span>
+        <span class="bracket">[</span><span class="attr">closable</span><span class="bracket">]</span>=<span class="value">'false'</span>
+        &gt;&lt;/<span class="tag-code">hover-alert</span>&gt;
+      </code>
+    </pre>
+  </div>
 
-  <!-- ALERTA - Info con autocierre -->
-  <section class="demo-section">
-    <h3 class="demo-section-title">Alerta informativa con autocierre</h3>
-    <ui-alert
-      type="info"
-      message="Nueva actualización disponible"
-      [autoClose]="true"
-      >
-      <!-- [duration]="3000" -->
-    </ui-alert>
-
-    <pre class="demo-code-container"><code class="demo-code-block">
-&lt;ui-alert
-  type="info"
-  message="Nueva actualización disponible"
-  [autoClose]="true"
-  [duration]="3000"&gt;
-&lt;/ui-alert&gt;
-    </code></pre>
-    <button class="demo-copy-button" (click)="copyToClipboard('<ui-alert type=\'info\' message=\'Nueva actualización disponible\' [autoClose]=\'true\' [duration]=\'3000\'></ui-alert>')">
-      <i class="demo-icon">content_copy</i> Copiar código
-    </button>
-  </section>
 </div>
