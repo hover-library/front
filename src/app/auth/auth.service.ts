@@ -25,12 +25,14 @@ export class AuthService {
 
   // Método para obtener el token JWT guardado en localStorage
   getToken(): string {
-    return localStorage.getItem('access_token') || ''; // Devuelve el token almacenado
+    // return localStorage.getItem('access_token') || '';
+    return sessionStorage.getItem('access_token') || ''; // Devuelve el token almacenado
   }
 
   // Método para almacenar el token JWT en localStorage
   saveToken(token: string): void {
-    localStorage.setItem('access_token', token); // Guarda el token en localStorage
+    // localStorage.setItem('access_token', token);
+    sessionStorage.setItem('access_token', token); // Guarda el token en localStorage
   }
 
   // // Método para obtener los encabezados con el token JWT

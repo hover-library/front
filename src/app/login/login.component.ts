@@ -25,8 +25,12 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    this.loginForm.setValue({
+      email: 'david@gmail.com',
+      password: '1234'
+    });
   }
+
 
   onLogin(): void {
     if (this.loginForm.invalid){
