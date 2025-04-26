@@ -17,17 +17,20 @@ export class RegisterComponent {
     password: ''
   };
 
+  registrationError: string | null = null;
+
+
   constructor(private authService: AuthService, private router: Router) { }
 
   onRegister() {
     this.authService.register(this.user).subscribe(
       (response) => {
-        // console.log('User registered successfully', response);
         console.log('User registered successfully');
-        this.router.navigate(['/login']); // Redirige al login después de registrarse
+        this.router.navigate(['/login']);
       },
       (error) => {
-        console.error('Registration error');
+        console.error('Registration error', error);
+        this.registrationError = error.message || 'Registration failed';
       }
     );
   }

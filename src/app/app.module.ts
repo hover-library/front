@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router'; // Asegúrate de importar esto
 
 import { AppRoutingModule } from './app-routing.module';
@@ -35,6 +36,7 @@ import { IntroductionComponent } from './components/introduction/introduction.co
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     RouterModule,
     ReactiveFormsModule,
