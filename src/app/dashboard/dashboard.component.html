@@ -97,43 +97,43 @@
     <div *ngIf="menuMobileDisplay" @menuAnimation class="menu-list-mobile">
       <ul>
         <li>
-          <a [routerLink]="['/dashboard/introduction']">
+          <a (click)="toggleMenu()" [routerLink]="['/dashboard/introduction']">
             introduction
           </a>
         </li>
         <li>
-          <a [routerLink]="['/dashboard']">
+          <a (click)="toggleMenu()" [routerLink]="['/dashboard']">
             examples
           </a>
         </li>
         <li>
-          <a routerLink="/">
+          <a (click)="toggleMenu()" routerLink="/">
             contact
           </a>
         </li>
 
         <li style="border-top: 1px solid rgba(0,0,0,.2);">
-          <a [routerLink]="['/dashboard/alert']">
+          <a (click)="toggleMenu()" [routerLink]="['/dashboard/alert']">
             alert
           </a>
         </li>
         <li>
-          <a [routerLink]="['/dashboard/badge']">
+          <a (click)="toggleMenu()" [routerLink]="['/dashboard/badge']">
             badge
           </a>
         </li>
         <li>
-          <a [routerLink]="['/dashboard/button']">
+          <a (click)="toggleMenu()" [routerLink]="['/dashboard/button']">
             button
           </a>
         </li>
         <li>
-          <a [routerLink]="['/dashboard/input']">
+          <a (click)="toggleMenu()" [routerLink]="['/dashboard/input']">
             input
           </a>
         </li>
         <li>
-          <a [routerLink]="['/dashboard/spinner']">
+          <a (click)="toggleMenu()" [routerLink]="['/dashboard/spinner']">
             spinner
           </a>
         </li>
