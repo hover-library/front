@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, Renderer2 } from '@angular/core';
+import { AfterViewInit, Component, effect, ElementRef, OnInit, Renderer2 } from '@angular/core';
 import {
   trigger,
   state,
@@ -6,6 +6,8 @@ import {
   transition,
   animate
 } from '@angular/animations';
+import { Router } from '@angular/router';
+import { AuthService } from '../auth/auth.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -22,13 +24,34 @@ import {
     ])
   ]
 })
-export class HomeComponent implements AfterViewInit{
+export class HomeComponent implements AfterViewInit, OnInit{
 
   menuMobileDisplay: boolean = false;
+  isLogged: boolean = false;
+  menuOpen: boolean = false;
+
+
+  // Accedemos a la señal directamente
+  userMail = this.authService.getUserMail();
 
   constructor(
-    private el: ElementRef
-  ){}
+    private el: ElementRef,
+    private router: Router,
+    private authService: AuthService
+  ){
+    // effect(() => {
+    //   console.log('User mail changed: ', this.authService.getUserMail()());
+    // });
+  }
+
+
+  ngOnInit(): void {
+
+    if(this.authService.getToken()){
+      this.isLogged = true;
+    }
+
+  }
 
   ngAfterViewInit() {
     const video = document.getElementById('bg-video') as HTMLVideoElement;
@@ -44,14 +67,24 @@ export class HomeComponent implements AfterViewInit{
     this.menuMobileDisplay = !this.menuMobileDisplay;
   }
 
-
+  logout() {
+    this.authService.deleteToken();
+    this.authService.setUserMail('');
+    this.menuOpen = false;
+  }
 
   menuRoutes = [
-    { label: 'Home', route: '/home' },
-    { label: 'Components', route: '/dashboard' },
-    { label: 'About', route: '/about' },
-    { label: 'Contact', route: '/contact' }
+    { label: '', route: '/' },
+    { label: 'introduction', route: '/dashboard/introduction' },
+    { label: 'examples', route: '/dashboard' },
+    { label: 'contact', route: '/' }
   ];
+
+
+emailToggle() {
+  this.menuOpen = !this.menuOpen;
+}
+
 
 
 }

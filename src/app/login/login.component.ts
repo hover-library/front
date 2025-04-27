@@ -20,17 +20,19 @@ export class LoginComponent implements OnInit {
   ) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required, Validators.minLength(6)]
+      // password: ['', [Validators.required, Validators.minLength(6)]]
+      password: ['', [Validators.required, Validators.minLength(4)]]
     });
   }
 
   ngOnInit(): void {
-    this.loginForm.setValue({
-      email: 'david@gmail.com',
-      password: '1234'
+    setTimeout(() => {
+      this.loginForm.patchValue({
+        email: 'david@gmail.com',
+        password: '1234'
+      });
     });
   }
-
 
   onLogin(): void {
     if (this.loginForm.invalid){
@@ -42,7 +44,9 @@ export class LoginComponent implements OnInit {
 
     this.authService.login(user).subscribe(
       (response) => {
-        console.log('Login successful');
+        // console.log("Loggin Success", user);
+
+        this.authService.setUserMail(user.email);
         this.authService.saveToken(response.access_token);
         this.router.navigate(['/dashboard']);
       }

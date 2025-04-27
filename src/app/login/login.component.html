@@ -1,77 +1,88 @@
-<div id="cont-log">
-  <!-- Video de fondo futurista -->
-  <div class="futuristic-bg">
-    <video autoplay muted loop playsinline aria-hidden="true">
-      <source src="../../assets/sea.mp4" type="video/mp4">
-      <!-- Fallback para navegadores que no soportan video -->
-      <div class="particle-fallback"></div>
-    </video>
-    <div class="video-overlay"></div>
-  </div>
+<div id="login-container">
+  <div class="login-background"></div>
 
-  <div class="log-container">
-    <h2 tabindex="0">Login Update</h2>
+  <div class="login-card">
+    <div class="login-header">
+      <svg width="35" height="35" viewBox="0 0 32 33" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#6e00ff" />
+            <stop offset="100%" stop-color="#3a0077" />
+          </linearGradient>
+          <filter id="textShadow" x="-50%" y="-50%" width="200%" height="200%">
+            <feDropShadow dx="0" dy="1" stdDeviation="1" flood-color="black" flood-opacity="0.5" />
+          </filter>
+        </defs>
+        <path d="M15.1934 0L0.0391235 5.38288L2.35052 25.3417L15.1934 32.427L28.0364 25.3417L30.3478 5.38288L15.1934 0Z" fill="url(#logoGradient)" />
+        <text x="48%" y="53%" text-anchor="middle" dominant-baseline="middle"
+              fill="white"
+              font-size="14"
+              font-family="'Plus Jakarta Sans', sans-serif"
+              font-weight="600"
+              filter="url(#textShadow)">
+          H
+        </text>
+      </svg>
+      <h2>Welcome Back</h2>
+      <p>Please sign in to your account</p>
+    </div>
 
-    <form [formGroup]="loginForm" (ngSubmit)="onLogin()" aria-label="Formulario de login">
-      <div class="cont-input">
-        <label for="email" aria-label="Correo electrónico">Email:</label>
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin()" class="login-form">
+      <div class="form-group">
+        <label for="email">Email Address</label>
         <input
           type="email"
           id="email"
           formControlName="email"
+          [ngClass]="{'is-invalid': (loginForm.get('email')?.touched || loginForm.get('email')?.dirty) && loginForm.get('email')?.invalid}"
           autocomplete="email"
-          required
-          aria-required="true"
-          aria-describedby="email-error"
-          [attr.aria-invalid]="loginForm.get('email')?.invalid && loginForm.get('email')?.touched"
-        />
+          placeholder="Enter your email"
+        >
+        <div *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.errors?.['required']" class="invalid-feedback">
+          Email is required
+        </div>
+        <div *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.errors?.['email']" class="invalid-feedback">
+          Please enter a valid email
+        </div>
       </div>
-      <p class="error"
-         id="email-error"
-         *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.invalid"
-         aria-live="assertive">
-        *This field is required
-      </p>
 
-      <div class="cont-input">
-        <label for="password" aria-label="Contraseña">Password:</label>
+      <div class="form-group">
+        <label for="password">Password</label>
         <input
           type="password"
           id="password"
           formControlName="password"
+          [ngClass]="{'is-invalid': (loginForm.get('password')?.touched || loginForm.get('password')?.dirty) && loginForm.get('password')?.invalid}"
           autocomplete="current-password"
-          required
-          aria-required="true"
-          aria-describedby="password-error"
-          [attr.aria-invalid]="loginForm.get('password')?.invalid && loginForm.get('password')?.touched"
-        />
+          placeholder="Enter your password"
+        >
+        <div *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.errors?.['required']" class="invalid-feedback">
+          Password is required
+        </div>
+        <div *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.errors?.['minlength']" class="invalid-feedback">
+          Password must be at least 6 characters
+        </div>
       </div>
-      <p class="error"
-         id="password-error"
-         *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid"
-         aria-live="assertive">
-        *This field is required
-      </p>
 
-      <p class="error"
-         *ngIf="isNotLogged"
-         aria-live="assertive">
-        *Email or password invalid
-      </p>
+      <div class="form-options">
+        <div class="form-check">
+          <input type="checkbox" id="remember" class="form-check-input">
+          <label for="remember" class="form-check-label">Remember me</label>
+        </div>
+        <a routerLink="/forgot-password" class="forgot-password">Forgot password?</a>
+      </div>
 
-      <div class="cont-btn">
-        <button type="submit"
-                [disabled]="loginForm.invalid"
-                aria-label="Enviar formulario de login"
-                [attr.aria-disabled]="loginForm.invalid">
-          Login
-        </button>
+      <div *ngIf="isNotLogged" class="alert alert-danger">
+        Invalid email or password
+      </div>
+
+      <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">
+        Sign In
+      </button>
+
+      <div class="login-footer">
+        <p>Don't have an account? <a routerLink="/register">Sign up</a></p>
       </div>
     </form>
-
-    <div class="register-link-cont">
-      <p>Don't have an account?</p>
-      <a routerLink="/register" aria-label="Registrar una nueva cuenta">Register</a>
-    </div>
   </div>
 </div>

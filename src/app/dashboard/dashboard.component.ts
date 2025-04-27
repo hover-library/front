@@ -45,32 +45,10 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
     const token = this.authService.getToken();
     if (token) {
-      const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-
-      this.http.get(this.apiUrl, { headers }).subscribe(
-        (response) => {
-          console.log('Dashboard data:', response);
-        },
-        (error) => {
-          console.error('Error fetching dashboard data:');
-        }
-      );
     } else {
       console.log('No token found');
     }
   }
-
-  logout() {
-    // Elimina el token del localStorage
-    localStorage.removeItem('access_token');
-
-    // Redirige al login
-    this.router.navigate(['/login']);
-  }
-
-
-
-
 
   //Modal
   // Método que se ejecuta cuando el modal se cierra

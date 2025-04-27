@@ -1,20 +1,44 @@
-<div id="cont-reg">
-  <!-- Video de fondo futurista -->
-  <div class="futuristic-bg">
-    <video autoplay muted loop playsinline aria-hidden="true">
-      <source src="../../assets/sea.mp4" type="video/mp4">
-      <!-- Fallback para navegadores que no soportan video -->
-      <div class="particle-fallback"></div>
-    </video>
+<div id="register-container">
+  <!-- Fondo profesional -->
+  <div class="auth-bg">
+
     <div class="video-overlay"></div>
   </div>
 
-  <div class="reg-container">
-    <h2 tabindex="0">Register</h2>
+  <div class="auth-card">
+    <div class="auth-header">
+      <svg width="35" height="35" viewBox="0 0 32 33" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <!-- Gradiente para el fondo del escudo -->
+          <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#6e00ff" />
+            <stop offset="100%" stop-color="#3a0077" />
+          </linearGradient>
 
-    <form (ngSubmit)="onRegister()" aria-label="Formulario de registro" #registerForm="ngForm">
-      <div class="cont-input">
-        <label for="name" aria-label="Nombre">Name:</label>
+          <!-- Sombra para la H -->
+          <filter id="textShadow" x="-50%" y="-50%" width="200%" height="200%">
+            <feDropShadow dx="0" dy="1" stdDeviation="1" flood-color="black" flood-opacity="0.5" />
+          </filter>
+        </defs>
+
+        <path d="M15.1934 0L0.0391235 5.38288L2.35052 25.3417L15.1934 32.427L28.0364 25.3417L30.3478 5.38288L15.1934 0Z" fill="url(#logoGradient)" />
+
+        <text x="48%" y="53%" text-anchor="middle" dominant-baseline="middle"
+          fill="white"
+          font-size="14"
+          font-family="'Plus Jakarta Sans', sans-serif"
+          font-weight="600"
+          filter="url(#textShadow)">
+          H
+        </text>
+      </svg>
+      <h2 tabindex="0">Create Account</h2>
+      <p>Join our community today</p>
+    </div>
+
+    <form #registerForm="ngForm" (ngSubmit)="onRegister(registerForm)" class="auth-form">
+      <div class="form-group">
+        <label for="name">Full Name</label>
         <input
           type="text"
           id="name"
@@ -22,82 +46,71 @@
           name="name"
           required
           autocomplete="name"
-          aria-required="true"
-          aria-describedby="name-error"
+          placeholder="Enter your full name"
+          [ngClass]="{'is-invalid': nameInput.touched && nameInput.invalid}"
           #nameInput="ngModel"
-          [attr.aria-invalid]="nameInput.invalid && nameInput.touched"
-        />
+        >
+        <div *ngIf="nameInput.touched && nameInput.invalid" class="invalid-feedback">
+          Please enter your name
+        </div>
       </div>
-      <p class="error"
-         id="name-error"
-         *ngIf="nameInput.touched && nameInput.invalid"
-         aria-live="assertive">
-        *This field is required
-      </p>
 
-      <div class="cont-input">
-        <label for="email" aria-label="Correo electrónico">Email:</label>
+      <div class="form-group">
+        <label for="email">Email Address</label>
         <input
           type="email"
           id="email"
           [(ngModel)]="user.email"
           name="email"
           required
+          email
           autocomplete="email"
-          aria-required="true"
-          aria-describedby="email-error"
+          placeholder="Enter your email"
+          [ngClass]="{'is-invalid': emailInput.touched && emailInput.invalid}"
           #emailInput="ngModel"
-          [attr.aria-invalid]="emailInput.invalid && emailInput.touched"
-        />
+        >
+        <div *ngIf="emailInput.touched && emailInput.errors?.['required']" class="invalid-feedback">
+          Email is required
+        </div>
+        <div *ngIf="emailInput.touched && emailInput.errors?.['email']" class="invalid-feedback">
+          Please enter a valid email
+        </div>
       </div>
-      <p class="error"
-         id="email-error"
-         *ngIf="emailInput.touched && emailInput.invalid"
-         aria-live="assertive">
-        *This field is required and must be a valid email
-      </p>
 
-      <div class="cont-input">
-        <label for="password" aria-label="Contraseña">Password:</label>
+      <div class="form-group">
+        <label for="password">Password</label>
         <input
           type="password"
           id="password"
           [(ngModel)]="user.password"
           name="password"
           required
+          minlength="6"
           autocomplete="new-password"
-          aria-required="true"
-          aria-describedby="password-error"
+          placeholder="Create a password"
+          [ngClass]="{'is-invalid': passwordInput.touched && passwordInput.invalid}"
           #passwordInput="ngModel"
-          [attr.aria-invalid]="passwordInput.invalid && passwordInput.touched"
-        />
+        >
+        <div *ngIf="passwordInput.touched && passwordInput.errors?.['required']" class="invalid-feedback">
+          Password is required
+        </div>
+        <div *ngIf="passwordInput.touched && passwordInput.errors?.['minlength']" class="invalid-feedback">
+          Password must be at least 6 characters
+        </div>
       </div>
-      <p class="error"
-         id="password-error"
-         *ngIf="passwordInput.touched && passwordInput.invalid"
-         aria-live="assertive">
-        *This field is required
-      </p>
 
-      <p class="error"
-         *ngIf="registrationError"
-         aria-live="assertive">
-        *Registration error: {{ registrationError }}
-      </p>
+      <div *ngIf="registrationError" class="alert alert-danger">
+        {{ registrationError }}
+      </div>
 
-      <div class="cont-btn">
-        <button type="submit"
-                [disabled]="registerForm.invalid"
-                aria-label="Enviar formulario de registro"
-                [attr.aria-disabled]="registerForm.invalid">
-          Register
-        </button>
+      <button type="submit" class="btn btn-primary" [disabled]="registerForm.invalid || isLoading">
+        <span *ngIf="!isLoading">Create Account</span>
+        <span *ngIf="isLoading" class="spinner-border spinner-border-sm"></span>
+      </button>
+
+      <div class="auth-footer">
+        <p>Already have an account? <a routerLink="/login">Sign in</a></p>
       </div>
     </form>
-
-    <div class="login-link-cont">
-      <p>Have an account?</p>
-      <a routerLink="/login" aria-label="Iniciar sesión">Login</a>
-    </div>
   </div>
 </div>

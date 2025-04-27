@@ -1,7 +1,8 @@
 
-import { Injectable } from '@angular/core';
+import { computed, Injectable, signal } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
@@ -10,7 +11,7 @@ export class AuthService {
   // private apiUrl = 'http://localhost:3000/auth'; // URL de tu backend de NestJS
   private apiUrl = 'https://back-sdm8.onrender.com'; // URL de tu backend de NestJS
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   // Método para registrar un usuario
   register(user: any): Observable<any> {
@@ -35,19 +36,36 @@ export class AuthService {
     sessionStorage.setItem('access_token', token); // Guarda el token en localStorage
   }
 
-  // // Método para obtener los encabezados con el token JWT
-  // getAuthHeaders(): HttpHeaders {
-  //   const token = this.getToken();
-  //   return new HttpHeaders().set('Authorization', `Bearer ${token}`);
-  // }
 
-  // getDashboard(): Observable<any> {
-  //   const headers = this.getAuthHeaders();  // Obtener los encabezados con el token
-  //   return this.http.get(`${this.apiUrl}/auth/dashboard`, { headers }).pipe(
-  //     tap(response => {
-  //       console.log('Dashboard data:', response);
-  //     })
-  //   );
-  // }
+  deleteToken() {
+    // Elimina el token del localStorage y sessionStorage
+    localStorage.removeItem('access_token');
+    sessionStorage.removeItem('access_token');
+    sessionStorage.removeItem('currentEmail');
+
+    this.router.navigate(['/']).then(() => {
+      window.location.reload();
+    });
+  }
+
+  // Creamos la señal
+  private userMail = signal<string>('');
+
+  // Método para actualizar el mail
+  setUserMail(email: string) {
+    this.userMail.set(email);
+    sessionStorage.setItem('currentEmail', email);
+  }
+
+  // Método para obtener la señal como readonly
+  getUserMail() {
+    // Verifica si hay un email en sessionStorage y lo establece en la señal
+    const storedEmail = sessionStorage.getItem('currentEmail');
+    if (storedEmail) {
+      this.userMail.set(storedEmail);  // Establece el valor en la señal
+    }
+    return this.userMail.asReadonly();
+  }
+
 
 }

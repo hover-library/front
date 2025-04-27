@@ -7,11 +7,9 @@ export const authGuard: CanActivateFn = (route, state) => {
   // const token = localStorage.getItem('access_token');
   const token = sessionStorage.getItem('access_token'); // Intentamos obtener el token del localStorage
 
-  console.log('Checking token in localStorage:', token); // Añadimos un console.log para ver si el token existe
-
   // Si no hay token, redirige al login
   if (!token) {
-    console.log('No token found. Redirecting to login...');
+    // console.log('No token found. Redirecting to login...');
     router.navigate(['/login']);
     return false;
   }
