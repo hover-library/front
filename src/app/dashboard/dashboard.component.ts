@@ -19,6 +19,14 @@ export class DashboardComponent implements OnInit {
   //  Detecta que componente se esta usando en la URL
   currentComponent: string = '';
 
+  menuMobileDisplay: boolean = false;
+  isLogged: boolean = false;
+  menuOpen: boolean = false;
+
+
+  // Accedemos a la señal directamente
+  userMail = this.authService.getUserMail();
+
   constructor(
     private http: HttpClient,
     private authService: AuthService,
@@ -45,6 +53,7 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
     const token = this.authService.getToken();
     if (token) {
+      this.isLogged = true;
     } else {
       console.log('No token found');
     }
@@ -61,37 +70,19 @@ export class DashboardComponent implements OnInit {
     console.log('Modal confirmado');
   }
 
-  /////// MENU ////////
-  // menuRoutes: string[] = ['Home', 'Components', 'About', 'Contact'];
-  menuRoutes = [
-    { label: 'Home', route: '/home' },
-    { label: 'Components', route: '/dashboard' },
-    { label: 'About', route: '/about' },
-    { label: 'Contact', route: '/contact' }
-  ];
-  // selectedIndex: number = -1; // Inicializamos en -1 para que ningún elemento esté seleccionado al inicio
-  // highlightStyle: any = {};
+  toggleMenu(){
+    this.menuMobileDisplay = !this.menuMobileDisplay;
+  }
 
+  logout() {
+    this.authService.deleteToken();
+    this.authService.setUserMail('');
+    this.menuOpen = false;
+  }
 
-  // selectItem(index: number): void {
-  //   this.selectedIndex = index;
-  //   this.updateHighlight();
-  // }
-
-  // updateHighlight(): void {
-  //   const menuItems = this.el.nativeElement.querySelectorAll('li');
-  //   if (menuItems[this.selectedIndex]) {
-  //     const selectedItem = menuItems[this.selectedIndex];
-  //     const rect = selectedItem.getBoundingClientRect();
-  //     const parentRect = this.el.nativeElement.querySelector('ul').getBoundingClientRect();
-
-  //     this.highlightStyle = {
-  //       width: `${rect.width}px`,
-  //       height: `${rect.height}px`,
-  //       transform: `translateX(${rect.left - parentRect.left}px)`,
-  //     };
-  //   }
-  // }
+  emailToggle() {
+    this.menuOpen = !this.menuOpen;
+  }
 
 
 
