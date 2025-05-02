@@ -39,9 +39,17 @@ export class RegisterComponent {
         });
       },
       error: (error) => {
-        this.registrationError = error.error?.message || 'Registration failed. Please try again.';
+        console.log(error);
+
+        if (error.status === 409) {
+          this.registrationError = 'Email is already registered';
+        } else {
+          this.registrationError = error.error?.message || 'Registration failed. Please try again.';
+        }
+
         this.isLoading = false;
-      },
+      }
+      ,
       complete: () => {
         this.isLoading = false;
       }
