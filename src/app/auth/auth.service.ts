@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class AuthService {
   // private apiUrl = 'http://localhost:3000/auth';
   // private apiUrl = 'https://back-sdm8.onrender.com'; // URL del backend
-  private apiUrl = 'https://web-production-3b90.up.railway.app/'; // URL del backend
+  private apiUrl = 'https://web-production-3b90.up.railway.app'; // URL del backend
 
   constructor(private http: HttpClient, private router: Router) {}
 
