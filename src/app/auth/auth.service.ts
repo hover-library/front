@@ -11,9 +11,9 @@ import { environment } from '../../environments/environment';
 export class AuthService {
   // private apiUrl = 'http://localhost:3000/auth';
   // private apiUrl = 'https://back-sdm8.onrender.com'; // URL del backend
-  private apiUrl = 'https://web-production-3b90.up.railway.app'; // URL del backend
+  // private apiUrl = 'https://web-production-3b90.up.railway.app'; // URL del backend
 
-  // private apiUrl = environment.apiUrl;
+  private apiUrl = environment.apiUrl;
 
 
   constructor(private http: HttpClient, private router: Router) {}
