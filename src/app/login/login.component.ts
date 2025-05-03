@@ -28,8 +28,8 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     setTimeout(() => {
       this.loginForm.patchValue({
-        email: 'david@gmail.com',
-        password: '1234'
+        email: 'juanma@gmail.com',
+        password: 'Y7p!dL9q$Xv3@Rt2'
       });
     });
   }
