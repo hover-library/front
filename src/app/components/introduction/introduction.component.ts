@@ -7,6 +7,8 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 })
 export class IntroductionComponent {
 
+  module: string = "import { HoverLibraryModule } from 'hover-angular-library';"
+
   @ViewChild('codeText', { static: false }) codeText!: ElementRef;
 
   copyCode() {

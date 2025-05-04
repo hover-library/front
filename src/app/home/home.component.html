@@ -34,12 +34,12 @@
     <div class="menu-list">
       <ul>
         <li>
-          <a [routerLink]="['/dashboard/introduction']">
+          <a [routerLink]="['/documentation/introduction']">
             introduction
           </a>
         </li>
         <li>
-          <a [routerLink]="['/dashboard']">
+          <a [routerLink]="['/documentation/components']">
             examples
           </a>
         </li>
@@ -77,14 +77,6 @@
           <div class="user-avatar">
             {{ userMail() ? userMail().charAt(0).toUpperCase() : '' }}
           </div>
-          <!-- <div class="user-info">
-            <div class="user-name">{{userMail()}}</div>
-          </div> -->
-          <!-- <div class="user-dropdown-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M7 10l5 5 5-5z"></path>
-            </svg>
-          </div> -->
         </div>
 
         <div class="user-menu" *ngIf="menuOpen">
@@ -98,12 +90,12 @@
     <div *ngIf="menuMobileDisplay" @menuAnimation class="menu-list-mobile">
       <ul>
         <li>
-          <a [routerLink]="['/dashboard/introduction']">
+          <a [routerLink]="['/documentation/introduction']">
             introduction
           </a>
         </li>
         <li>
-          <a [routerLink]="['/dashboard']">
+          <a [routerLink]="['/documentation/components']">
             examples
           </a>
         </li>
@@ -163,7 +155,7 @@
     <p class="hero-description">A sleek Angular component library to speed up your development.</p>
 
     <div class="buttons">
-      <button [routerLink]="['/dashboard/introduction']" class="starter-button">
+      <button [routerLink]="['/documentation/introduction']" class="starter-button">
         <span>Get Started</span>
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>

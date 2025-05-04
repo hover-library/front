@@ -1,18 +1,14 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-menu-aside',
-  templateUrl: './menu-aside.component.html',
-  styleUrl: './menu-aside.component.css'
+  selector: 'app-components-page',
+  templateUrl: './components-page.component.html',
+  styleUrl: './components-page.component.css'
 })
-export class MenuAsideComponent {
+export class ComponentsPageComponent {
 
-  // introductionRoute = {
-  //   label: 'introduction', route: '/dashboard/alert'
-  // };
+  componentsRoutes = [
 
-
-  menuRoutes = [
     { label: 'Alert', route: '/documentation/alert' },
     { label: 'Badge', route: '/documentation/badge' },
     { label: 'Button', route: '/documentation/button' },

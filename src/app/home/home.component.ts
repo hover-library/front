@@ -75,8 +75,8 @@ export class HomeComponent implements AfterViewInit, OnInit{
 
   menuRoutes = [
     { label: '', route: '/' },
-    { label: 'introduction', route: '/dashboard/introduction' },
-    { label: 'examples', route: '/dashboard' },
+    { label: 'introduction', route: '/documentation/introduction' },
+    { label: 'examples', route: '/documentation/components' },
     { label: 'contact', route: '/' }
   ];
 

@@ -1,0 +1,64 @@
+<div id="container">
+  <h1>Components</h1>
+
+  <p>
+    <strong>Hover Angular Library</strong> is a sleek collection of reusable Angular UI components with smooth animations and modern design. Fully customizable and easy to integrate into any project.
+  </p>
+
+
+  <div class="cards">
+
+    <div class="card"  *ngFor="let component of componentsRoutes" [routerLink]="component.route">
+      <div class="img-cont">
+        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="50%" viewBox="0 0 1200 600" preserveAspectRatio="none">
+          <defs>
+            <!-- Gradiente blanco premium -->
+            <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#ffffff"/>
+              <stop offset="50%" stop-color="#fafafa"/>
+              <stop offset="100%" stop-color="#ffffff"/>
+            </linearGradient>
+
+            <!-- Patrón de líneas diagonales dinámicas -->
+            <pattern id="pattern" width="80" height="80" patternUnits="userSpaceOnUse">
+              <path d="M0 0 L80 0 L80 80 Z" fill="none" stroke="white" stroke-width="1.2" opacity="0.15"/>
+              <path d="M0 0 L0 80 L80 80 Z" fill="none" stroke="white" stroke-width="0.8" opacity="0.1"/>
+            </pattern>
+
+            <!-- Efecto de partículas finas -->
+            <filter id="noise">
+              <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="3"/>
+              <feColorMatrix type="saturate" values="0"/>
+              <feBlend in="SourceGraphic" mode="soft-light" result="noise"/>
+            </filter>
+          </defs>
+
+          <!-- Fondo principal -->
+          <rect width="100%" height="100%" fill="url(#bg)"/>
+
+          <!-- Capa de patrón geométrico -->
+          <rect width="100%" height="100%" fill="url(#pattern)" opacity="0.7"/>
+
+          <!-- Efectos de luz -->
+          <circle cx="20%" cy="30%" r="200" fill="white" opacity="0.08" filter="blur(50px)"/>
+          <circle cx="85%" cy="70%" r="180" fill="white" opacity="0.05" filter="blur(60px)"/>
+
+          <!-- Textura de grano fino -->
+          <rect width="100%" height="100%" fill="transparent" filter="url(#noise)" opacity="0.12"/>
+
+          <!-- Detalle de esquina premium -->
+          <path d="M1200,0 L1200,150 Q1100,50 950,100 L1200,0" fill="white" fill-opacity="0.1"/>
+        </svg>
+
+      </div>
+      <div class="name-cont">
+        {{component.label}}
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+</div>

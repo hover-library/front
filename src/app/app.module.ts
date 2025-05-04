@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router'; // Asegúrate de importar esto
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -22,6 +22,7 @@ import { ListAsideComponent } from './layout/list-aside/list-aside.component';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { HoverLibraryModule } from 'hover-angular-library';
 import { IntroductionComponent } from './components/introduction/introduction.component';
+import { ComponentsPageComponent } from './components/components-page/components-page.component';
 
 @NgModule({
   declarations: [
@@ -33,17 +34,18 @@ import { IntroductionComponent } from './components/introduction/introduction.co
     MenuAsideComponent,
     ListAsideComponent,
     IntroductionComponent,
+    ComponentsPageComponent,
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule,
     AppRoutingModule,
     RouterModule,
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
     DashboardModule,
-    HoverLibraryModule
+    HoverLibraryModule,
+    BrowserAnimationsModule
 ],
 exports: [
   HoverLibraryModule

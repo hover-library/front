@@ -33,12 +33,12 @@
     <div class="menu-list">
       <ul>
         <li>
-          <a [routerLink]="['/dashboard/introduction']">
+          <a [routerLink]="['/documentation/introduction']">
             introduction
           </a>
         </li>
         <li>
-          <a [routerLink]="['/dashboard']">
+          <a [routerLink]="['/documentation/components']">
             examples
           </a>
         </li>
@@ -97,58 +97,49 @@
     <div *ngIf="menuMobileDisplay" @menuAnimation class="menu-list-mobile">
       <ul>
         <li>
-          <a (click)="toggleMenu()" [routerLink]="['/dashboard/introduction']">
+          <a [routerLink]="['/documentation/introduction']">
             introduction
           </a>
         </li>
         <li>
-          <a (click)="toggleMenu()" [routerLink]="['/dashboard']">
+          <a [routerLink]="['/documentation/components']">
             examples
           </a>
         </li>
         <li>
-          <a (click)="toggleMenu()" routerLink="/">
+          <a routerLink="/">
             contact
           </a>
         </li>
 
-        <li style="border-top: 1px solid rgba(0,0,0,.2);">
-          <a (click)="toggleMenu()" [routerLink]="['/dashboard/alert']">
+        <hr class="hr">
+
+        <li>
+          <a  [routerLink]="['/documentation/alert']">
             alert
           </a>
         </li>
         <li>
-          <a (click)="toggleMenu()" [routerLink]="['/dashboard/badge']">
+          <a  [routerLink]="['/documentation/badge']">
             badge
           </a>
         </li>
         <li>
-          <a (click)="toggleMenu()" [routerLink]="['/dashboard/button']">
+          <a  [routerLink]="['/documentation/button']">
             button
           </a>
         </li>
         <li>
-          <a (click)="toggleMenu()" [routerLink]="['/dashboard/input']">
+          <a  [routerLink]="['/documentation/input']">
             input
           </a>
         </li>
         <li>
-          <a (click)="toggleMenu()" [routerLink]="['/dashboard/spinner']">
+          <a  [routerLink]="['/documentation/spinner']">
             spinner
           </a>
         </li>
       </ul>
-      @if(!isLogged){
-        <div class="login-mobile">
-          <a [routerLink]="['/login']" class="login-link">
-            Log In
-          </a>
-          <a [routerLink]="['/register']" class="register-link">
-            Sign Up
-          </a>
-        </div>
-      } @else {
-        <div class="hr"></div>
         <div class="user-logout-mobile">
           <div class="user-profile" (click)="emailToggle()">
             <div class="user-avatar">
@@ -171,7 +162,6 @@
             </div>
           </div>
         </div>
-      }
     </div>
 </div>
 

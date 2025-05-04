@@ -13,7 +13,7 @@ import { filter } from 'rxjs';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  private apiUrl = 'https://back-sdm8.onrender.com/auth/dashboard';
+  // private apiUrl = 'https://back-sdm8.onrender.com/auth/dashboard';
   dashboardData: any;
 
   //  Detecta que componente se esta usando en la URL
@@ -22,7 +22,6 @@ export class DashboardComponent implements OnInit {
   menuMobileDisplay: boolean = false;
   isLogged: boolean = false;
   menuOpen: boolean = false;
-
 
   // Accedemos a la señal directamente
   userMail = this.authService.getUserMail();
@@ -48,8 +47,6 @@ export class DashboardComponent implements OnInit {
     });
   }
 
-
-
   ngOnInit(): void {
     const token = this.authService.getToken();
     if (token) {
@@ -57,17 +54,6 @@ export class DashboardComponent implements OnInit {
     } else {
       console.log('No token found');
     }
-  }
-
-  //Modal
-  // Método que se ejecuta cuando el modal se cierra
-  onModalClosed() {
-    console.log('Modal cerrado');
-  }
-
-  // Método que se ejecuta cuando se confirma el modal
-  onModalConfirmed() {
-    console.log('Modal confirmado');
   }
 
   toggleMenu(){
@@ -83,9 +69,5 @@ export class DashboardComponent implements OnInit {
   emailToggle() {
     this.menuOpen = !this.menuOpen;
   }
-
-
-
-
 
 }

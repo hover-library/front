@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit {
 
         this.authService.setUserMail(user.email);
         this.authService.saveToken(response.access_token);
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['/documentation']);
       }
     );
   }

@@ -7,6 +7,7 @@ import { InputComponent } from '../components/input/input.component';
 import { BadgeComponent } from '../components/badge/badge.component';
 import { SpinnerComponent } from '../components/spinner/spinner.component';
 import { IntroductionComponent } from '../components/introduction/introduction.component';
+import { ComponentsPageComponent } from '../components/components-page/components-page.component';
 
 
 const routes: Routes = [
@@ -14,6 +15,7 @@ const routes: Routes = [
     children: [
       {path: '', component : IntroductionComponent},
       {path: 'introduction', component : IntroductionComponent},
+      {path: 'components', component : ComponentsPageComponent},
       {path: 'alert', component : AlertComponent},
       {path: 'badge', component : BadgeComponent},
       {path: 'button', component : ButtonComponent},
