@@ -61,16 +61,6 @@
         </svg>
       </label>
     </div>
-    @if(!isLogged){
-      <div class="login">
-        <a [routerLink]="['/login']" class="login-link">
-          Log In
-        </a>
-        <a [routerLink]="['/register']" class="register-link">
-          Sign Up
-        </a>
-      </div>
-    }@else {
       <div class="user-logout">
         <div class="user-profile" (click)="emailToggle()">
           <div class="user-avatar">
@@ -93,7 +83,6 @@
           </div>
         </div>
       </div>
-    }
     <div *ngIf="menuMobileDisplay" @menuAnimation class="menu-list-mobile">
       <ul>
         <li>
@@ -172,7 +161,3 @@
 <div id="router">
   <router-outlet></router-outlet>
 </div>
-<!--
-<div id="list-aside">
-  <app-list-aside [currentComponent]="currentComponent"></app-list-aside>
-</div> -->
