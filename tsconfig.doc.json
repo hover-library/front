@@ -1,0 +1,6 @@
+{
+  "include": ["src/**/*.ts"]
+}
+
+
+// Iniciar documentación: compodoc -p tsconfig.doc.json -s

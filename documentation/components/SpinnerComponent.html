@@ -1,0 +1,624 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>landing-page documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">landing-page documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  SpinnerComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/spinner/spinner.component.ts</code>
+</p>
+
+
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-spinner</code></td>
+            </tr>
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./spinner.component.html</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrl</td>
+                <td class="col-md-9"><code>./spinner.component.css</code></td>
+            </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#spinnersColors" >spinnersColors</a>
+                            </li>
+                            <li>
+                                <a href="#spinnersSizes" >spinnersSizes</a>
+                            </li>
+                            <li>
+                                <a href="#spinnersTypes" >spinnersTypes</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#copyCode" >copyCode</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="copyCode"></a>
+                    <span class="name">
+                        <span ><b>copyCode</b></span>
+                        <a href="#copyCode"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>copyCode(code: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="26"
+                                    class="link-to-prism">src/app/components/spinner/spinner.component.ts:26</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>code</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="spinnersColors"></a>
+                    <span class="name">
+                        <span ><b>spinnersColors</b></span>
+                        <a href="#spinnersColors"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x60;
+   &lt;hover-spinner type&#x3D;&quot;pulse&quot; color&#x3D;&quot;primary&quot;&gt;&lt;/hover-spinner&gt;
+  &lt;hover-spinner type&#x3D;&quot;pulse&quot; color&#x3D;&quot;tech&quot;&gt;&lt;/hover-spinner&gt;
+  &lt;hover-spinner type&#x3D;&quot;pulse&quot; color&#x3D;&quot;accent&quot;&gt;&lt;/hover-spinner&gt;
+  &lt;hover-spinner type&#x3D;&quot;pulse&quot; color&#x3D;&quot;neon&quot;&gt;&lt;/hover-spinner&gt;&#x60;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/components/spinner/spinner.component.ts:20</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="spinnersSizes"></a>
+                    <span class="name">
+                        <span ><b>spinnersSizes</b></span>
+                        <a href="#spinnersSizes"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x60;
+   &lt;hover-spinner type&#x3D;&quot;pulse&quot; color&#x3D;&quot;primary&quot; size&#x3D;&quot;sm&quot;&gt;&lt;/hover-spinner&gt;
+  &lt;hover-spinner type&#x3D;&quot;pulse&quot; color&#x3D;&quot;primary&quot; size&#x3D;&quot;md&quot;&gt;&lt;/hover-spinner&gt;
+  &lt;hover-spinner type&#x3D;&quot;pulse&quot; color&#x3D;&quot;primary&quot; size&#x3D;&quot;lg&quot;&gt;&lt;/hover-spinner&gt;&#x60;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/components/spinner/spinner.component.ts:15</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="spinnersTypes"></a>
+                    <span class="name">
+                        <span ><b>spinnersTypes</b></span>
+                        <a href="#spinnersTypes"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x60;
+   &lt;hover-spinner type&#x3D;&quot;pulse&quot; color&#x3D;&quot;primary&quot;&gt;&lt;/hover-spinner&gt;
+  &lt;hover-spinner type&#x3D;&quot;wave&quot; color&#x3D;&quot;tech&quot;&gt;&lt;/hover-spinner&gt;
+  &lt;hover-spinner type&#x3D;&quot;cube&quot; color&#x3D;&quot;accent&quot;&gt;&lt;/hover-spinner&gt;
+  &lt;hover-spinner type&#x3D;&quot;neo&quot; color&#x3D;&quot;neon&quot;&gt;&lt;/hover-spinner&gt;&#x60;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/components/spinner/spinner.component.ts:9</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+
+@Component({
+  selector: &#x27;app-spinner&#x27;,
+  templateUrl: &#x27;./spinner.component.html&#x27;,
+  styleUrl: &#x27;./spinner.component.css&#x27;
+})
+export class SpinnerComponent {
+  spinnersTypes &#x3D; &#x60;
+   &lt;hover-spinner type&#x3D;&quot;pulse&quot; color&#x3D;&quot;primary&quot;&gt;&lt;/hover-spinner&gt;
+  &lt;hover-spinner type&#x3D;&quot;wave&quot; color&#x3D;&quot;tech&quot;&gt;&lt;/hover-spinner&gt;
+  &lt;hover-spinner type&#x3D;&quot;cube&quot; color&#x3D;&quot;accent&quot;&gt;&lt;/hover-spinner&gt;
+  &lt;hover-spinner type&#x3D;&quot;neo&quot; color&#x3D;&quot;neon&quot;&gt;&lt;/hover-spinner&gt;&#x60;;
+
+  spinnersSizes &#x3D; &#x60;
+   &lt;hover-spinner type&#x3D;&quot;pulse&quot; color&#x3D;&quot;primary&quot; size&#x3D;&quot;sm&quot;&gt;&lt;/hover-spinner&gt;
+  &lt;hover-spinner type&#x3D;&quot;pulse&quot; color&#x3D;&quot;primary&quot; size&#x3D;&quot;md&quot;&gt;&lt;/hover-spinner&gt;
+  &lt;hover-spinner type&#x3D;&quot;pulse&quot; color&#x3D;&quot;primary&quot; size&#x3D;&quot;lg&quot;&gt;&lt;/hover-spinner&gt;&#x60;;
+
+  spinnersColors &#x3D; &#x60;
+   &lt;hover-spinner type&#x3D;&quot;pulse&quot; color&#x3D;&quot;primary&quot;&gt;&lt;/hover-spinner&gt;
+  &lt;hover-spinner type&#x3D;&quot;pulse&quot; color&#x3D;&quot;tech&quot;&gt;&lt;/hover-spinner&gt;
+  &lt;hover-spinner type&#x3D;&quot;pulse&quot; color&#x3D;&quot;accent&quot;&gt;&lt;/hover-spinner&gt;
+  &lt;hover-spinner type&#x3D;&quot;pulse&quot; color&#x3D;&quot;neon&quot;&gt;&lt;/hover-spinner&gt;&#x60;;
+
+  copyCode(code: string) {
+    const textarea &#x3D; document.createElement(&#x27;textarea&#x27;);
+    textarea.value &#x3D; code;
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand(&#x27;copy&#x27;);
+    document.body.removeChild(textarea);
+    alert(&#x27;Code copied to clipboard!&#x27;);
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div id&#x3D;&quot;container&quot;&gt;
+  &lt;h1&gt;Hover Spinner&lt;/h1&gt;
+  &lt;p&gt;
+    The &lt;strong translate&#x3D;&quot;no&quot;&gt;hover-spinner&lt;/strong&gt; component provides animated loading indicators to improve user experience while data is loading or a process is running. It supports multiple styles, sizes, and color themes to fit various design needs.
+  &lt;/p&gt;
+  &lt;p&gt;
+    Spinners are ideal for asynchronous operations, form submissions, or content placeholders. They are lightweight, customizable, and easy to use.
+  &lt;/p&gt;
+
+  &lt;h2&gt;Types&lt;/h2&gt;
+  &lt;p&gt;
+    The &lt;span class&#x3D;&quot;tag&quot;&gt;type&lt;/span&gt; input lets you choose from four unique spinner styles: &lt;strong&gt;pulse&lt;/strong&gt;, &lt;strong&gt;wave&lt;/strong&gt;, &lt;strong&gt;cube&lt;/strong&gt;, and &lt;strong&gt;neo&lt;/strong&gt;. Each style is animated with its own pattern and feel.
+  &lt;/p&gt;
+  &lt;div class&#x3D;&quot;component-row&quot;&gt;
+    &lt;hover-spinner type&#x3D;&quot;pulse&quot; color&#x3D;&quot;primary&quot;&gt;&lt;/hover-spinner&gt;
+    &lt;hover-spinner type&#x3D;&quot;wave&quot; color&#x3D;&quot;tech&quot;&gt;&lt;/hover-spinner&gt;
+    &lt;hover-spinner type&#x3D;&quot;cube&quot; color&#x3D;&quot;accent&quot;&gt;&lt;/hover-spinner&gt;
+    &lt;hover-spinner type&#x3D;&quot;neo&quot; color&#x3D;&quot;neon&quot;&gt;&lt;/hover-spinner&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;code&quot;&gt;
+    &lt;span class&#x3D;&quot;copy&quot; (click)&#x3D;&quot;copyCode(spinnersTypes)&quot;&gt;copy&lt;/span&gt;
+    &lt;pre&gt;&lt;code class&#x3D;&quot;text-code&quot;&gt;
+&amp;lt;&lt;span class&#x3D;&quot;tag-code&quot;&gt;hover-spinner&lt;/span&gt; &lt;span class&#x3D;&quot;attr&quot;&gt;type&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;&#x27;pulse&#x27;&lt;/span&gt; &lt;span class&#x3D;&quot;attr&quot;&gt;color&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;&#x27;primary&#x27;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span class&#x3D;&quot;tag-code&quot;&gt;hover-spinner&lt;/span&gt;&amp;gt;
+&amp;lt;&lt;span class&#x3D;&quot;tag-code&quot;&gt;hover-spinner&lt;/span&gt; &lt;span class&#x3D;&quot;attr&quot;&gt;type&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;&#x27;wave&#x27;&lt;/span&gt; &lt;span class&#x3D;&quot;attr&quot;&gt;color&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;&#x27;tech&#x27;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span class&#x3D;&quot;tag-code&quot;&gt;hover-spinner&lt;/span&gt;&amp;gt;
+&amp;lt;&lt;span class&#x3D;&quot;tag-code&quot;&gt;hover-spinner&lt;/span&gt; &lt;span class&#x3D;&quot;attr&quot;&gt;type&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;&#x27;cube&#x27;&lt;/span&gt; &lt;span class&#x3D;&quot;attr&quot;&gt;color&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;&#x27;accent&#x27;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span class&#x3D;&quot;tag-code&quot;&gt;hover-spinner&lt;/span&gt;&amp;gt;
+&amp;lt;&lt;span class&#x3D;&quot;tag-code&quot;&gt;hover-spinner&lt;/span&gt; &lt;span class&#x3D;&quot;attr&quot;&gt;type&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;&#x27;neo&#x27;&lt;/span&gt; &lt;span class&#x3D;&quot;attr&quot;&gt;color&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;&#x27;neon&#x27;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span class&#x3D;&quot;tag-code&quot;&gt;hover-spinner&lt;/span&gt;&amp;gt;
+    &lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+
+  &lt;h2&gt;Sizes&lt;/h2&gt;
+  &lt;p&gt;
+    You can define the spinner&#x27;s size using the &lt;span class&#x3D;&quot;tag&quot;&gt;size&lt;/span&gt; input. Available options are &lt;strong&gt;sm&lt;/strong&gt;, &lt;strong&gt;md&lt;/strong&gt; (default), and &lt;strong&gt;lg&lt;/strong&gt;. Use different sizes to fit spinners into buttons, cards, or full-page loaders.
+  &lt;/p&gt;
+  &lt;div class&#x3D;&quot;component-row&quot;&gt;
+    &lt;hover-spinner type&#x3D;&quot;pulse&quot; color&#x3D;&quot;primary&quot; size&#x3D;&quot;sm&quot;&gt;&lt;/hover-spinner&gt;
+    &lt;hover-spinner type&#x3D;&quot;pulse&quot; color&#x3D;&quot;primary&quot; size&#x3D;&quot;md&quot;&gt;&lt;/hover-spinner&gt;
+    &lt;hover-spinner type&#x3D;&quot;pulse&quot; color&#x3D;&quot;primary&quot; size&#x3D;&quot;lg&quot;&gt;&lt;/hover-spinner&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;code&quot;&gt;
+    &lt;span class&#x3D;&quot;copy&quot; (click)&#x3D;&quot;copyCode(spinnersSizes)&quot;&gt;copy&lt;/span&gt;
+    &lt;pre&gt;&lt;code class&#x3D;&quot;text-code&quot;&gt;
+&amp;lt;&lt;span class&#x3D;&quot;tag-code&quot;&gt;hover-spinner&lt;/span&gt; &lt;span class&#x3D;&quot;attr&quot;&gt;size&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;&#x27;sm&#x27;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span class&#x3D;&quot;tag-code&quot;&gt;hover-spinner&lt;/span&gt;&amp;gt;
+&amp;lt;&lt;span class&#x3D;&quot;tag-code&quot;&gt;hover-spinner&lt;/span&gt; &lt;span class&#x3D;&quot;attr&quot;&gt;size&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;&#x27;md&#x27;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span class&#x3D;&quot;tag-code&quot;&gt;hover-spinner&lt;/span&gt;&amp;gt;
+&amp;lt;&lt;span class&#x3D;&quot;tag-code&quot;&gt;hover-spinner&lt;/span&gt; &lt;span class&#x3D;&quot;attr&quot;&gt;size&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;&#x27;lg&#x27;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span class&#x3D;&quot;tag-code&quot;&gt;hover-spinner&lt;/span&gt;&amp;gt;
+    &lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+
+  &lt;h2&gt;Colors&lt;/h2&gt;
+  &lt;p&gt;
+    Spinners can be styled with theme colors using the &lt;span class&#x3D;&quot;tag&quot;&gt;color&lt;/span&gt; input. The available values are &lt;strong&gt;primary&lt;/strong&gt;, &lt;strong&gt;tech&lt;/strong&gt;, &lt;strong&gt;accent&lt;/strong&gt;, and &lt;strong&gt;neon&lt;/strong&gt;. These follow the design system of your application.
+  &lt;/p&gt;
+  &lt;div class&#x3D;&quot;component-row&quot;&gt;
+    &lt;hover-spinner type&#x3D;&quot;pulse&quot; color&#x3D;&quot;primary&quot;&gt;&lt;/hover-spinner&gt;
+    &lt;hover-spinner type&#x3D;&quot;pulse&quot; color&#x3D;&quot;tech&quot;&gt;&lt;/hover-spinner&gt;
+    &lt;hover-spinner type&#x3D;&quot;pulse&quot; color&#x3D;&quot;accent&quot;&gt;&lt;/hover-spinner&gt;
+    &lt;hover-spinner type&#x3D;&quot;pulse&quot; color&#x3D;&quot;neon&quot;&gt;&lt;/hover-spinner&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;code&quot;&gt;
+    &lt;span class&#x3D;&quot;copy&quot; (click)&#x3D;&quot;copyCode(spinnersColors)&quot;&gt;copy&lt;/span&gt;
+    &lt;pre&gt;&lt;code class&#x3D;&quot;text-code&quot;&gt;
+&amp;lt;&lt;span class&#x3D;&quot;tag-code&quot;&gt;hover-spinner&lt;/span&gt; &lt;span class&#x3D;&quot;attr&quot;&gt;color&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;&#x27;primary&#x27;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span class&#x3D;&quot;tag-code&quot;&gt;hover-spinner&lt;/span&gt;&amp;gt;
+&amp;lt;&lt;span class&#x3D;&quot;tag-code&quot;&gt;hover-spinner&lt;/span&gt; &lt;span class&#x3D;&quot;attr&quot;&gt;color&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;&#x27;tech&#x27;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span class&#x3D;&quot;tag-code&quot;&gt;hover-spinner&lt;/span&gt;&amp;gt;
+&amp;lt;&lt;span class&#x3D;&quot;tag-code&quot;&gt;hover-spinner&lt;/span&gt; &lt;span class&#x3D;&quot;attr&quot;&gt;color&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;&#x27;accent&#x27;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span class&#x3D;&quot;tag-code&quot;&gt;hover-spinner&lt;/span&gt;&amp;gt;
+&amp;lt;&lt;span class&#x3D;&quot;tag-code&quot;&gt;hover-spinner&lt;/span&gt; &lt;span class&#x3D;&quot;attr&quot;&gt;color&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;&#x27;neon&#x27;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span class&#x3D;&quot;tag-code&quot;&gt;hover-spinner&lt;/span&gt;&amp;gt;
+    &lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div id="container">  <h1>Hover Spinner</h1>  <p>    The <strong translate="no">hover-spinner</strong> component provides animated loading indicators to improve user experience while data is loading or a process is running. It supports multiple styles, sizes, and color themes to fit various design needs.  </p>  <p>    Spinners are ideal for asynchronous operations, form submissions, or content placeholders. They are lightweight, customizable, and easy to use.  </p>  <h2>Types</h2>  <p>    The <span class="tag">type</span> input lets you choose from four unique spinner styles: <strong>pulse</strong>, <strong>wave</strong>, <strong>cube</strong>, and <strong>neo</strong>. Each style is animated with its own pattern and feel.  </p>  <div class="component-row">    <hover-spinner type="pulse" color="primary"></hover-spinner>    <hover-spinner type="wave" color="tech"></hover-spinner>    <hover-spinner type="cube" color="accent"></hover-spinner>    <hover-spinner type="neo" color="neon"></hover-spinner>  </div>  <div class="code">    <span class="copy" (click)="copyCode(spinnersTypes)">copy</span>    <pre><code class="text-code">&lt;<span class="tag-code">hover-spinner</span> <span class="attr">type</span>=<span class="value">\'pulse\'</span> <span class="attr">color</span>=<span class="value">\'primary\'</span>&gt;&lt;/<span class="tag-code">hover-spinner</span>&gt;&lt;<span class="tag-code">hover-spinner</span> <span class="attr">type</span>=<span class="value">\'wave\'</span> <span class="attr">color</span>=<span class="value">\'tech\'</span>&gt;&lt;/<span class="tag-code">hover-spinner</span>&gt;&lt;<span class="tag-code">hover-spinner</span> <span class="attr">type</span>=<span class="value">\'cube\'</span> <span class="attr">color</span>=<span class="value">\'accent\'</span>&gt;&lt;/<span class="tag-code">hover-spinner</span>&gt;&lt;<span class="tag-code">hover-spinner</span> <span class="attr">type</span>=<span class="value">\'neo\'</span> <span class="attr">color</span>=<span class="value">\'neon\'</span>&gt;&lt;/<span class="tag-code">hover-spinner</span>&gt;    </code></pre>  </div>  <h2>Sizes</h2>  <p>    You can define the spinner\'s size using the <span class="tag">size</span> input. Available options are <strong>sm</strong>, <strong>md</strong> (default), and <strong>lg</strong>. Use different sizes to fit spinners into buttons, cards, or full-page loaders.  </p>  <div class="component-row">    <hover-spinner type="pulse" color="primary" size="sm"></hover-spinner>    <hover-spinner type="pulse" color="primary" size="md"></hover-spinner>    <hover-spinner type="pulse" color="primary" size="lg"></hover-spinner>  </div>  <div class="code">    <span class="copy" (click)="copyCode(spinnersSizes)">copy</span>    <pre><code class="text-code">&lt;<span class="tag-code">hover-spinner</span> <span class="attr">size</span>=<span class="value">\'sm\'</span>&gt;&lt;/<span class="tag-code">hover-spinner</span>&gt;&lt;<span class="tag-code">hover-spinner</span> <span class="attr">size</span>=<span class="value">\'md\'</span>&gt;&lt;/<span class="tag-code">hover-spinner</span>&gt;&lt;<span class="tag-code">hover-spinner</span> <span class="attr">size</span>=<span class="value">\'lg\'</span>&gt;&lt;/<span class="tag-code">hover-spinner</span>&gt;    </code></pre>  </div>  <h2>Colors</h2>  <p>    Spinners can be styled with theme colors using the <span class="tag">color</span> input. The available values are <strong>primary</strong>, <strong>tech</strong>, <strong>accent</strong>, and <strong>neon</strong>. These follow the design system of your application.  </p>  <div class="component-row">    <hover-spinner type="pulse" color="primary"></hover-spinner>    <hover-spinner type="pulse" color="tech"></hover-spinner>    <hover-spinner type="pulse" color="accent"></hover-spinner>    <hover-spinner type="pulse" color="neon"></hover-spinner>  </div>  <div class="code">    <span class="copy" (click)="copyCode(spinnersColors)">copy</span>    <pre><code class="text-code">&lt;<span class="tag-code">hover-spinner</span> <span class="attr">color</span>=<span class="value">\'primary\'</span>&gt;&lt;/<span class="tag-code">hover-spinner</span>&gt;&lt;<span class="tag-code">hover-spinner</span> <span class="attr">color</span>=<span class="value">\'tech\'</span>&gt;&lt;/<span class="tag-code">hover-spinner</span>&gt;&lt;<span class="tag-code">hover-spinner</span> <span class="attr">color</span>=<span class="value">\'accent\'</span>&gt;&lt;/<span class="tag-code">hover-spinner</span>&gt;&lt;<span class="tag-code">hover-spinner</span> <span class="attr">color</span>=<span class="value">\'neon\'</span>&gt;&lt;/<span class="tag-code">hover-spinner</span>&gt;    </code></pre>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AlertComponent', 'selector': 'app-alert'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BadgeComponent', 'selector': 'app-badge'},{'name': 'ButtonComponent', 'selector': 'app-button'},{'name': 'ComponentsPageComponent', 'selector': 'app-components-page'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InputComponent', 'selector': 'app-input'},{'name': 'IntroductionComponent', 'selector': 'app-introduction'},{'name': 'ListAsideComponent', 'selector': 'app-list-aside'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MenuAsideComponent', 'selector': 'app-menu-aside'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'SpinnerComponent', 'selector': 'app-spinner'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'SpinnerComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'SpinnerComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

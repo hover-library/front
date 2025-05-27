@@ -1,0 +1,1378 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>landing-page documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">landing-page documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  InputComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/input/input.component.ts</code>
+</p>
+
+
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-input</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./input.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./input.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ageMessages" >ageMessages</a>
+                            </li>
+                            <li>
+                                <a href="#checkForm" >checkForm</a>
+                            </li>
+                            <li>
+                                <a href="#emailMessages" >emailMessages</a>
+                            </li>
+                            <li>
+                                <a href="#form" >form</a>
+                            </li>
+                            <li>
+                                <a href="#inputsBasic" >inputsBasic</a>
+                            </li>
+                            <li>
+                                <a href="#inputStates" >inputStates</a>
+                            </li>
+                            <li>
+                                <a href="#passwordMessages" >passwordMessages</a>
+                            </li>
+                            <li>
+                                <a href="#reactiveForm" >reactiveForm</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#copyCode" >copyCode</a>
+                            </li>
+                            <li>
+                                <a href="#onSubmit" >onSubmit</a>
+                            </li>
+                            <li>
+                                <a href="#reset" >reset</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(fb: FormBuilder)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/components/input/input.component.ts:28</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>fb</td>
+                                                  
+                                                        <td>
+                                                                    <code>FormBuilder</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="copyCode"></a>
+                    <span class="name">
+                        <span ><b>copyCode</b></span>
+                        <a href="#copyCode"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>copyCode(code: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="123"
+                                    class="link-to-prism">src/app/components/input/input.component.ts:123</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>code</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSubmit"></a>
+                    <span class="name">
+                        <span ><b>onSubmit</b></span>
+                        <a href="#onSubmit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onSubmit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="46"
+                                    class="link-to-prism">src/app/components/input/input.component.ts:46</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="reset"></a>
+                    <span class="name">
+                        <span ><b>reset</b></span>
+                        <a href="#reset"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>reset()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="54"
+                                    class="link-to-prism">src/app/components/input/input.component.ts:54</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ageMessages"></a>
+                    <span class="name">
+                        <span ><b>ageMessages</b></span>
+                        <a href="#ageMessages"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    min: &#x27;La edad debe ser al menos 18 años&#x27;,
+    max: &#x27;La edad no debe superar los 99 años&#x27;
+  }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/components/input/input.component.ts:25</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="checkForm"></a>
+                    <span class="name">
+                        <span ><b>checkForm</b></span>
+                        <a href="#checkForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.fb.group({
+    acceptTerms: [false, Validators.requiredTrue],
+    newsletter: [true]
+  })</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/components/input/input.component.ts:40</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="emailMessages"></a>
+                    <span class="name">
+                        <span ><b>emailMessages</b></span>
+                        <a href="#emailMessages"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    required: &#x27;Este campo es obligatorio&#x27;,
+    pattern: &#x27;Ingresa una dirección de correo válida&#x27;
+  }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/components/input/input.component.ts:15</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="form"></a>
+                    <span class="name">
+                        <span ><b>form</b></span>
+                        <a href="#form"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.fb.group({
+    email: [&#x27;&#x27;, [Validators.required, Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/)]],
+    password: [&#x27;&#x27;, [Validators.required, Validators.minLength(8)]],
+    age: [null, [Validators.min(18), Validators.max(99)]]
+  })</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/components/input/input.component.ts:33</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="inputsBasic"></a>
+                    <span class="name">
+                        <span ><b>inputsBasic</b></span>
+                        <a href="#inputsBasic"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x60;
+  &lt;hover-input label&#x3D;&quot;Full Name&quot; icon&#x3D;&quot;person&quot;&gt;&lt;/hover-input&gt;
+  &lt;hover-input label&#x3D;&quot;Password&quot; type&#x3D;&quot;password&quot; icon&#x3D;&quot;lock&quot;&gt;&lt;/hover-input&gt;&#x60;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="63" class="link-to-prism">src/app/components/input/input.component.ts:63</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="inputStates"></a>
+                    <span class="name">
+                        <span ><b>inputStates</b></span>
+                        <a href="#inputStates"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x60;
+  &lt;hover-input label&#x3D;&quot;Email&quot; type&#x3D;&quot;email&quot; icon&#x3D;&quot;mail&quot;&gt;&lt;/hover-input&gt;
+  &lt;hover-input label&#x3D;&quot;Phone&quot; type&#x3D;&quot;tel&quot; icon&#x3D;&quot;phone&quot;&gt;&lt;/hover-input&gt;
+  &lt;hover-input label&#x3D;&quot;Password&quot; type&#x3D;&quot;password&quot; icon&#x3D;&quot;lock&quot;&gt;&lt;/hover-input&gt;
+  &lt;hover-input label&#x3D;&quot;Disabled&quot; [disabled]&#x3D;&quot;true&quot; icon&#x3D;&quot;block&quot; value&#x3D;&quot;Example&quot;&gt;&lt;/hover-input&gt;&#x60;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="67" class="link-to-prism">src/app/components/input/input.component.ts:67</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="passwordMessages"></a>
+                    <span class="name">
+                        <span ><b>passwordMessages</b></span>
+                        <a href="#passwordMessages"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    required: &#x27;Este campo es obligatorio&#x27;,
+    minlength: &#x27;Se requieren al menos 8 caracteres&#x27;
+  }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/components/input/input.component.ts:20</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="reactiveForm"></a>
+                    <span class="name">
+                        <span ><b>reactiveForm</b></span>
+                        <a href="#reactiveForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x60;
+      &lt;form [formGroup]&#x3D;&quot;form&quot; (ngSubmit)&#x3D;&quot;onSubmit()&quot; class&#x3D;&quot;form-reactive&quot;&gt;
+      &lt;hover-input
+        label&#x3D;&quot;Corporate Email&quot;
+        type&#x3D;&quot;email&quot;
+        formControlName&#x3D;&quot;email&quot;
+        [control]&#x3D;&quot;form.get(&#x27;email&#x27;)&quot;
+        icon&#x3D;&quot;alternate_email&quot;
+        [customMessages]&#x3D;&quot;emailMessages&quot;
+      &gt;&lt;/hover-input&gt;
+
+      &lt;hover-input
+        label&#x3D;&quot;Password&quot;
+        type&#x3D;&quot;password&quot;
+        formControlName&#x3D;&quot;password&quot;
+        [control]&#x3D;&quot;form.get(&#x27;password&#x27;)&quot;
+        icon&#x3D;&quot;lock&quot;
+        [customMessages]&#x3D;&quot;passwordMessages&quot;
+      &gt;&lt;/hover-input&gt;
+
+      &lt;hover-input
+        label&#x3D;&quot;Age (optional)&quot;
+        type&#x3D;&quot;text&quot;
+        formControlName&#x3D;&quot;age&quot;
+        [control]&#x3D;&quot;form.get(&#x27;age&#x27;)&quot;
+        helperText&#x3D;&quot;Between 18 and 99&quot;
+        icon&#x3D;&quot;elderly&quot;
+      &gt;&lt;/hover-input&gt;
+
+      &lt;div class&#x3D;&quot;actions&quot;&gt;
+        &lt;hover-button
+          color&#x3D;&quot;primary&quot;
+          type&#x3D;&quot;submit&quot;
+          [disabled]&#x3D;&quot;form.invalid ? &#x27;disabled&#x27; : &#x27;&#x27;&quot;
+        &gt;
+          Submit Form
+        &lt;/hover-button&gt;
+
+        &lt;hover-button
+          color&#x3D;&quot;secondary&quot;
+          type&#x3D;&quot;button&quot;
+          (click)&#x3D;&quot;reset()&quot;
+          icon&#x3D;&quot;delete&quot;
+        &gt;
+          Clear
+        &lt;/hover-button&gt;
+      &lt;/div&gt;
+    &lt;/form&gt;&#x60;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="73" class="link-to-prism">src/app/components/input/input.component.ts:73</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { HttpClient } from &#x27;@angular/common/http&#x27;;
+import { Component, ElementRef, Renderer2 } from &#x27;@angular/core&#x27;;
+import { FormBuilder, FormGroup, Validators } from &#x27;@angular/forms&#x27;;
+import { AuthService } from &#x27;../../auth/auth.service&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+
+@Component({
+  selector: &#x27;app-input&#x27;,
+  templateUrl: &#x27;./input.component.html&#x27;,
+  styleUrls: [&#x27;./input.component.css&#x27;]
+})
+export class InputComponent {
+
+  // Mensajes personalizados para los campos
+  emailMessages &#x3D; {
+    required: &#x27;Este campo es obligatorio&#x27;,
+    pattern: &#x27;Ingresa una dirección de correo válida&#x27;
+  };
+
+  passwordMessages &#x3D; {
+    required: &#x27;Este campo es obligatorio&#x27;,
+    minlength: &#x27;Se requieren al menos 8 caracteres&#x27;
+  };
+
+  ageMessages &#x3D; {
+    min: &#x27;La edad debe ser al menos 18 años&#x27;,
+    max: &#x27;La edad no debe superar los 99 años&#x27;
+  };
+
+  constructor(private fb: FormBuilder) {}
+
+  // Formulario principal
+  form &#x3D; this.fb.group({
+    email: [&#x27;&#x27;, [Validators.required, Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/)]],
+    password: [&#x27;&#x27;, [Validators.required, Validators.minLength(8)]],
+    age: [null, [Validators.min(18), Validators.max(99)]]
+  });
+
+  // Formulario de verificación de términos y condiciones
+  checkForm &#x3D; this.fb.group({
+    acceptTerms: [false, Validators.requiredTrue],
+    newsletter: [true]
+  });
+
+  // Método para enviar el formulario
+  onSubmit() {
+    if (this.form.valid) {
+      console.log(&#x27;Formulario Enviado&#x27;, this.form.value);
+      this.reset();
+    }
+  }
+
+  // Método para resetear el formulario
+  reset() {
+    this.form.reset();
+    // Actualizar manualmente los valores visuales en los ui-inputs
+    this.form.get(&#x27;email&#x27;)?.setValue(&#x27;&#x27;);
+    this.form.get(&#x27;password&#x27;)?.setValue(&#x27;&#x27;);
+    this.form.get(&#x27;age&#x27;)?.setValue(null);
+  }
+
+  // Variantes de inputs para mostrar ejemplos
+  inputsBasic &#x3D; &#x60;
+  &lt;hover-input label&#x3D;&quot;Full Name&quot; icon&#x3D;&quot;person&quot;&gt;&lt;/hover-input&gt;
+  &lt;hover-input label&#x3D;&quot;Password&quot; type&#x3D;&quot;password&quot; icon&#x3D;&quot;lock&quot;&gt;&lt;/hover-input&gt;&#x60;;
+
+  inputStates &#x3D; &#x60;
+  &lt;hover-input label&#x3D;&quot;Email&quot; type&#x3D;&quot;email&quot; icon&#x3D;&quot;mail&quot;&gt;&lt;/hover-input&gt;
+  &lt;hover-input label&#x3D;&quot;Phone&quot; type&#x3D;&quot;tel&quot; icon&#x3D;&quot;phone&quot;&gt;&lt;/hover-input&gt;
+  &lt;hover-input label&#x3D;&quot;Password&quot; type&#x3D;&quot;password&quot; icon&#x3D;&quot;lock&quot;&gt;&lt;/hover-input&gt;
+  &lt;hover-input label&#x3D;&quot;Disabled&quot; [disabled]&#x3D;&quot;true&quot; icon&#x3D;&quot;block&quot; value&#x3D;&quot;Example&quot;&gt;&lt;/hover-input&gt;&#x60;;
+
+  reactiveForm &#x3D; &#x60;
+      &lt;form [formGroup]&#x3D;&quot;form&quot; (ngSubmit)&#x3D;&quot;onSubmit()&quot; class&#x3D;&quot;form-reactive&quot;&gt;
+      &lt;hover-input
+        label&#x3D;&quot;Corporate Email&quot;
+        type&#x3D;&quot;email&quot;
+        formControlName&#x3D;&quot;email&quot;
+        [control]&#x3D;&quot;form.get(&#x27;email&#x27;)&quot;
+        icon&#x3D;&quot;alternate_email&quot;
+        [customMessages]&#x3D;&quot;emailMessages&quot;
+      &gt;&lt;/hover-input&gt;
+
+      &lt;hover-input
+        label&#x3D;&quot;Password&quot;
+        type&#x3D;&quot;password&quot;
+        formControlName&#x3D;&quot;password&quot;
+        [control]&#x3D;&quot;form.get(&#x27;password&#x27;)&quot;
+        icon&#x3D;&quot;lock&quot;
+        [customMessages]&#x3D;&quot;passwordMessages&quot;
+      &gt;&lt;/hover-input&gt;
+
+      &lt;hover-input
+        label&#x3D;&quot;Age (optional)&quot;
+        type&#x3D;&quot;text&quot;
+        formControlName&#x3D;&quot;age&quot;
+        [control]&#x3D;&quot;form.get(&#x27;age&#x27;)&quot;
+        helperText&#x3D;&quot;Between 18 and 99&quot;
+        icon&#x3D;&quot;elderly&quot;
+      &gt;&lt;/hover-input&gt;
+
+      &lt;div class&#x3D;&quot;actions&quot;&gt;
+        &lt;hover-button
+          color&#x3D;&quot;primary&quot;
+          type&#x3D;&quot;submit&quot;
+          [disabled]&#x3D;&quot;form.invalid ? &#x27;disabled&#x27; : &#x27;&#x27;&quot;
+        &gt;
+          Submit Form
+        &lt;/hover-button&gt;
+
+        &lt;hover-button
+          color&#x3D;&quot;secondary&quot;
+          type&#x3D;&quot;button&quot;
+          (click)&#x3D;&quot;reset()&quot;
+          icon&#x3D;&quot;delete&quot;
+        &gt;
+          Clear
+        &lt;/hover-button&gt;
+      &lt;/div&gt;
+    &lt;/form&gt;&#x60;;
+
+  // Método para copiar el código
+  copyCode(code: string) {
+    const textarea &#x3D; document.createElement(&#x27;textarea&#x27;);
+    textarea.value &#x3D; code;
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand(&#x27;copy&#x27;);
+    document.body.removeChild(textarea);
+    alert(&#x27;Code copied to clipboard!&#x27;);
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div id&#x3D;&quot;container&quot;&gt;
+  &lt;h1&gt;Inputs&lt;/h1&gt;
+  &lt;p&gt;
+    The &lt;strong translate&#x3D;&quot;no&quot;&gt;hover-input&lt;/strong&gt; component provides customizable input fields with support for icons, validation, and error messages. It is ideal for creating interactive forms with a clear interface.
+  &lt;/p&gt;
+
+  &lt;!-- Basic Inputs --&gt;
+  &lt;h2&gt;Basic Inputs&lt;/h2&gt;
+  &lt;div class&#x3D;&quot;component-row&quot;&gt;
+    &lt;hover-input label&#x3D;&quot;Full Name&quot; icon&#x3D;&quot;person&quot;&gt;&lt;/hover-input&gt;
+    &lt;hover-input label&#x3D;&quot;Password&quot; type&#x3D;&quot;password&quot; icon&#x3D;&quot;lock&quot;&gt;&lt;/hover-input&gt;
+  &lt;/div&gt;
+  &lt;p&gt;
+    In this example, it shows how to use the &lt;code&gt;hover-input&lt;/code&gt; component to create basic fields like &quot;Full Name&quot; and &quot;Password&quot; with icons. These inputs are ideal for simple forms where text or password entries are required.
+  &lt;/p&gt;
+  &lt;div class&#x3D;&quot;code&quot;&gt;
+    &lt;span class&#x3D;&quot;copy&quot; (click)&#x3D;&quot;copyCode(inputsBasic)&quot;&gt;copy&lt;/span&gt;
+    &lt;pre&gt;&lt;code class&#x3D;&quot;text-code&quot;&gt;
+      &amp;lt;&lt;span class&#x3D;&quot;tag-code&quot;&gt;hover-input&lt;/span&gt; &lt;span class&#x3D;&quot;attr&quot;&gt;label&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;&#x27;Full Name&#x27;&lt;/span&gt; &lt;span class&#x3D;&quot;attr&quot;&gt;icon&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;&#x27;person&#x27;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span class&#x3D;&quot;tag-code&quot;&gt;hover-input&lt;/span&gt;&amp;gt;
+      &amp;lt;&lt;span class&#x3D;&quot;tag-code&quot;&gt;hover-input&lt;/span&gt; &lt;span class&#x3D;&quot;attr&quot;&gt;label&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;&#x27;Password&#x27;&lt;/span&gt; &lt;span class&#x3D;&quot;attr&quot;&gt;type&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;&#x27;password&#x27;&lt;/span&gt; &lt;span class&#x3D;&quot;attr&quot;&gt;icon&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;&#x27;lock&#x27;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span class&#x3D;&quot;tag-code&quot;&gt;hover-input&lt;/span&gt;&amp;gt;
+    &lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Inputs with States --&gt;
+  &lt;h2&gt;Inputs with States&lt;/h2&gt;
+  &lt;div class&#x3D;&quot;component-row&quot;&gt;
+    &lt;hover-input label&#x3D;&quot;Email&quot; type&#x3D;&quot;email&quot; icon&#x3D;&quot;mail&quot;&gt;&lt;/hover-input&gt;
+    &lt;hover-input label&#x3D;&quot;Phone&quot; type&#x3D;&quot;tel&quot; icon&#x3D;&quot;phone&quot;&gt;&lt;/hover-input&gt;
+    &lt;hover-input label&#x3D;&quot;Password&quot; type&#x3D;&quot;password&quot; icon&#x3D;&quot;lock&quot;&gt;&lt;/hover-input&gt;
+    &lt;hover-input label&#x3D;&quot;Disabled&quot; [disabled]&#x3D;&quot;true&quot; icon&#x3D;&quot;block&quot; value&#x3D;&quot;Example&quot;&gt;&lt;/hover-input&gt;
+  &lt;/div&gt;
+  &lt;p&gt;
+    Here we show inputs that include different field types: email, phone, and password. You will also see a disabled input, which is achieved by using the &lt;code&gt;[disabled]&#x3D;&quot;true&quot;&lt;/code&gt; property.
+  &lt;/p&gt;
+  &lt;div class&#x3D;&quot;code&quot;&gt;
+    &lt;span class&#x3D;&quot;copy&quot; (click)&#x3D;&quot;copyCode(inputStates)&quot;&gt;copy&lt;/span&gt;
+    &lt;pre&gt;&lt;code class&#x3D;&quot;text-code&quot;&gt;
+      &amp;lt;&lt;span class&#x3D;&quot;tag-code&quot;&gt;hover-input&lt;/span&gt; &lt;span class&#x3D;&quot;attr&quot;&gt;label&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;&#x27;Email&#x27;&lt;/span&gt; &lt;span class&#x3D;&quot;attr&quot;&gt;type&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;&#x27;email&#x27;&lt;/span&gt; &lt;span class&#x3D;&quot;attr&quot;&gt;icon&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;&#x27;mail&#x27;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span class&#x3D;&quot;tag-code&quot;&gt;hover-input&lt;/span&gt;&amp;gt;
+      &amp;lt;&lt;span class&#x3D;&quot;tag-code&quot;&gt;hover-input&lt;/span&gt; &lt;span class&#x3D;&quot;attr&quot;&gt;label&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;&#x27;Phone&#x27;&lt;/span&gt; &lt;span class&#x3D;&quot;attr&quot;&gt;type&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;&#x27;tel&#x27;&lt;/span&gt; &lt;span class&#x3D;&quot;attr&quot;&gt;icon&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;&#x27;phone&#x27;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span class&#x3D;&quot;tag-code&quot;&gt;hover-input&lt;/span&gt;&amp;gt;
+      &amp;lt;&lt;span class&#x3D;&quot;tag-code&quot;&gt;hover-input&lt;/span&gt; &lt;span class&#x3D;&quot;attr&quot;&gt;label&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;&#x27;Disabled&#x27;&lt;/span&gt; &lt;span class&#x3D;&quot;attr&quot;&gt;disabled&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;&#x27;true&#x27;&lt;/span&gt; &lt;span class&#x3D;&quot;attr&quot;&gt;icon&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;&#x27;block&#x27;&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span class&#x3D;&quot;tag-code&quot;&gt;hover-input&lt;/span&gt;&amp;gt;
+    &lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Inputs with Reactive Validation --&gt;
+  &lt;h2&gt;Inputs with Reactive Validation&lt;/h2&gt;
+  &lt;p&gt;
+    These inputs are connected to a reactive form with validation. We use controls such as email, password, and age, each with custom validation rules. It demonstrates how to handle errors and custom messages using the component.
+  &lt;/p&gt;
+  &lt;div class&#x3D;&quot;component-row&quot;&gt;
+    &lt;form [formGroup]&#x3D;&quot;form&quot; (ngSubmit)&#x3D;&quot;onSubmit()&quot; class&#x3D;&quot;form-reactive&quot;&gt;
+      &lt;hover-input
+        label&#x3D;&quot;Corporate Email&quot;
+        type&#x3D;&quot;email&quot;
+        formControlName&#x3D;&quot;email&quot;
+        [control]&#x3D;&quot;form.get(&#x27;email&#x27;)&quot;
+        icon&#x3D;&quot;alternate_email&quot;
+        [customMessages]&#x3D;&quot;emailMessages&quot;
+      &gt;&lt;/hover-input&gt;
+
+      &lt;hover-input
+        label&#x3D;&quot;Password&quot;
+        type&#x3D;&quot;password&quot;
+        formControlName&#x3D;&quot;password&quot;
+        [control]&#x3D;&quot;form.get(&#x27;password&#x27;)&quot;
+        icon&#x3D;&quot;lock&quot;
+        [customMessages]&#x3D;&quot;passwordMessages&quot;
+      &gt;&lt;/hover-input&gt;
+
+      &lt;hover-input
+        label&#x3D;&quot;Age (optional)&quot;
+        type&#x3D;&quot;text&quot;
+        formControlName&#x3D;&quot;age&quot;
+        [control]&#x3D;&quot;form.get(&#x27;age&#x27;)&quot;
+        helperText&#x3D;&quot;Between 18 and 99&quot;
+        icon&#x3D;&quot;elderly&quot;
+      &gt;&lt;/hover-input&gt;
+
+      &lt;div class&#x3D;&quot;actions&quot;&gt;
+        &lt;hover-button
+          color&#x3D;&quot;primary&quot;
+          type&#x3D;&quot;submit&quot;
+          [disabled]&#x3D;&quot;form.invalid ? &#x27;disabled&#x27; : &#x27;&#x27;&quot;
+        &gt;
+          Submit Form
+        &lt;/hover-button&gt;
+
+        &lt;hover-button
+          color&#x3D;&quot;secondary&quot;
+          type&#x3D;&quot;button&quot;
+          (click)&#x3D;&quot;reset()&quot;
+          icon&#x3D;&quot;delete&quot;
+        &gt;
+          Clear
+        &lt;/hover-button&gt;
+      &lt;/div&gt;
+    &lt;/form&gt;
+  &lt;/div&gt;
+  &lt;p&gt;
+    The reactive form allows for advanced validation, such as ensuring that the email field is correctly formatted and that the password has at least 8 characters. If the form contains errors, the &quot;Submit Form&quot; button is disabled.
+  &lt;/p&gt;
+  &lt;div class&#x3D;&quot;code&quot;&gt;
+    &lt;span class&#x3D;&quot;copy&quot; (click)&#x3D;&quot;copyCode(reactiveForm)&quot;&gt;copy&lt;/span&gt;
+    &lt;pre&gt;&lt;code class&#x3D;&quot;text-code&quot;&gt;
+      &amp;lt;&lt;span class&#x3D;&quot;tag-code&quot;&gt;form&lt;/span&gt; &lt;span class&#x3D;&quot;attr&quot;&gt;[formGroup]&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;&quot;form&quot;&lt;/span&gt; &lt;span class&#x3D;&quot;attr&quot;&gt;(ngSubmit)&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;&quot;onSubmit()&quot;&lt;/span&gt; &lt;span class&#x3D;&quot;attr&quot;&gt;class&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;&quot;form-reactive&quot;&lt;/span&gt;&amp;gt;
+        &amp;lt;&lt;span class&#x3D;&quot;tag-code&quot;&gt;hover-input&lt;/span&gt;
+          &lt;span class&#x3D;&quot;attr&quot;&gt;label&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;&quot;Corporate Email&quot;&lt;/span&gt;
+          &lt;span class&#x3D;&quot;attr&quot;&gt;type&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;&quot;email&quot;&lt;/span&gt;
+          &lt;span class&#x3D;&quot;attr&quot;&gt;formControlName&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;&quot;email&quot;&lt;/span&gt;
+          &lt;span class&#x3D;&quot;attr&quot;&gt;[control]&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;&quot;form.get(&#x27;email&#x27;)&quot;&lt;/span&gt;
+          &lt;span class&#x3D;&quot;attr&quot;&gt;icon&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;&quot;alternate_email&quot;&lt;/span&gt;
+          &lt;span class&#x3D;&quot;attr&quot;&gt;[customMessages]&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;{{ &quot;&#x27;{&quot; }} required: &#x27;This field is required&#x27;, default: &#x27;Enter a valid email address&#x27; {{ &quot;}&#x27;&quot; }}&lt;/span&gt;
+        &amp;gt;&amp;lt;/&lt;span class&#x3D;&quot;tag-code&quot;&gt;hover-input&lt;/span&gt;&amp;gt;
+
+        &amp;lt;&lt;span class&#x3D;&quot;tag-code&quot;&gt;hover-input&lt;/span&gt;
+          &lt;span class&#x3D;&quot;attr&quot;&gt;label&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;&quot;Password&quot;&lt;/span&gt;
+          &lt;span class&#x3D;&quot;attr&quot;&gt;type&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;&quot;password&quot;&lt;/span&gt;
+          &lt;span class&#x3D;&quot;attr&quot;&gt;formControlName&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;&quot;password&quot;&lt;/span&gt;
+          &lt;span class&#x3D;&quot;attr&quot;&gt;[control]&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;&quot;form.get(&#x27;password&#x27;)&quot;&lt;/span&gt;
+          &lt;span class&#x3D;&quot;attr&quot;&gt;icon&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;&quot;lock&quot;&lt;/span&gt;
+          &lt;span class&#x3D;&quot;attr&quot;&gt;[customMessages]&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;{{ &quot;&#x27;{&quot; }} required: &#x27;This field is required&#x27;, minlength: &#x27;Minimum 8 characters&#x27; {{ &quot;}&#x27;&quot; }}&lt;/span&gt;
+        &amp;gt;&amp;lt;/&lt;span class&#x3D;&quot;tag-code&quot;&gt;hover-input&lt;/span&gt;&amp;gt;
+
+        &amp;lt;&lt;span class&#x3D;&quot;tag-code&quot;&gt;hover-input&lt;/span&gt;
+          &lt;span class&#x3D;&quot;attr&quot;&gt;label&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;&quot;Age (optional)&quot;&lt;/span&gt;
+          &lt;span class&#x3D;&quot;attr&quot;&gt;type&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;&quot;text&quot;&lt;/span&gt;
+          &lt;span class&#x3D;&quot;attr&quot;&gt;formControlName&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;&quot;age&quot;&lt;/span&gt;
+          &lt;span class&#x3D;&quot;attr&quot;&gt;[control]&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;&quot;form.get(&#x27;age&#x27;)&quot;&lt;/span&gt;
+          &lt;span class&#x3D;&quot;attr&quot;&gt;helperText&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;&quot;Between 18 and 99&quot;&lt;/span&gt;
+          &lt;span class&#x3D;&quot;attr&quot;&gt;icon&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;&quot;elderly&quot;&lt;/span&gt;
+        &amp;gt;&amp;lt;/&lt;span class&#x3D;&quot;tag-code&quot;&gt;hover-input&lt;/span&gt;&amp;gt;
+
+        &amp;lt;&lt;span class&#x3D;&quot;tag-code&quot;&gt;div&lt;/span&gt; &lt;span class&#x3D;&quot;attr&quot;&gt;class&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;&quot;actions&quot;&lt;/span&gt;&amp;gt;
+          &amp;lt;&lt;span class&#x3D;&quot;tag-code&quot;&gt;hover-button&lt;/span&gt;
+            &lt;span class&#x3D;&quot;attr&quot;&gt;color&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;&quot;primary&quot;&lt;/span&gt;
+            &lt;span class&#x3D;&quot;attr&quot;&gt;type&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;&quot;submit&quot;&lt;/span&gt;
+            &lt;span class&#x3D;&quot;attr&quot;&gt;[disabled]&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;&quot;form.invalid ? &#x27;disabled&#x27; : &#x27;&#x27;&quot;&lt;/span&gt;
+          &amp;gt;
+            Submit Form
+          &amp;lt;/&lt;span class&#x3D;&quot;tag-code&quot;&gt;hover-button&lt;/span&gt;&amp;gt;
+
+          &amp;lt;&lt;span class&#x3D;&quot;tag-code&quot;&gt;hover-button&lt;/span&gt;
+            &lt;span class&#x3D;&quot;attr&quot;&gt;color&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;&quot;secondary&quot;&lt;/span&gt;
+            &lt;span class&#x3D;&quot;attr&quot;&gt;type&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;&quot;button&quot;&lt;/span&gt;
+            &lt;span class&#x3D;&quot;attr&quot;&gt;(click)&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;&quot;reset()&quot;&lt;/span&gt;
+            &lt;span class&#x3D;&quot;attr&quot;&gt;icon&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;&quot;delete&quot;&lt;/span&gt;
+          &amp;gt;
+            Clear
+          &amp;lt;/&lt;span class&#x3D;&quot;tag-code&quot;&gt;hover-button&lt;/span&gt;&amp;gt;
+        &amp;lt;/&lt;span class&#x3D;&quot;tag-code&quot;&gt;div&lt;/span&gt;&amp;gt;
+      &amp;lt;/&lt;span class&#x3D;&quot;tag-code&quot;&gt;form&lt;/span&gt;&amp;gt;
+    &lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+
+
+
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./input.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">#container {
+  min-width: fit-content;
+  width: 100%;
+  max-width: 900px;
+  min-height: fit-content;
+  padding-bottom: 100px;
+  margin: 0 auto;
+  color: #DCDCD4;
+  color: #3C3C43;
+  line-height: 1.6;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+}
+
+h1 {
+  font-size: 32px;
+}
+
+h1, h2, h3 {
+  width: 90%;
+  text-align: left;
+  margin-top: 80px;
+}
+
+p {
+  width: 90%;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.8rem;
+}
+
+table {
+  width: 90%;
+  border-radius: 6px;
+  border: 2px solid rgba(228, 238, 246, .8);
+  padding: 10px;
+}
+
+th {
+  padding-bottom: 10px;
+}
+
+td, th {
+  height: fit-content;
+  padding: 15px 10px;
+  font-size: 14px;
+}
+
+th {
+  text-align: left;
+}
+
+strong {
+  color: #000000;
+  font-weight: 800;
+}
+
+.tag {
+  display: inline-flex;
+  width: fit-content;
+  height: fit-content;
+  border-radius: 6px;
+  padding: 0px 8px;
+  font-size: 14px;
+  box-shadow: inset 0 0 0 1px #c4d0d966, inset 0 -1px #ffffff1a, inset 0 1px #84b9f61a;
+  background-image: radial-gradient(145% 110% at 46% 20%, rgba(250, 253, 255, .5) 50%, rgba(228, 238, 246, .6) 85%, #9abfe1 100%);
+  color: #000000 !important;
+}
+
+.example {
+  width: 90%;
+  margin-top: 35px;
+}
+
+.component-row {
+  width: 90%;
+}
+
+.code {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: 35px 0;
+  border-radius: 7px;
+  font-family: &quot;DM Mono&quot;, monospace;
+  border-radius: 12px;
+  box-shadow: inset 0 0 0 1px #c4d0d966, inset 0 -1px #ffffff1a, inset 0 1px #84b9f61a;
+  background-image: radial-gradient(145% 110% at 46% 20%, rgba(250, 253, 255, .5) 50%, rgba(228, 238, 246, .6) 85%, #9abfe1 100%);
+}
+
+.copy {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  padding: 2px 7px;
+  border-radius: 7px;
+  cursor: pointer;
+  user-select: none;
+  color: #999999;
+  font-size: 14px;
+}
+
+.copy:hover {
+  background-color: #dadada10;
+  outline: 1px solid rgba(71, 71, 71, 0.6);
+}
+
+.copy:active {
+  color: rgb(199, 199, 199);
+}
+
+pre {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  width: 90%;
+  margin-left: 0px;
+  overflow-x: auto;
+
+}
+
+.text-code {
+  font-family: monospace;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.tag-code {
+  color: #d73a49;
+}
+
+.attr {
+  color: #6f42c1;
+}
+
+.value {
+  color: #032f62;
+}
+
+.bracket {
+  color: #22863a;
+}
+
+.material-link{
+  color: #6f42c1;
+}
+
+.actions{
+  display: flex;
+}
+
+
+/* Media Query para pantallas pequeñas */
+@media (max-width: 770px) {
+
+  h1, h2, h3 {
+    width: 94%;
+  }
+
+  p {
+    width: 94%;
+    font-size: 13px;
+    line-height: 1.7rem;
+  }
+
+  table {
+    width: 100%;
+    padding: 0px;
+    border: none;
+    overflow-x: auto; /* Aseguramos el desplazamiento horizontal si el contenido se desborda */
+  }
+
+  .tag {
+    font-size: 12px;
+  }
+
+  .code {
+    width: 90%;
+    margin: 35px 0;
+    padding: 0 !important;
+  }
+
+  pre {
+    width: 100%; /* Aseguramos que los bloques de código también se ajusten */
+  }
+
+
+  /* Hace que las palabras largas o el contenido dentro de &lt;pre&gt; se rompa en varias líneas */
+pre, code {
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Para que las tablas no se desborden en móviles */
+table {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  display: block;
+}
+
+/* Textos normales */
+p, h1, h2, h3, strong {
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div id="container">  <h1>Inputs</h1>  <p>    The <strong translate="no">hover-input</strong> component provides customizable input fields with support for icons, validation, and error messages. It is ideal for creating interactive forms with a clear interface.  </p>  <!-- Basic Inputs -->  <h2>Basic Inputs</h2>  <div class="component-row">    <hover-input label="Full Name" icon="person"></hover-input>    <hover-input label="Password" type="password" icon="lock"></hover-input>  </div>  <p>    In this example, it shows how to use the <code>hover-input</code> component to create basic fields like "Full Name" and "Password" with icons. These inputs are ideal for simple forms where text or password entries are required.  </p>  <div class="code">    <span class="copy" (click)="copyCode(inputsBasic)">copy</span>    <pre><code class="text-code">      &lt;<span class="tag-code">hover-input</span> <span class="attr">label</span>=<span class="value">\'Full Name\'</span> <span class="attr">icon</span>=<span class="value">\'person\'</span>&gt;&lt;/<span class="tag-code">hover-input</span>&gt;      &lt;<span class="tag-code">hover-input</span> <span class="attr">label</span>=<span class="value">\'Password\'</span> <span class="attr">type</span>=<span class="value">\'password\'</span> <span class="attr">icon</span>=<span class="value">\'lock\'</span>&gt;&lt;/<span class="tag-code">hover-input</span>&gt;    </code></pre>  </div>  <!-- Inputs with States -->  <h2>Inputs with States</h2>  <div class="component-row">    <hover-input label="Email" type="email" icon="mail"></hover-input>    <hover-input label="Phone" type="tel" icon="phone"></hover-input>    <hover-input label="Password" type="password" icon="lock"></hover-input>    <hover-input label="Disabled" [disabled]="true" icon="block" value="Example"></hover-input>  </div>  <p>    Here we show inputs that include different field types: email, phone, and password. You will also see a disabled input, which is achieved by using the <code>[disabled]="true"</code> property.  </p>  <div class="code">    <span class="copy" (click)="copyCode(inputStates)">copy</span>    <pre><code class="text-code">      &lt;<span class="tag-code">hover-input</span> <span class="attr">label</span>=<span class="value">\'Email\'</span> <span class="attr">type</span>=<span class="value">\'email\'</span> <span class="attr">icon</span>=<span class="value">\'mail\'</span>&gt;&lt;/<span class="tag-code">hover-input</span>&gt;      &lt;<span class="tag-code">hover-input</span> <span class="attr">label</span>=<span class="value">\'Phone\'</span> <span class="attr">type</span>=<span class="value">\'tel\'</span> <span class="attr">icon</span>=<span class="value">\'phone\'</span>&gt;&lt;/<span class="tag-code">hover-input</span>&gt;      &lt;<span class="tag-code">hover-input</span> <span class="attr">label</span>=<span class="value">\'Disabled\'</span> <span class="attr">disabled</span>=<span class="value">\'true\'</span> <span class="attr">icon</span>=<span class="value">\'block\'</span>&gt;&lt;/<span class="tag-code">hover-input</span>&gt;    </code></pre>  </div>  <!-- Inputs with Reactive Validation -->  <h2>Inputs with Reactive Validation</h2>  <p>    These inputs are connected to a reactive form with validation. We use controls such as email, password, and age, each with custom validation rules. It demonstrates how to handle errors and custom messages using the component.  </p>  <div class="component-row">    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form-reactive">      <hover-input        label="Corporate Email"        type="email"        formControlName="email"        [control]="form.get(\'email\')"        icon="alternate_email"        [customMessages]="emailMessages"      ></hover-input>      <hover-input        label="Password"        type="password"        formControlName="password"        [control]="form.get(\'password\')"        icon="lock"        [customMessages]="passwordMessages"      ></hover-input>      <hover-input        label="Age (optional)"        type="text"        formControlName="age"        [control]="form.get(\'age\')"        helperText="Between 18 and 99"        icon="elderly"      ></hover-input>      <div class="actions">        <hover-button          color="primary"          type="submit"          [disabled]="form.invalid ? \'disabled\' : \'\'"        >          Submit Form        </hover-button>        <hover-button          color="secondary"          type="button"          (click)="reset()"          icon="delete"        >          Clear        </hover-button>      </div>    </form>  </div>  <p>    The reactive form allows for advanced validation, such as ensuring that the email field is correctly formatted and that the password has at least 8 characters. If the form contains errors, the "Submit Form" button is disabled.  </p>  <div class="code">    <span class="copy" (click)="copyCode(reactiveForm)">copy</span>    <pre><code class="text-code">      &lt;<span class="tag-code">form</span> <span class="attr">[formGroup]</span>=<span class="value">"form"</span> <span class="attr">(ngSubmit)</span>=<span class="value">"onSubmit()"</span> <span class="attr">class</span>=<span class="value">"form-reactive"</span>&gt;        &lt;<span class="tag-code">hover-input</span>          <span class="attr">label</span>=<span class="value">"Corporate Email"</span>          <span class="attr">type</span>=<span class="value">"email"</span>          <span class="attr">formControlName</span>=<span class="value">"email"</span>          <span class="attr">[control]</span>=<span class="value">"form.get(\'email\')"</span>          <span class="attr">icon</span>=<span class="value">"alternate_email"</span>          <span class="attr">[customMessages]</span>=<span class="value">{{ "\'{" }} required: \'This field is required\', default: \'Enter a valid email address\' {{ "}\'" }}</span>        &gt;&lt;/<span class="tag-code">hover-input</span>&gt;        &lt;<span class="tag-code">hover-input</span>          <span class="attr">label</span>=<span class="value">"Password"</span>          <span class="attr">type</span>=<span class="value">"password"</span>          <span class="attr">formControlName</span>=<span class="value">"password"</span>          <span class="attr">[control]</span>=<span class="value">"form.get(\'password\')"</span>          <span class="attr">icon</span>=<span class="value">"lock"</span>          <span class="attr">[customMessages]</span>=<span class="value">{{ "\'{" }} required: \'This field is required\', minlength: \'Minimum 8 characters\' {{ "}\'" }}</span>        &gt;&lt;/<span class="tag-code">hover-input</span>&gt;        &lt;<span class="tag-code">hover-input</span>          <span class="attr">label</span>=<span class="value">"Age (optional)"</span>          <span class="attr">type</span>=<span class="value">"text"</span>          <span class="attr">formControlName</span>=<span class="value">"age"</span>          <span class="attr">[control]</span>=<span class="value">"form.get(\'age\')"</span>          <span class="attr">helperText</span>=<span class="value">"Between 18 and 99"</span>          <span class="attr">icon</span>=<span class="value">"elderly"</span>        &gt;&lt;/<span class="tag-code">hover-input</span>&gt;        &lt;<span class="tag-code">div</span> <span class="attr">class</span>=<span class="value">"actions"</span>&gt;          &lt;<span class="tag-code">hover-button</span>            <span class="attr">color</span>=<span class="value">"primary"</span>            <span class="attr">type</span>=<span class="value">"submit"</span>            <span class="attr">[disabled]</span>=<span class="value">"form.invalid ? \'disabled\' : \'\'"</span>          &gt;            Submit Form          &lt;/<span class="tag-code">hover-button</span>&gt;          &lt;<span class="tag-code">hover-button</span>            <span class="attr">color</span>=<span class="value">"secondary"</span>            <span class="attr">type</span>=<span class="value">"button"</span>            <span class="attr">(click)</span>=<span class="value">"reset()"</span>            <span class="attr">icon</span>=<span class="value">"delete"</span>          &gt;            Clear          &lt;/<span class="tag-code">hover-button</span>&gt;        &lt;/<span class="tag-code">div</span>&gt;      &lt;/<span class="tag-code">form</span>&gt;    </code></pre>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AlertComponent', 'selector': 'app-alert'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BadgeComponent', 'selector': 'app-badge'},{'name': 'ButtonComponent', 'selector': 'app-button'},{'name': 'ComponentsPageComponent', 'selector': 'app-components-page'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InputComponent', 'selector': 'app-input'},{'name': 'IntroductionComponent', 'selector': 'app-introduction'},{'name': 'ListAsideComponent', 'selector': 'app-list-aside'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MenuAsideComponent', 'selector': 'app-menu-aside'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'SpinnerComponent', 'selector': 'app-spinner'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'InputComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'InputComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

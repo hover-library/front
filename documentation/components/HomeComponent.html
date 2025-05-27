@@ -1,0 +1,1070 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>landing-page documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">landing-page documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  HomeComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/home/home.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>AfterViewInit</code>
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-home</code></td>
+            </tr>
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./home.component.html</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrl</td>
+                <td class="col-md-9"><code>./home.component.css</code></td>
+            </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#isLogged" >isLogged</a>
+                            </li>
+                            <li>
+                                <a href="#menuMobileDisplay" >menuMobileDisplay</a>
+                            </li>
+                            <li>
+                                <a href="#menuOpen" >menuOpen</a>
+                            </li>
+                            <li>
+                                <a href="#menuRoutes" >menuRoutes</a>
+                            </li>
+                            <li>
+                                <a href="#userMail" >userMail</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#emailToggle" >emailToggle</a>
+                            </li>
+                            <li>
+                                <a href="#logout" >logout</a>
+                            </li>
+                            <li>
+                                <a href="#ngAfterViewInit" >ngAfterViewInit</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#toggleMenu" >toggleMenu</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(el: ElementRef, router: Router, authService: <a href="../injectables/AuthService.html" target="_self">AuthService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/home/home.component.ts:35</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>el</td>
+                                                  
+                                                        <td>
+                                                                    <code>ElementRef</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code>Router</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>authService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="emailToggle"></a>
+                    <span class="name">
+                        <span ><b>emailToggle</b></span>
+                        <a href="#emailToggle"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>emailToggle()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="84"
+                                    class="link-to-prism">src/app/home/home.component.ts:84</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="logout"></a>
+                    <span class="name">
+                        <span ><b>logout</b></span>
+                        <a href="#logout"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>logout()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="70"
+                                    class="link-to-prism">src/app/home/home.component.ts:70</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngAfterViewInit"></a>
+                    <span class="name">
+                        <span ><b>ngAfterViewInit</b></span>
+                        <a href="#ngAfterViewInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngAfterViewInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="56"
+                                    class="link-to-prism">src/app/home/home.component.ts:56</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="48"
+                                    class="link-to-prism">src/app/home/home.component.ts:48</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toggleMenu"></a>
+                    <span class="name">
+                        <span ><b>toggleMenu</b></span>
+                        <a href="#toggleMenu"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>toggleMenu()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="66"
+                                    class="link-to-prism">src/app/home/home.component.ts:66</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isLogged"></a>
+                    <span class="name">
+                        <span ><b>isLogged</b></span>
+                        <a href="#isLogged"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/home/home.component.ts:30</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="menuMobileDisplay"></a>
+                    <span class="name">
+                        <span ><b>menuMobileDisplay</b></span>
+                        <a href="#menuMobileDisplay"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/home/home.component.ts:29</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="menuOpen"></a>
+                    <span class="name">
+                        <span ><b>menuOpen</b></span>
+                        <a href="#menuOpen"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/home/home.component.ts:31</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="menuRoutes"></a>
+                    <span class="name">
+                        <span ><b>menuRoutes</b></span>
+                        <a href="#menuRoutes"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+    { label: &#x27;&#x27;, route: &#x27;/&#x27; },
+    { label: &#x27;introduction&#x27;, route: &#x27;/documentation/introduction&#x27; },
+    { label: &#x27;examples&#x27;, route: &#x27;/documentation/components&#x27; },
+    { label: &#x27;contact&#x27;, route: &#x27;/&#x27; }
+  ]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="76" class="link-to-prism">src/app/home/home.component.ts:76</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="userMail"></a>
+                    <span class="name">
+                        <span ><b>userMail</b></span>
+                        <a href="#userMail"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.authService.getUserMail()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/home/home.component.ts:35</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { AfterViewInit, Component, effect, ElementRef, OnInit, Renderer2 } from &#x27;@angular/core&#x27;;
+import {
+  trigger,
+  state,
+  style,
+  transition,
+  animate
+} from &#x27;@angular/animations&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import { AuthService } from &#x27;../auth/auth.service&#x27;;
+@Component({
+  selector: &#x27;app-home&#x27;,
+  templateUrl: &#x27;./home.component.html&#x27;,
+  styleUrl: &#x27;./home.component.css&#x27;,
+  animations: [
+    trigger(&#x27;menuAnimation&#x27;, [
+      transition(&#x27;:enter&#x27;, [ // cuando aparece
+        style({ opacity: 0, transform: &#x27;translateY(-10px)&#x27; }),
+        animate(&#x27;300ms ease-out&#x27;, style({ opacity: 1, transform: &#x27;translateY(0)&#x27; }))
+      ]),
+      transition(&#x27;:leave&#x27;, [ // cuando desaparece
+        animate(&#x27;200ms ease-in&#x27;, style({ opacity: 0, transform: &#x27;translateY(-10px)&#x27; }))
+      ])
+    ])
+  ]
+})
+export class HomeComponent implements AfterViewInit, OnInit{
+
+  menuMobileDisplay: boolean &#x3D; false;
+  isLogged: boolean &#x3D; false;
+  menuOpen: boolean &#x3D; false;
+
+
+  // Accedemos a la señal directamente
+  userMail &#x3D; this.authService.getUserMail();
+
+  constructor(
+    private el: ElementRef,
+    private router: Router,
+    private authService: AuthService
+  ){
+    // effect(() &#x3D;&gt; {
+    //   console.log(&#x27;User mail changed: &#x27;, this.authService.getUserMail()());
+    // });
+  }
+
+
+  ngOnInit(): void {
+
+    if(this.authService.getToken()){
+      this.isLogged &#x3D; true;
+    }
+
+  }
+
+  ngAfterViewInit() {
+    const video &#x3D; document.getElementById(&#x27;bg-video&#x27;) as HTMLVideoElement;
+    if (video) {
+      video.muted &#x3D; true;
+      video.play().catch(err &#x3D;&gt; {
+        console.warn(&#x27;Autoplay error:&#x27;, err);
+      });
+    }
+  }
+
+  toggleMenu(){
+    this.menuMobileDisplay &#x3D; !this.menuMobileDisplay;
+  }
+
+  logout() {
+    this.authService.deleteToken();
+    this.authService.setUserMail(&#x27;&#x27;);
+    this.menuOpen &#x3D; false;
+  }
+
+  menuRoutes &#x3D; [
+    { label: &#x27;&#x27;, route: &#x27;/&#x27; },
+    { label: &#x27;introduction&#x27;, route: &#x27;/documentation/introduction&#x27; },
+    { label: &#x27;examples&#x27;, route: &#x27;/documentation/components&#x27; },
+    { label: &#x27;contact&#x27;, route: &#x27;/&#x27; }
+  ];
+
+
+emailToggle() {
+  this.menuOpen &#x3D; !this.menuOpen;
+}
+
+
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;menu&quot;&gt;
+
+  &lt;div class&#x3D;&quot;logo&quot;&gt;
+    &lt;svg width&#x3D;&quot;35&quot; height&#x3D;&quot;35&quot; viewBox&#x3D;&quot;0 0 32 33&quot; xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot;&gt;
+      &lt;defs&gt;
+        &lt;!-- Gradiente para el fondo del escudo --&gt;
+        &lt;linearGradient id&#x3D;&quot;logoGradient&quot; x1&#x3D;&quot;0%&quot; y1&#x3D;&quot;0%&quot; x2&#x3D;&quot;100%&quot; y2&#x3D;&quot;100%&quot;&gt;
+          &lt;stop offset&#x3D;&quot;0%&quot; stop-color&#x3D;&quot;#6e00ff&quot; /&gt;
+          &lt;stop offset&#x3D;&quot;100%&quot; stop-color&#x3D;&quot;#3a0077&quot; /&gt;
+        &lt;/linearGradient&gt;
+
+        &lt;!-- Sombra para la H --&gt;
+        &lt;filter id&#x3D;&quot;textShadow&quot; x&#x3D;&quot;-50%&quot; y&#x3D;&quot;-50%&quot; width&#x3D;&quot;200%&quot; height&#x3D;&quot;200%&quot;&gt;
+          &lt;feDropShadow dx&#x3D;&quot;0&quot; dy&#x3D;&quot;1&quot; stdDeviation&#x3D;&quot;1&quot; flood-color&#x3D;&quot;black&quot; flood-opacity&#x3D;&quot;0.5&quot; /&gt;
+        &lt;/filter&gt;
+      &lt;/defs&gt;
+
+      &lt;path d&#x3D;&quot;M15.1934 0L0.0391235 5.38288L2.35052 25.3417L15.1934 32.427L28.0364 25.3417L30.3478 5.38288L15.1934 0Z&quot; fill&#x3D;&quot;url(#logoGradient)&quot; /&gt;
+
+      &lt;text x&#x3D;&quot;48%&quot; y&#x3D;&quot;53%&quot; text-anchor&#x3D;&quot;middle&quot; dominant-baseline&#x3D;&quot;middle&quot;
+        fill&#x3D;&quot;white&quot;
+        font-size&#x3D;&quot;14&quot;
+        font-family&#x3D;&quot;&#x27;Plus Jakarta Sans&#x27;, sans-serif&quot;
+        font-weight&#x3D;&quot;600&quot;
+        filter&#x3D;&quot;url(#textShadow)&quot;&gt;
+        H
+      &lt;/text&gt;
+    &lt;/svg&gt;
+
+    &lt;a routerLink&#x3D;&quot;/&quot; translate&#x3D;&quot;no&quot;&gt;
+      Hover UI
+    &lt;/a&gt;
+  &lt;/div&gt;
+    &lt;div class&#x3D;&quot;menu-list&quot;&gt;
+      &lt;ul&gt;
+        &lt;li&gt;
+          &lt;a [routerLink]&#x3D;&quot;[&#x27;/documentation/introduction&#x27;]&quot;&gt;
+            introduction
+          &lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+          &lt;a [routerLink]&#x3D;&quot;[&#x27;/documentation/components&#x27;]&quot;&gt;
+            examples
+          &lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+          &lt;a routerLink&#x3D;&quot;/&quot;&gt;
+            contact
+          &lt;/a&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+
+
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;menu-mobile&quot;&gt;
+      &lt;label class&#x3D;&quot;hamburger&quot;&gt;
+        &lt;input (click)&#x3D;&quot;toggleMenu()&quot; type&#x3D;&quot;checkbox&quot;&gt;
+        &lt;svg viewBox&#x3D;&quot;0 0 32 32&quot;&gt;
+          &lt;path class&#x3D;&quot;line line-top-bottom&quot; d&#x3D;&quot;M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22&quot;&gt;&lt;/path&gt;
+          &lt;path class&#x3D;&quot;line&quot; d&#x3D;&quot;M7 16 27 16&quot;&gt;&lt;/path&gt;
+        &lt;/svg&gt;
+      &lt;/label&gt;
+    &lt;/div&gt;
+    @if(!isLogged){
+      &lt;div class&#x3D;&quot;login&quot;&gt;
+        &lt;a [routerLink]&#x3D;&quot;[&#x27;/login&#x27;]&quot; class&#x3D;&quot;login-link&quot;&gt;
+          Log In
+        &lt;/a&gt;
+        &lt;a [routerLink]&#x3D;&quot;[&#x27;/register&#x27;]&quot; class&#x3D;&quot;register-link&quot;&gt;
+          Sign Up
+        &lt;/a&gt;
+      &lt;/div&gt;
+    }@else {
+      &lt;div class&#x3D;&quot;user-logout&quot;&gt;
+        &lt;div class&#x3D;&quot;user-profile&quot; (click)&#x3D;&quot;emailToggle()&quot;&gt;
+          &lt;div class&#x3D;&quot;user-avatar&quot;&gt;
+            {{ userMail() ? userMail().charAt(0).toUpperCase() : &#x27;&#x27; }}
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;user-menu&quot; *ngIf&#x3D;&quot;menuOpen&quot;&gt;
+          &lt;div class&#x3D;&quot;menu-item&quot; (click)&#x3D;&quot;logout()&quot;&gt;
+            &lt;svg xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; height&#x3D;&quot;24px&quot; viewBox&#x3D;&quot;0 -960 960 960&quot; width&#x3D;&quot;24px&quot; fill&#x3D;&quot;#3C3C43&quot;&gt;&lt;path d&#x3D;&quot;M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z&quot;/&gt;&lt;/svg&gt;
+            &lt;span&gt;Cerrar sesión&lt;/span&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    }
+    &lt;div *ngIf&#x3D;&quot;menuMobileDisplay&quot; @menuAnimation class&#x3D;&quot;menu-list-mobile&quot;&gt;
+      &lt;ul&gt;
+        &lt;li&gt;
+          &lt;a [routerLink]&#x3D;&quot;[&#x27;/documentation/introduction&#x27;]&quot;&gt;
+            introduction
+          &lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+          &lt;a [routerLink]&#x3D;&quot;[&#x27;/documentation/components&#x27;]&quot;&gt;
+            examples
+          &lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+          &lt;a routerLink&#x3D;&quot;/&quot;&gt;
+            contact
+          &lt;/a&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+      @if(!isLogged){
+        &lt;div class&#x3D;&quot;login-mobile&quot;&gt;
+          &lt;a [routerLink]&#x3D;&quot;[&#x27;/login&#x27;]&quot; class&#x3D;&quot;login-link&quot;&gt;
+            Log In
+          &lt;/a&gt;
+          &lt;a [routerLink]&#x3D;&quot;[&#x27;/register&#x27;]&quot; class&#x3D;&quot;register-link&quot;&gt;
+            Sign Up
+          &lt;/a&gt;
+        &lt;/div&gt;
+      } @else {
+        &lt;div class&#x3D;&quot;hr&quot;&gt;&lt;/div&gt;
+        &lt;div class&#x3D;&quot;user-logout-mobile&quot;&gt;
+          &lt;div class&#x3D;&quot;user-profile&quot; (click)&#x3D;&quot;emailToggle()&quot;&gt;
+            &lt;div class&#x3D;&quot;user-avatar&quot;&gt;
+              {{ userMail() ? userMail().charAt(0).toUpperCase() : &#x27;&#x27; }}
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;user-info&quot;&gt;
+              &lt;div class&#x3D;&quot;user-name&quot;&gt;{{userMail()}}&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;user-dropdown-icon&quot;&gt;
+              &lt;svg width&#x3D;&quot;24&quot; height&#x3D;&quot;24&quot; viewBox&#x3D;&quot;0 0 24 24&quot; fill&#x3D;&quot;currentColor&quot;&gt;
+                &lt;path d&#x3D;&quot;M7 10l5 5 5-5z&quot;&gt;&lt;/path&gt;
+              &lt;/svg&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+
+          &lt;div class&#x3D;&quot;user-menu&quot; *ngIf&#x3D;&quot;menuOpen&quot;&gt;
+            &lt;div class&#x3D;&quot;menu-item&quot; (click)&#x3D;&quot;logout()&quot;&gt;
+              &lt;svg xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; height&#x3D;&quot;24px&quot; viewBox&#x3D;&quot;0 -960 960 960&quot; width&#x3D;&quot;24px&quot; fill&#x3D;&quot;#3C3C43&quot;&gt;&lt;path d&#x3D;&quot;M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z&quot;/&gt;&lt;/svg&gt;
+              &lt;span&gt;Cerrar sesión&lt;/span&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      }
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;main class&#x3D;&quot;hero&quot;&gt;
+
+  &lt;video id&#x3D;&quot;bg-video&quot; autoplay muted loop playsinline&gt;
+    &lt;source src&#x3D;&quot;../../assets/orb.mp4&quot; type&#x3D;&quot;video/mp4&quot;&gt;
+    &lt;!-- Fallback  --&gt;
+    &lt;img src&#x3D;&quot;../../assets/orb.jpg&quot; alt&#x3D;&quot;Background fallback&quot;&gt;
+  &lt;/video&gt;
+
+  &lt;div class&#x3D;&quot;hero-content&quot;&gt;
+    &lt;h1 class&#x3D;&quot;hero-title&quot;&gt;Build Fast, Beautiful Interfaces with Hover&lt;/h1&gt;
+    &lt;p class&#x3D;&quot;hero-description&quot;&gt;A sleek Angular component library to speed up your development.&lt;/p&gt;
+
+    &lt;div class&#x3D;&quot;buttons&quot;&gt;
+      &lt;button [routerLink]&#x3D;&quot;[&#x27;/documentation/introduction&#x27;]&quot; class&#x3D;&quot;starter-button&quot;&gt;
+        &lt;span&gt;Get Started&lt;/span&gt;
+        &lt;svg width&#x3D;&quot;20&quot; height&#x3D;&quot;20&quot; viewBox&#x3D;&quot;0 0 24 24&quot; fill&#x3D;&quot;none&quot; xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot;&gt;
+          &lt;path d&#x3D;&quot;M5 12H19M19 12L12 5M19 12L12 19&quot; stroke&#x3D;&quot;currentColor&quot; stroke-width&#x3D;&quot;2&quot; stroke-linecap&#x3D;&quot;round&quot; stroke-linejoin&#x3D;&quot;round&quot;/&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+      &lt;button class&#x3D;&quot;github-button&quot;&gt;
+       &lt;a href&#x3D;&quot;https://github.com/hover-library?tab&#x3D;repositories&quot; target&#x3D;&quot;_blank&quot;&gt;
+        &lt;span&gt;GitHub&lt;/span&gt;
+        &lt;svg width&#x3D;&quot;18&quot; height&#x3D;&quot;18&quot; viewBox&#x3D;&quot;0 0 24 24&quot; fill&#x3D;&quot;none&quot; xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot;&gt;
+          &lt;path d&#x3D;&quot;M12 0C5.374 0 0 5.373 0 12C0 17.302 3.438 21.8 8.207 23.387C8.806 23.498 9 23.126 9 22.81V20.576C5.662 21.302 4.967 19.16 4.967 19.16C4.421 17.773 3.634 17.404 3.634 17.404C2.545 16.659 3.717 16.675 3.717 16.675C4.922 16.759 5.556 17.912 5.556 17.912C6.626 19.746 8.363 19.216 9.048 18.909C9.155 18.134 9.466 17.604 9.81 17.305C7.145 17.001 4.343 15.971 4.343 11.374C4.343 10.063 4.812 8.993 5.579 8.153C5.455 7.85 5.044 6.629 5.696 4.977C5.696 4.977 6.704 4.655 8.997 6.207C9.954 5.941 10.98 5.808 12 5.803C13.02 5.808 14.047 5.941 15.006 6.207C17.297 4.655 18.303 4.977 18.303 4.977C18.956 6.629 18.545 7.85 18.421 8.153C19.191 8.993 19.656 10.063 19.656 11.374C19.656 15.983 16.849 16.998 14.177 17.295C14.607 17.667 15 18.397 15 19.517V22.81C15 23.129 15.192 23.504 15.801 23.386C20.566 21.797 24 17.3 24 12C24 5.373 18.627 0 12 0Z&quot; fill&#x3D;&quot;currentColor&quot;/&gt;
+        &lt;/svg&gt;
+       &lt;/a&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/main&gt;
+</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="menu">  <div class="logo">    <svg width="35" height="35" viewBox="0 0 32 33" xmlns="http://www.w3.org/2000/svg">      <defs>        <!-- Gradiente para el fondo del escudo -->        <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">          <stop offset="0%" stop-color="#6e00ff" />          <stop offset="100%" stop-color="#3a0077" />        </linearGradient>        <!-- Sombra para la H -->        <filter id="textShadow" x="-50%" y="-50%" width="200%" height="200%">          <feDropShadow dx="0" dy="1" stdDeviation="1" flood-color="black" flood-opacity="0.5" />        </filter>      </defs>      <path d="M15.1934 0L0.0391235 5.38288L2.35052 25.3417L15.1934 32.427L28.0364 25.3417L30.3478 5.38288L15.1934 0Z" fill="url(#logoGradient)" />      <text x="48%" y="53%" text-anchor="middle" dominant-baseline="middle"        fill="white"        font-size="14"        font-family="\'Plus Jakarta Sans\', sans-serif"        font-weight="600"        filter="url(#textShadow)">        H      </text>    </svg>    <a routerLink="/" translate="no">      Hover UI    </a>  </div>    <div class="menu-list">      <ul>        <li>          <a [routerLink]="[\'/documentation/introduction\']">            introduction          </a>        </li>        <li>          <a [routerLink]="[\'/documentation/components\']">            examples          </a>        </li>        <li>          <a routerLink="/">            contact          </a>        </li>      </ul>    </div>    <div class="menu-mobile">      <label class="hamburger">        <input (click)="toggleMenu()" type="checkbox">        <svg viewBox="0 0 32 32">          <path class="line line-top-bottom" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>          <path class="line" d="M7 16 27 16"></path>        </svg>      </label>    </div>    @if(!isLogged){      <div class="login">        <a [routerLink]="[\'/login\']" class="login-link">          Log In        </a>        <a [routerLink]="[\'/register\']" class="register-link">          Sign Up        </a>      </div>    }@else {      <div class="user-logout">        <div class="user-profile" (click)="emailToggle()">          <div class="user-avatar">            {{ userMail() ? userMail().charAt(0).toUpperCase() : \'\' }}          </div>        </div>        <div class="user-menu" *ngIf="menuOpen">          <div class="menu-item" (click)="logout()">            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#3C3C43"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z"/></svg>            <span>Cerrar sesión</span>          </div>        </div>      </div>    }    <div *ngIf="menuMobileDisplay" @menuAnimation class="menu-list-mobile">      <ul>        <li>          <a [routerLink]="[\'/documentation/introduction\']">            introduction          </a>        </li>        <li>          <a [routerLink]="[\'/documentation/components\']">            examples          </a>        </li>        <li>          <a routerLink="/">            contact          </a>        </li>      </ul>      @if(!isLogged){        <div class="login-mobile">          <a [routerLink]="[\'/login\']" class="login-link">            Log In          </a>          <a [routerLink]="[\'/register\']" class="register-link">            Sign Up          </a>        </div>      } @else {        <div class="hr"></div>        <div class="user-logout-mobile">          <div class="user-profile" (click)="emailToggle()">            <div class="user-avatar">              {{ userMail() ? userMail().charAt(0).toUpperCase() : \'\' }}            </div>            <div class="user-info">              <div class="user-name">{{userMail()}}</div>            </div>            <div class="user-dropdown-icon">              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">                <path d="M7 10l5 5 5-5z"></path>              </svg>            </div>          </div>          <div class="user-menu" *ngIf="menuOpen">            <div class="menu-item" (click)="logout()">              <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#3C3C43"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z"/></svg>              <span>Cerrar sesión</span>            </div>          </div>        </div>      }    </div></div><main class="hero">  <video id="bg-video" autoplay muted loop playsinline>    <source src="../../assets/orb.mp4" type="video/mp4">    <!-- Fallback  -->    <img src="../../assets/orb.jpg" alt="Background fallback">  </video>  <div class="hero-content">    <h1 class="hero-title">Build Fast, Beautiful Interfaces with Hover</h1>    <p class="hero-description">A sleek Angular component library to speed up your development.</p>    <div class="buttons">      <button [routerLink]="[\'/documentation/introduction\']" class="starter-button">        <span>Get Started</span>        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">          <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>        </svg>      </button>      <button class="github-button">       <a href="https://github.com/hover-library?tab=repositories" target="_blank">        <span>GitHub</span>        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">          <path d="M12 0C5.374 0 0 5.373 0 12C0 17.302 3.438 21.8 8.207 23.387C8.806 23.498 9 23.126 9 22.81V20.576C5.662 21.302 4.967 19.16 4.967 19.16C4.421 17.773 3.634 17.404 3.634 17.404C2.545 16.659 3.717 16.675 3.717 16.675C4.922 16.759 5.556 17.912 5.556 17.912C6.626 19.746 8.363 19.216 9.048 18.909C9.155 18.134 9.466 17.604 9.81 17.305C7.145 17.001 4.343 15.971 4.343 11.374C4.343 10.063 4.812 8.993 5.579 8.153C5.455 7.85 5.044 6.629 5.696 4.977C5.696 4.977 6.704 4.655 8.997 6.207C9.954 5.941 10.98 5.808 12 5.803C13.02 5.808 14.047 5.941 15.006 6.207C17.297 4.655 18.303 4.977 18.303 4.977C18.956 6.629 18.545 7.85 18.421 8.153C19.191 8.993 19.656 10.063 19.656 11.374C19.656 15.983 16.849 16.998 14.177 17.295C14.607 17.667 15 18.397 15 19.517V22.81C15 23.129 15.192 23.504 15.801 23.386C20.566 21.797 24 17.3 24 12C24 5.373 18.627 0 12 0Z" fill="currentColor"/>        </svg>       </a>      </button>    </div>  </div></main></div>'
+    var COMPONENTS = [{'name': 'AlertComponent', 'selector': 'app-alert'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BadgeComponent', 'selector': 'app-badge'},{'name': 'ButtonComponent', 'selector': 'app-button'},{'name': 'ComponentsPageComponent', 'selector': 'app-components-page'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InputComponent', 'selector': 'app-input'},{'name': 'IntroductionComponent', 'selector': 'app-introduction'},{'name': 'ListAsideComponent', 'selector': 'app-list-aside'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MenuAsideComponent', 'selector': 'app-menu-aside'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'SpinnerComponent', 'selector': 'app-spinner'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'HomeComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'HomeComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

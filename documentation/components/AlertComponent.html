@@ -1,0 +1,797 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>landing-page documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">landing-page documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  AlertComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/alert/alert.component.ts</code>
+</p>
+
+
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-alert</code></td>
+            </tr>
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./alert.component.html</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrl</td>
+                <td class="col-md-9"><code>./alert.component.css</code></td>
+            </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#alertError" >alertError</a>
+                            </li>
+                            <li>
+                                <a href="#alertInfo" >alertInfo</a>
+                            </li>
+                            <li>
+                                <a href="#alertSuccess" >alertSuccess</a>
+                            </li>
+                            <li>
+                                <a href="#alertWarning" >alertWarning</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#copyCode" >copyCode</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="copyCode"></a>
+                    <span class="name">
+                        <span ><b>copyCode</b></span>
+                        <a href="#copyCode"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>copyCode(code: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="42"
+                                    class="link-to-prism">src/app/components/alert/alert.component.ts:42</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>code</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="alertError"></a>
+                    <span class="name">
+                        <span ><b>alertError</b></span>
+                        <a href="#alertError"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x60;
+  &lt;hover-alert
+    type&#x3D;&quot;error&quot;
+    title&#x3D;&quot;Error&quot;
+    message&#x3D;&quot;The operation could not be completed.&quot;
+    [showProgressBar]&#x3D;&quot;true&quot;
+    [autoClose]&#x3D;&quot;true&quot;&gt;
+  &lt;/hover-alert&gt;&#x60;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/components/alert/alert.component.ts:25</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="alertInfo"></a>
+                    <span class="name">
+                        <span ><b>alertInfo</b></span>
+                        <a href="#alertInfo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x60;
+  &lt;hover-alert
+    type&#x3D;&quot;info&quot;
+    message&#x3D;&quot;This is an info alert.&quot;
+    [closable]&#x3D;&quot;true&quot;&gt;
+  &lt;/hover-alert&gt;&#x60;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/components/alert/alert.component.ts:10</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="alertSuccess"></a>
+                    <span class="name">
+                        <span ><b>alertSuccess</b></span>
+                        <a href="#alertSuccess"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x60;
+  &lt;hover-alert
+    type&#x3D;&quot;success&quot;
+    title&#x3D;&quot;Success&quot;
+    message&#x3D;&quot;The data was saved successfully.&quot;
+    [closable]&#x3D;&quot;true&quot;&gt;
+  &lt;/hover-alert&gt;&#x60;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/components/alert/alert.component.ts:17</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="alertWarning"></a>
+                    <span class="name">
+                        <span ><b>alertWarning</b></span>
+                        <a href="#alertWarning"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x60;
+  &lt;hover-alert
+    type&#x3D;&quot;warning&quot;
+    title&#x3D;&quot;Warning&quot;
+    message&#x3D;&quot;Please check the input data.&quot;
+    [closable]&#x3D;&quot;false&quot;&gt;
+  &lt;/hover-alert&gt;&#x60;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/components/alert/alert.component.ts:34</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, ElementRef, ViewChild } from &#x27;@angular/core&#x27;;
+
+@Component({
+  selector: &#x27;app-alert&#x27;,
+  templateUrl: &#x27;./alert.component.html&#x27;,
+  styleUrl: &#x27;./alert.component.css&#x27;
+})
+export class AlertComponent {
+
+  alertInfo &#x3D; &#x60;
+  &lt;hover-alert
+    type&#x3D;&quot;info&quot;
+    message&#x3D;&quot;This is an info alert.&quot;
+    [closable]&#x3D;&quot;true&quot;&gt;
+  &lt;/hover-alert&gt;&#x60;;
+
+  alertSuccess &#x3D; &#x60;
+  &lt;hover-alert
+    type&#x3D;&quot;success&quot;
+    title&#x3D;&quot;Success&quot;
+    message&#x3D;&quot;The data was saved successfully.&quot;
+    [closable]&#x3D;&quot;true&quot;&gt;
+  &lt;/hover-alert&gt;&#x60;;
+
+  alertError &#x3D; &#x60;
+  &lt;hover-alert
+    type&#x3D;&quot;error&quot;
+    title&#x3D;&quot;Error&quot;
+    message&#x3D;&quot;The operation could not be completed.&quot;
+    [showProgressBar]&#x3D;&quot;true&quot;
+    [autoClose]&#x3D;&quot;true&quot;&gt;
+  &lt;/hover-alert&gt;&#x60;;
+
+  alertWarning &#x3D; &#x60;
+  &lt;hover-alert
+    type&#x3D;&quot;warning&quot;
+    title&#x3D;&quot;Warning&quot;
+    message&#x3D;&quot;Please check the input data.&quot;
+    [closable]&#x3D;&quot;false&quot;&gt;
+  &lt;/hover-alert&gt;&#x60;;
+
+  copyCode(code: string) {
+    const textarea &#x3D; document.createElement(&#x27;textarea&#x27;);
+    textarea.value &#x3D; code;
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand(&#x27;copy&#x27;);
+    document.body.removeChild(textarea);
+    alert(&#x27;Code copied to clipboard!&#x27;);
+  }
+
+
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div id&#x3D;&quot;container&quot;&gt;
+  &lt;h1&gt;Alerts&lt;/h1&gt;
+  &lt;p&gt;
+    The &lt;strong translate&#x3D;&quot;no&quot;&gt;hover-alert&lt;/strong&gt; component allows you to display various types of alerts to users, such as &lt;span class&#x3D;&quot;tag&quot;&gt;information&lt;/span&gt;, &lt;span class&#x3D;&quot;tag&quot;&gt;success&lt;/span&gt;, &lt;span class&#x3D;&quot;tag&quot;&gt;error&lt;/span&gt;, and &lt;span class&#x3D;&quot;tag&quot;&gt;warning&lt;/span&gt;. These alerts come with customizable features like manual close, automatic close, progress bars, optional titles, and more. Below are examples of each type of alert with descriptions of their available attributes.
+  &lt;/p&gt;
+
+  &lt;!-- Table of Inputs --&gt;
+  &lt;h3&gt;Available Inputs&lt;/h3&gt;
+  &lt;table&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;
+        &lt;th&gt;Attribute&lt;/th&gt;
+        &lt;th&gt;Description&lt;/th&gt;
+        &lt;th&gt;Possible Values&lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;
+        &lt;td&gt;&lt;code&gt;type&lt;/code&gt;&lt;/td&gt;
+        &lt;td&gt;Defines the type of the alert&lt;/td&gt;
+        &lt;td&gt;info, success, error, warning&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;&lt;code&gt;message&lt;/code&gt;&lt;/td&gt;
+        &lt;td&gt;The message text to display in the alert&lt;/td&gt;
+        &lt;td&gt;Any string&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;&lt;code&gt;title&lt;/code&gt;&lt;/td&gt;
+        &lt;td&gt;Optional title for the alert (not used for all types)&lt;/td&gt;
+        &lt;td&gt;Any string&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;&lt;code&gt;closable&lt;/code&gt;&lt;/td&gt;
+        &lt;td&gt;Indicates whether the alert can be manually closed by the user&lt;/td&gt;
+        &lt;td&gt;true, false&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;&lt;code&gt;autoClose&lt;/code&gt;&lt;/td&gt;
+        &lt;td&gt;Automatically closes the alert after a specified duration&lt;/td&gt;
+        &lt;td&gt;true, false&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;&lt;code&gt;duration&lt;/code&gt;&lt;/td&gt;
+        &lt;td&gt;The time (in milliseconds) before the alert auto closes&lt;/td&gt;
+        &lt;td&gt;Any positive integer (e.g., 5000 for 5 seconds)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;&lt;code&gt;showProgressBar&lt;/code&gt;&lt;/td&gt;
+        &lt;td&gt;Displays a progress bar while the alert is visible&lt;/td&gt;
+        &lt;td&gt;true, false&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+
+  &lt;!-- Alert Info --&gt;
+  &lt;h2&gt;Info&lt;/h2&gt;
+  &lt;p&gt;
+    This alert is typically used to display informational messages. It has the option of being closed manually by the user. It can be customized with a &lt;span class&#x3D;&quot;tag&quot;&gt;message&lt;/span&gt; and can be made closable using the &lt;span class&#x3D;&quot;tag&quot;&gt;closable&lt;/span&gt; attribute.
+  &lt;/p&gt;
+  &lt;div class&#x3D;&quot;example&quot;&gt;
+    &lt;hover-alert
+      type&#x3D;&quot;info&quot;
+      message&#x3D;&quot;This is an info alert.&quot;
+      [closable]&#x3D;&quot;true&quot;&gt;
+    &lt;/hover-alert&gt;
+  &lt;/div&gt;
+
+  &lt;div class&#x3D;&quot;code&quot;&gt;
+    &lt;span class&#x3D;&quot;copy&quot; (click)&#x3D;&quot;copyCode(alertInfo)&quot;&gt;copy&lt;/span&gt;
+    &lt;pre&gt;
+      &lt;code class&#x3D;&quot;text-code&quot;&gt;
+        &amp;lt;&lt;span class&#x3D;&quot;tag-code&quot;&gt;hover-alert&lt;/span&gt;
+        &lt;span class&#x3D;&quot;attr&quot;&gt;type&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;&#x27;info&#x27;&lt;/span&gt;
+        &lt;span class&#x3D;&quot;attr&quot;&gt;message&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;&#x27;This is an info alert.&#x27;&lt;/span&gt;
+        &lt;span class&#x3D;&quot;bracket&quot;&gt;[&lt;/span&gt;&lt;span class&#x3D;&quot;attr&quot;&gt;closable&lt;/span&gt;&lt;span class&#x3D;&quot;bracket&quot;&gt;]&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;&#x27;true&#x27;&lt;/span&gt;
+        &amp;gt;&amp;lt;/&lt;span class&#x3D;&quot;tag-code&quot;&gt;hover-alert&lt;/span&gt;&amp;gt;
+      &lt;/code&gt;
+    &lt;/pre&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Alert Success --&gt;
+  &lt;h2&gt;Success&lt;/h2&gt;
+  &lt;p&gt;
+    Success alerts are useful for displaying positive feedback or confirmation. They usually include a &lt;span class&#x3D;&quot;tag&quot;&gt;title&lt;/span&gt;, like &quot;Success&quot;, and a &lt;span class&#x3D;&quot;tag&quot;&gt;message&lt;/span&gt; with additional information. The &lt;span class&#x3D;&quot;tag&quot;&gt;closable&lt;/span&gt; option allows the user to close the alert manually.
+  &lt;/p&gt;
+  &lt;div class&#x3D;&quot;example&quot;&gt;
+    &lt;hover-alert
+      type&#x3D;&quot;success&quot;
+      title&#x3D;&quot;Success&quot;
+      message&#x3D;&quot;The data was saved successfully.&quot;
+      [closable]&#x3D;&quot;true&quot;&gt;
+    &lt;/hover-alert&gt;
+  &lt;/div&gt;
+
+  &lt;div class&#x3D;&quot;code&quot;&gt;
+    &lt;span class&#x3D;&quot;copy&quot; (click)&#x3D;&quot;copyCode(alertSuccess)&quot;&gt;copy&lt;/span&gt;
+    &lt;pre&gt;
+      &lt;code class&#x3D;&quot;text-code&quot;&gt;
+        &amp;lt;&lt;span class&#x3D;&quot;tag-code&quot;&gt;hover-alert&lt;/span&gt;
+        &lt;span class&#x3D;&quot;attr&quot;&gt;type&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;&#x27;success&#x27;&lt;/span&gt;
+        &lt;span class&#x3D;&quot;attr&quot;&gt;title&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;&#x27;Success&#x27;&lt;/span&gt;
+        &lt;span class&#x3D;&quot;attr&quot;&gt;message&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;&#x27;The data was saved successfully.&#x27;&lt;/span&gt;
+        &lt;span class&#x3D;&quot;bracket&quot;&gt;[&lt;/span&gt;&lt;span class&#x3D;&quot;attr&quot;&gt;closable&lt;/span&gt;&lt;span class&#x3D;&quot;bracket&quot;&gt;]&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;&#x27;true&#x27;&lt;/span&gt;
+        &amp;gt;&amp;lt;/&lt;span class&#x3D;&quot;tag-code&quot;&gt;hover-alert&lt;/span&gt;&amp;gt;
+      &lt;/code&gt;
+    &lt;/pre&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Alert Error --&gt;
+  &lt;h2&gt;Error&lt;/h2&gt;
+  &lt;p&gt;
+    Error alerts are used to notify users of problems or issues that require attention. You can customize this alert with a &lt;span class&#x3D;&quot;tag&quot;&gt;title&lt;/span&gt;, &lt;span class&#x3D;&quot;tag&quot;&gt;message&lt;/span&gt;, and set properties like &lt;span class&#x3D;&quot;tag&quot;&gt;showProgressBar&lt;/span&gt; and &lt;span class&#x3D;&quot;tag&quot;&gt;autoClose&lt;/span&gt;. Additionally, you can control how long the alert is visible using the &lt;span class&#x3D;&quot;tag&quot;&gt;duration&lt;/span&gt; attribute.
+  &lt;/p&gt;
+  &lt;div class&#x3D;&quot;example&quot;&gt;
+    &lt;hover-alert
+      type&#x3D;&quot;error&quot;
+      title&#x3D;&quot;Error&quot;
+      message&#x3D;&quot;The operation could not be completed.&quot;
+      [showProgressBar]&#x3D;&quot;true&quot;
+      [autoClose]&#x3D;&quot;true&quot;&gt;
+    &lt;/hover-alert&gt;
+  &lt;/div&gt;
+
+  &lt;div class&#x3D;&quot;code&quot;&gt;
+    &lt;span class&#x3D;&quot;copy&quot; (click)&#x3D;&quot;copyCode(alertError)&quot;&gt;copy&lt;/span&gt;
+    &lt;pre&gt;
+      &lt;code class&#x3D;&quot;text-code&quot;&gt;
+        &amp;lt;&lt;span class&#x3D;&quot;tag-code&quot;&gt;hover-alert&lt;/span&gt;
+        &lt;span class&#x3D;&quot;attr&quot;&gt;type&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;&#x27;error&#x27;&lt;/span&gt;
+        &lt;span class&#x3D;&quot;attr&quot;&gt;title&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;&#x27;Error&#x27;&lt;/span&gt;
+        &lt;span class&#x3D;&quot;attr&quot;&gt;message&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;&#x27;The operation could not be completed.&#x27;&lt;/span&gt;
+        &lt;span class&#x3D;&quot;bracket&quot;&gt;[&lt;/span&gt;&lt;span class&#x3D;&quot;attr&quot;&gt;showProgressBar&lt;/span&gt;&lt;span class&#x3D;&quot;bracket&quot;&gt;]&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;&#x27;true&#x27;&lt;/span&gt;
+        &lt;span class&#x3D;&quot;bracket&quot;&gt;[&lt;/span&gt;&lt;span class&#x3D;&quot;attr&quot;&gt;autoClose&lt;/span&gt;&lt;span class&#x3D;&quot;bracket&quot;&gt;]&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;&#x27;true&#x27;&lt;/span&gt;
+        &lt;span class&#x3D;&quot;attr&quot;&gt;[duration]&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;&#x27;5000&#x27;&lt;/span&gt;
+        &amp;gt;&amp;lt;/&lt;span class&#x3D;&quot;tag-code&quot;&gt;hover-alert&lt;/span&gt;&amp;gt;
+      &lt;/code&gt;
+    &lt;/pre&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Alert Warning --&gt;
+  &lt;h2&gt;Warning&lt;/h2&gt;
+  &lt;p&gt;
+    Warning alerts are used to highlight potential issues that require attention but are not critical. You can set a &lt;span class&#x3D;&quot;tag&quot;&gt;title&lt;/span&gt;, provide a &lt;span class&#x3D;&quot;tag&quot;&gt;message&lt;/span&gt;, and control whether the alert is closable using the &lt;span class&#x3D;&quot;tag&quot;&gt;closable&lt;/span&gt; attribute.
+  &lt;/p&gt;
+  &lt;div class&#x3D;&quot;example&quot;&gt;
+    &lt;hover-alert
+      type&#x3D;&quot;warning&quot;
+      title&#x3D;&quot;Warning&quot;
+      message&#x3D;&quot;Please check the input data.&quot;
+      [closable]&#x3D;&quot;false&quot;&gt;
+    &lt;/hover-alert&gt;
+  &lt;/div&gt;
+
+  &lt;div class&#x3D;&quot;code&quot;&gt;
+    &lt;span class&#x3D;&quot;copy&quot; (click)&#x3D;&quot;copyCode(alertWarning)&quot;&gt;copy&lt;/span&gt;
+    &lt;pre&gt;
+      &lt;code class&#x3D;&quot;text-code&quot;&gt;
+        &amp;lt;&lt;span class&#x3D;&quot;tag-code&quot;&gt;hover-alert&lt;/span&gt;
+        &lt;span class&#x3D;&quot;attr&quot;&gt;type&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;&#x27;warning&#x27;&lt;/span&gt;
+        &lt;span class&#x3D;&quot;attr&quot;&gt;title&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;&#x27;Warning&#x27;&lt;/span&gt;
+        &lt;span class&#x3D;&quot;attr&quot;&gt;message&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;&#x27;Please check the input data.&#x27;&lt;/span&gt;
+        &lt;span class&#x3D;&quot;bracket&quot;&gt;[&lt;/span&gt;&lt;span class&#x3D;&quot;attr&quot;&gt;closable&lt;/span&gt;&lt;span class&#x3D;&quot;bracket&quot;&gt;]&lt;/span&gt;&#x3D;&lt;span class&#x3D;&quot;value&quot;&gt;&#x27;false&#x27;&lt;/span&gt;
+        &amp;gt;&amp;lt;/&lt;span class&#x3D;&quot;tag-code&quot;&gt;hover-alert&lt;/span&gt;&amp;gt;
+      &lt;/code&gt;
+    &lt;/pre&gt;
+  &lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;!-- &lt;div class&#x3D;&quot;list-aside&quot;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href&#x3D;&quot;&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href&#x3D;&quot;&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href&#x3D;&quot;&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href&#x3D;&quot;&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href&#x3D;&quot;&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href&#x3D;&quot;&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt; --&gt;
+</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div id="container">  <h1>Alerts</h1>  <p>    The <strong translate="no">hover-alert</strong> component allows you to display various types of alerts to users, such as <span class="tag">information</span>, <span class="tag">success</span>, <span class="tag">error</span>, and <span class="tag">warning</span>. These alerts come with customizable features like manual close, automatic close, progress bars, optional titles, and more. Below are examples of each type of alert with descriptions of their available attributes.  </p>  <!-- Table of Inputs -->  <h3>Available Inputs</h3>  <table>    <thead>      <tr>        <th>Attribute</th>        <th>Description</th>        <th>Possible Values</th>      </tr>    </thead>    <tbody>      <tr>        <td><code>type</code></td>        <td>Defines the type of the alert</td>        <td>info, success, error, warning</td>      </tr>      <tr>        <td><code>message</code></td>        <td>The message text to display in the alert</td>        <td>Any string</td>      </tr>      <tr>        <td><code>title</code></td>        <td>Optional title for the alert (not used for all types)</td>        <td>Any string</td>      </tr>      <tr>        <td><code>closable</code></td>        <td>Indicates whether the alert can be manually closed by the user</td>        <td>true, false</td>      </tr>      <tr>        <td><code>autoClose</code></td>        <td>Automatically closes the alert after a specified duration</td>        <td>true, false</td>      </tr>      <tr>        <td><code>duration</code></td>        <td>The time (in milliseconds) before the alert auto closes</td>        <td>Any positive integer (e.g., 5000 for 5 seconds)</td>      </tr>      <tr>        <td><code>showProgressBar</code></td>        <td>Displays a progress bar while the alert is visible</td>        <td>true, false</td>      </tr>    </tbody>  </table>  <!-- Alert Info -->  <h2>Info</h2>  <p>    This alert is typically used to display informational messages. It has the option of being closed manually by the user. It can be customized with a <span class="tag">message</span> and can be made closable using the <span class="tag">closable</span> attribute.  </p>  <div class="example">    <hover-alert      type="info"      message="This is an info alert."      [closable]="true">    </hover-alert>  </div>  <div class="code">    <span class="copy" (click)="copyCode(alertInfo)">copy</span>    <pre>      <code class="text-code">        &lt;<span class="tag-code">hover-alert</span>        <span class="attr">type</span>=<span class="value">\'info\'</span>        <span class="attr">message</span>=<span class="value">\'This is an info alert.\'</span>        <span class="bracket">[</span><span class="attr">closable</span><span class="bracket">]</span>=<span class="value">\'true\'</span>        &gt;&lt;/<span class="tag-code">hover-alert</span>&gt;      </code>    </pre>  </div>  <!-- Alert Success -->  <h2>Success</h2>  <p>    Success alerts are useful for displaying positive feedback or confirmation. They usually include a <span class="tag">title</span>, like "Success", and a <span class="tag">message</span> with additional information. The <span class="tag">closable</span> option allows the user to close the alert manually.  </p>  <div class="example">    <hover-alert      type="success"      title="Success"      message="The data was saved successfully."      [closable]="true">    </hover-alert>  </div>  <div class="code">    <span class="copy" (click)="copyCode(alertSuccess)">copy</span>    <pre>      <code class="text-code">        &lt;<span class="tag-code">hover-alert</span>        <span class="attr">type</span>=<span class="value">\'success\'</span>        <span class="attr">title</span>=<span class="value">\'Success\'</span>        <span class="attr">message</span>=<span class="value">\'The data was saved successfully.\'</span>        <span class="bracket">[</span><span class="attr">closable</span><span class="bracket">]</span>=<span class="value">\'true\'</span>        &gt;&lt;/<span class="tag-code">hover-alert</span>&gt;      </code>    </pre>  </div>  <!-- Alert Error -->  <h2>Error</h2>  <p>    Error alerts are used to notify users of problems or issues that require attention. You can customize this alert with a <span class="tag">title</span>, <span class="tag">message</span>, and set properties like <span class="tag">showProgressBar</span> and <span class="tag">autoClose</span>. Additionally, you can control how long the alert is visible using the <span class="tag">duration</span> attribute.  </p>  <div class="example">    <hover-alert      type="error"      title="Error"      message="The operation could not be completed."      [showProgressBar]="true"      [autoClose]="true">    </hover-alert>  </div>  <div class="code">    <span class="copy" (click)="copyCode(alertError)">copy</span>    <pre>      <code class="text-code">        &lt;<span class="tag-code">hover-alert</span>        <span class="attr">type</span>=<span class="value">\'error\'</span>        <span class="attr">title</span>=<span class="value">\'Error\'</span>        <span class="attr">message</span>=<span class="value">\'The operation could not be completed.\'</span>        <span class="bracket">[</span><span class="attr">showProgressBar</span><span class="bracket">]</span>=<span class="value">\'true\'</span>        <span class="bracket">[</span><span class="attr">autoClose</span><span class="bracket">]</span>=<span class="value">\'true\'</span>        <span class="attr">[duration]</span>=<span class="value">\'5000\'</span>        &gt;&lt;/<span class="tag-code">hover-alert</span>&gt;      </code>    </pre>  </div>  <!-- Alert Warning -->  <h2>Warning</h2>  <p>    Warning alerts are used to highlight potential issues that require attention but are not critical. You can set a <span class="tag">title</span>, provide a <span class="tag">message</span>, and control whether the alert is closable using the <span class="tag">closable</span> attribute.  </p>  <div class="example">    <hover-alert      type="warning"      title="Warning"      message="Please check the input data."      [closable]="false">    </hover-alert>  </div>  <div class="code">    <span class="copy" (click)="copyCode(alertWarning)">copy</span>    <pre>      <code class="text-code">        &lt;<span class="tag-code">hover-alert</span>        <span class="attr">type</span>=<span class="value">\'warning\'</span>        <span class="attr">title</span>=<span class="value">\'Warning\'</span>        <span class="attr">message</span>=<span class="value">\'Please check the input data.\'</span>        <span class="bracket">[</span><span class="attr">closable</span><span class="bracket">]</span>=<span class="value">\'false\'</span>        &gt;&lt;/<span class="tag-code">hover-alert</span>&gt;      </code>    </pre>  </div></div><!-- <div class="list-aside">  <ul>    <li><a href=""></a></li>    <li><a href=""></a></li>    <li><a href=""></a></li>    <li><a href=""></a></li>    <li><a href=""></a></li>    <li><a href=""></a></li>  </ul></div> --></div>'
+    var COMPONENTS = [{'name': 'AlertComponent', 'selector': 'app-alert'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BadgeComponent', 'selector': 'app-badge'},{'name': 'ButtonComponent', 'selector': 'app-button'},{'name': 'ComponentsPageComponent', 'selector': 'app-components-page'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'InputComponent', 'selector': 'app-input'},{'name': 'IntroductionComponent', 'selector': 'app-introduction'},{'name': 'ListAsideComponent', 'selector': 'app-list-aside'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MenuAsideComponent', 'selector': 'app-menu-aside'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'SpinnerComponent', 'selector': 'app-spinner'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'AlertComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'AlertComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

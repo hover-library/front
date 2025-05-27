@@ -520,6 +520,15 @@ button,  .github-button a{
 
 /* Media Queries */
 
+@media (min-width: 901px) {
+
+  *{
+    cursor: none !important;
+  }
+
+
+}
+
 
 
 @media (max-width: 900px) {
