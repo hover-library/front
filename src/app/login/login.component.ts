@@ -6,10 +6,9 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-
   loginForm!: FormGroup;
   isNotLogged: boolean = false;
 
@@ -21,35 +20,33 @@ export class LoginComponent implements OnInit {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       // password: ['', [Validators.required, Validators.minLength(6)]]
-      password: ['', [Validators.required, Validators.minLength(4)]]
+      password: ['', [Validators.required, Validators.minLength(4)]],
     });
   }
 
   ngOnInit(): void {
     setTimeout(() => {
       this.loginForm.patchValue({
-        email: 'juanma@gmail.com',
-        password: 'Y7p!dL9q$Xv3@Rt2'
+        email: 'example@gmail.com',
+        password: 'Y7p!dL9q$Xv3@Rt2',
       });
     });
   }
 
   onLogin(): void {
-    if (this.loginForm.invalid){
+    if (this.loginForm.invalid) {
       this.isNotLogged = true;
       return;
     }
 
     const user = this.loginForm.value;
 
-    this.authService.login(user).subscribe(
-      (response) => {
-        // console.log("Loggin Success", user);
+    this.authService.login(user).subscribe((response) => {
+      // console.log("Loggin Success", user);
 
-        this.authService.setUserMail(user.email);
-        this.authService.saveToken(response.access_token);
-        this.router.navigate(['/documentation']);
-      }
-    );
+      this.authService.setUserMail(user.email);
+      this.authService.saveToken(response.access_token);
+      this.router.navigate(['/documentation']);
+    });
   }
 }
